@@ -34,72 +34,24 @@ export const pchVideos: LocalVideo[] = [
     title: 'Big Check Delivery Moment',
     caption:
       'A PCH winner poses with their oversized prize check after applying online and being selected in a random drawing.',
-    src: '/videos/big-check-delivery.mp4',
-    poster: '/videos/posters/big-check-delivery.jpg',
+    src: '/videos/prize-patrol-2.mp4',
+    poster: '/videos/posters/prize-patrol-2.jpg',
   },
   {
     id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
+    title: 'Robert C from Ohio Wins $40,000 & $10,000 a Year for Life',
     caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
-    src: '/videos/prize-patrol-3.mp4',
-    poster: '/videos/posters/prize-patrol-3.jpg',
-  },
-  {
-    id: '3',
-    title: ' Publishers Clearing House Winners: Robert C From Ohio Wins $40,000 &10,000 a Year for Life',
-    caption:
-      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House, Do you want to become our next big #PCHWinner? Apply now',
+      'Robert Clemente of Willoughby, OH won $40,000 plus $10,000 A Year For Life from Publishers Clearing House. Do you want to become our next big #PCHWinner? Apply now.',
     src: '/videos/prize-patrol-3.mp4',
     poster: '/videos/posters/prize-patrol-3.jpg',
   },
 
-  
+  // ── ADD MORE VIDEOS BELOW ─────────────────────────────────────
+  // {
+  //   id: '4',
+  //   title: 'Your video title',
+  //   caption: 'Short description shown under the player.',
+  //   src: '/videos/your-clip.mp4',
+  //   poster: '/videos/posters/your-clip.jpg',
+  // },
+];
