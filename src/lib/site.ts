@@ -18,3 +18,8 @@ export const WINNERS_TAGLINE =
 
 export const ELIGIBLE_REGIONS_SHORT =
   'Open to applicants worldwide — USA, Canada, UK, Germany, Australia, and more.';
+
+/** WhatsApp apply — country code + number, digits only (e.g. 15551234567). Set in Vercel env. */
+export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '') ?? '';
+
+export const WHATSAPP_ENABLED = WHATSAPP_NUMBER.length > 0;

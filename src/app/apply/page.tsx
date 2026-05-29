@@ -31,9 +31,7 @@ import {
   buildWhatsAppApplicationUrl,
 } from '@/data/apply-form';
 import { PRIZE_GROUPS, tiersForGroup, getPrizeTier } from '@/data/prize-categories';
-import { MAX_LUMP_SUM_PRIZE, APPLICATION_RESPONSE_HOURS, ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
-
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '';
+import { MAX_LUMP_SUM_PRIZE, APPLICATION_RESPONSE_HOURS, ELIGIBLE_REGIONS_SHORT, WHATSAPP_ENABLED, WHATSAPP_NUMBER } from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -260,7 +258,7 @@ export default function ApplyPage() {
           <div className="lg:col-span-2">
             <div className="card p-6 md:p-8">
               {/* Method toggle */}
-              <div className="flex gap-1 p-1 bg-[var(--pch-gray-100)] rounded-lg mb-8">
+              <div className={`flex gap-1 p-1 bg-[var(--pch-gray-100)] rounded-lg mb-8 ${WHATSAPP_ENABLED ? '' : 'hidden'}`}>
                 <button
                   type="button"
                   onClick={() => setSubmissionMethod('form')}
@@ -281,7 +279,7 @@ export default function ApplyPage() {
                 </button>
               </div>
 
-              {submissionMethod === 'whatsapp' ? (
+              {submissionMethod === 'whatsapp' && WHATSAPP_ENABLED ? (
                 <div className="py-4">
                   <div className="text-center mb-6">
                     <MessageCircle className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
@@ -301,22 +299,16 @@ export default function ApplyPage() {
                   </div>
 
                   <div className="text-center">
-                    {WHATSAPP_NUMBER ? (
-                      <a
-                        href={buildWhatsAppApplicationUrl(WHATSAPP_NUMBER)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary px-6 py-3 inline-flex"
-                      >
-                        Open WhatsApp &amp; complete application
-                      </a>
-                    ) : (
-                      <p className="text-xs text-[var(--pch-text-muted)]">
-                        Set <code>NEXT_PUBLIC_WHATSAPP_NUMBER</code> in .env.local to enable.
-                      </p>
-                    )}
+                    <a
+                      href={buildWhatsAppApplicationUrl(WHATSAPP_NUMBER)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary px-6 py-3 inline-flex"
+                    >
+                      Open WhatsApp &amp; complete application
+                    </a>
                     <p className="text-xs text-[var(--pch-text-muted)] mt-4 max-w-sm mx-auto">
-                      Each person must apply on their own. You will receive a reply by email within 24 hours.
+                      Each person must apply on their own. You will receive a response within 24 hours.
                     </p>
                     <button
                       type="button"
