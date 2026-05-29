@@ -1,13 +1,14 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, HelpCircle, Globe } from 'lucide-react';
 import { PRIZE_GROUPS, tiersForGroup, ELIGIBLE_REGIONS } from '@/data/prize-categories';
 import { MAX_LUMP_SUM_PRIZE, SUPER_PRIZE_AMOUNT } from '@/lib/site';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Prize Categories',
   description: `Explore PCH prize categories — Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrize ${SUPER_PRIZE_AMOUNT}, Weekly For Life, Dream Home, and more.`,
-};
+  path: '/areas',
+});
 
 export default function AreasPage() {
   return (

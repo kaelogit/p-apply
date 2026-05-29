@@ -1,12 +1,14 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { CheckWinnersGallery } from '@/components/winners/WinnerGallery';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Winners',
-  description: 'PCH winners who applied and received life-changing prizes worldwide.',
-};
+  description:
+    'PCH winners who applied and received life-changing prizes — real people with their prize checks from the USA, Canada, UK, and beyond.',
+  path: '/winners',
+});
 
 export default function WinnersPage() {
   return (

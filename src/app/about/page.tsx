@@ -1,11 +1,12 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Trophy, Heart, Shield } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'About',
   description: 'About Publishers Clearing House — apply to win since 1953.',
-};
+  path: '/about',
+});
 
 const sections = [
   {

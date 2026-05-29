@@ -1,28 +1,11 @@
 import './globals.css';
 import { ReactNode } from 'react';
-import { Metadata, Viewport } from 'next';
+import { Viewport } from 'next';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { createMetadata } from '@/lib/metadata';
 
-import { SITE_URL } from '@/lib/site';
-
-const siteTitle = "Publisher's Clearing House — Apply to Win";
-const siteDescription =
-  'Apply for your chance to win PCH prizes. Real winners since 1953.';
-
-export const metadata: Metadata = {
-  title: { default: siteTitle, template: '%s | PCH' },
-  description: siteDescription,
-  metadataBase: new URL(SITE_URL),
-  openGraph: {
-    title: siteTitle,
-    description: siteDescription,
-    siteName: "Publisher's Clearing House",
-    locale: 'en_US',
-    type: 'website',
-  },
-  robots: { index: true, follow: true },
-};
+export const metadata = createMetadata({ path: '/' });
 
 export const viewport: Viewport = {
   width: 'device-width',

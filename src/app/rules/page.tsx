@@ -1,7 +1,12 @@
-import { Metadata } from 'next';
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = { title: 'Official Rules' };
+export const metadata = createMetadata({
+  title: 'Official Rules',
+  description:
+    'Official rules for PCH prize drawings — eligibility, winner selection, and prize awards.',
+  path: '/rules',
+});
 
 export default function RulesPage() {
   return (

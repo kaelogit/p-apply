@@ -1,11 +1,13 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Quote, Target, Shield, Globe } from 'lucide-react';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Our Story',
-  description: 'The PCH story — awarding life-changing prizes to winners worldwide since 1953.',
-};
+  description:
+    'The PCH story — awarding life-changing prizes to winners worldwide since 1953.',
+  path: '/story',
+});
 
 export default function StoryPage() {
   return (

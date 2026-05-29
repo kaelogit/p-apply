@@ -1,8 +1,12 @@
-import { Metadata } from 'next';
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
 import { CONTACT_EMAIL } from '@/lib/site';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = { title: 'Privacy Policy' };
+export const metadata = createMetadata({
+  title: 'Privacy Policy',
+  description: 'PCH privacy policy — how we collect, use, and protect your application information.',
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (

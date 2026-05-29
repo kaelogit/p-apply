@@ -1,11 +1,13 @@
-import { Metadata } from 'next';
 import { Lock, ShieldCheck, Mail, UserX } from 'lucide-react';
 import { CONTACT_EMAIL } from '@/lib/site';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: 'Security & Trust',
-  description: 'How PCH protects your application, your privacy, and your personal information.',
-};
+  description:
+    'How PCH protects your application, your privacy, and your personal information.',
+  path: '/security',
+});
 
 const blocks = [
   {

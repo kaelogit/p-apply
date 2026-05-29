@@ -1,7 +1,11 @@
-import { Metadata } from 'next';
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
+import { createMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = { title: 'Terms of Service' };
+export const metadata = createMetadata({
+  title: 'Terms of Service',
+  description: 'Terms of service for applypch.com and PCH prize applications.',
+  path: '/terms',
+});
 
 export default function TermsPage() {
   return (
