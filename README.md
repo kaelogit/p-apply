@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PCH Website
+
+Modern sweepstakes landing site for **Publisher's Clearing House** — built as a standalone project separate from edwincastro.
+
+## Location
+
+```
+c:\Users\Kaelo\pch-website
+```
+
+This folder is entirely outside the edwincastro project and can be moved anywhere independently.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **React 19** + TypeScript
+- **Tailwind CSS v4**
+- **Framer Motion** for animations
+- **Nodemailer** for entry form email delivery (Zoho SMTP)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+cd c:\Users\Kaelo\pch-website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and fill in your Zoho credentials:
 
-## Learn More
+```
+ZOHO_USER=your-email@yourdomain.com
+ZOHO_PASS=your-zoho-app-password
+TO_EMAIL=entries@yourdomain.com
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage — hero, prizes, winners, stats, video, FAQ |
+| `/enter` | **Main conversion** — individual sweepstakes entry form |
+| `/winners` | Winner gallery |
+| `/about` | About PCH |
+| `/faq` | Full FAQ page |
+| `/rules` | Official Rules |
+| `/privacy` | Privacy Policy |
+| `/terms` | Terms of Service |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding Your Own Media
 
-## Deploy on Vercel
+### Videos (local files — no YouTube required)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Drop `.mp4` / `.webm` / `.mov` files into `public/videos/`
+2. Optional thumbnails → `public/videos/posters/`
+3. List them in `src/data/videos.ts`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+{
+  id: '1',
+  title: 'Prize Patrol Surprise',
+  src: '/videos/my-clip.mp4',           // file in public/videos/
+  poster: '/videos/posters/my-clip.jpg' // optional thumbnail
+}
+```
+
+### Winner photos (two types)
+
+| Folder | Use for |
+|--------|---------|
+| `public/winners/checks/` | Winners **holding their big checks** |
+| `public/winners/testimonials/` | **Thank-you** messages / gratitude photos |
+
+1. Save your images in the matching folder
+2. Update `src/data/winners.ts` — `checkWinners` or `testimonialWinners` arrays
+
+```ts
+{
+  id: 'check-4',
+  type: 'check',
+  name: 'Jane D.',
+  location: 'Austin, TX',
+  prize: '$100,000',
+  date: 'March 2026',
+  quote: '...',
+  image: '/winners/checks/check-04.jpg',
+}
+```
+
+### Other content
+
+- **Prizes**: Edit `src/data/prizes.ts`
+- **FAQ**: Edit `src/data/faq.ts`
+- **Brand colors**: Adjust CSS variables in `src/app/globals.css`
+
+## Build
+
+```bash
+npm run build
+npm start
+```

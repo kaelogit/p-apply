@@ -1,0 +1,4 @@
+# Winners saying THANK YOU — testimonial photos / screenshots
+#
+# Suggested naming: thankyou-01.jpg, thankyou-02.jpg, ...
+# Update src/data/winners.ts → testimonialWinners array

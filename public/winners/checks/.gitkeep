@@ -1,0 +1,4 @@
+# Drop check winner photos here
+# Naming: 001.jpg, 002.jpg, … 150.jpg  (match id in src/data/check-winners.ts)
+#
+# Example: id '047' in check-winners.ts → save as 047.jpg

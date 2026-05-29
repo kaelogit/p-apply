@@ -1,0 +1,7 @@
+# Drop your PCH video files here (.mp4, .webm, .mov)
+#
+# Then list them in src/data/videos.ts, for example:
+#   src: '/videos/prize-patrol-1.mp4'
+#
+# Optional thumbnails go in posters/ subfolder:
+#   poster: '/videos/posters/prize-patrol-1.jpg'
