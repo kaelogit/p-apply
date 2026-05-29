@@ -108,6 +108,30 @@ export const GUIDED_QUESTIONS = [
 export const APPLY_FAQS = [
   { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the USA, Canada, UK, Germany, Australia, and other eligible regions. See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },
-  { q: 'How will I know if I won?', a: 'Winners are contacted by email at the address on their application. Check your inbox and spam folder regularly.' },
+  { q: 'How will I hear back after applying?', a: 'Every applicant receives a personal email within 24 hours at the address on their application. Check your inbox and spam folder.' },
+  { q: 'How will I know if I won?', a: 'Selected winners are notified by email during our application review process. Keep your contact details up to date.' },
   { q: 'Is my information secure?', a: 'Yes. Your data is handled securely per our Privacy Policy.' },
 ];
+
+/** Prefilled WhatsApp message — applicant completes each line, then sends */
+export const WHATSAPP_APPLICATION_MESSAGE = `PCH PRIZE APPLICATION
+
+Full name:
+Email:
+Phone:
+Country:
+State / Region:
+City:
+Postal / ZIP code:
+Street address:
+Prize applying for:
+Why I am applying:
+
+I confirm I am 18 or older and submitting my own application.
+
+Please fill in every line above, then tap Send.`;
+
+export function buildWhatsAppApplicationUrl(phone: string): string {
+  const digits = phone.replace(/\D/g, '');
+  return `https://wa.me/${digits}?text=${encodeURIComponent(WHATSAPP_APPLICATION_MESSAGE)}`;
+}

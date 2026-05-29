@@ -12,7 +12,7 @@ interface ApplyPayload {
   address: string;
   postalCode: string;
   prizeCategory: string;
-  message?: string;
+  message: string;
   ageConfirm: boolean;
 }
 
@@ -29,10 +29,10 @@ function validate(body: unknown): ApplyPayload | null {
   const address = typeof o.address === 'string' ? o.address.trim() : '';
   const postalCode = typeof o.postalCode === 'string' ? o.postalCode.trim() : '';
   const prizeCategory = typeof o.prizeCategory === 'string' ? o.prizeCategory.trim() : '';
-  const message = typeof o.message === 'string' ? o.message.trim() : undefined;
+  const message = typeof o.message === 'string' ? o.message.trim() : '';
   const ageConfirm = o.ageConfirm === true;
 
-  if (!name || !email || !phone || !country || !region || !city || !address || !postalCode || !prizeCategory || !ageConfirm) {
+  if (!name || !email || !phone || !country || !region || !city || !address || !postalCode || !prizeCategory || !message || !ageConfirm) {
     return null;
   }
 
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
   const parsed = validate(await request.json());
   if (!parsed) {
     return NextResponse.json(
-      { error: 'Please complete all required fields and confirm you are 18 or older.' },
+      { error: 'Please complete all required fields, including your message, and confirm you are 18 or older.' },
       { status: 400 }
     );
   }

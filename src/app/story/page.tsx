@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Quote, Target, Shield, Globe } from 'lucide-react';
 import { createMetadata } from '@/lib/metadata';
+import { ELIGIBLE_REGIONS_SHORT, APPLICATION_RESPONSE_HOURS } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Our Story',
@@ -40,8 +41,8 @@ export default function StoryPage() {
               big check in hand — to tell people their application had won.
             </p>
             <p className="text-[var(--pch-text-muted)] leading-relaxed">
-              Today, applicants from the USA, Canada, United Kingdom, Germany, Australia, and
-              beyond submit applications online. Winners are selected through random drawings
+              {ELIGIBLE_REGIONS_SHORT} Every application receives a personal email within{' '}
+              {APPLICATION_RESPONSE_HOURS} hours. Winners are selected through random drawings
               overseen by independent judges.
             </p>
           </div>
@@ -82,8 +83,8 @@ export default function StoryPage() {
               },
               {
                 icon: Shield,
-                title: 'Email notification',
-                desc: 'Selected winners are contacted directly by email at the address on their application.',
+                title: '24-hour response',
+                desc: `Every applicant receives a personal email within ${APPLICATION_RESPONSE_HOURS} hours. Selected winners receive prize details at the address on their application.`,
               },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="space-y-4">

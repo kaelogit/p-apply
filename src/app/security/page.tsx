@@ -1,5 +1,5 @@
 import { Lock, ShieldCheck, Mail, UserX } from 'lucide-react';
-import { CONTACT_EMAIL } from '@/lib/site';
+import { CONTACT_EMAIL, APPLICATION_RESPONSE_HOURS } from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
@@ -22,8 +22,8 @@ const blocks = [
   },
   {
     icon: Mail,
-    title: 'Email notification',
-    desc: 'Selected winners are contacted by email at the address provided on their application. Always verify messages come from an official applypch.com address.',
+    title: 'Email response',
+    desc: `Every applicant receives a personal email within ${APPLICATION_RESPONSE_HOURS} hours at the address on their application. Selected winners receive further details from an official applypch.com address.`,
   },
   {
     icon: UserX,

@@ -53,7 +53,7 @@ export function RealStoriesSection() {
             Changing lives, one winner at a time.
           </h2>
           <p className="text-sm text-[var(--pch-text-muted)] mt-3">
-            Applicants from the USA, Canada, United Kingdom, Germany, Australia, and beyond.
+            Winner stories from applicants around the world.
           </p>
         </div>
 

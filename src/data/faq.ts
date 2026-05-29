@@ -9,8 +9,12 @@ export const faqItems: FaqItem[] = [
     answer: 'Complete the application form on our Apply page with your personal details. Each person submits their own application.',
   },
   {
+    question: 'When will I hear back after applying?',
+    answer: 'Every applicant receives a personal email within 24 hours at the address provided on their application. Check your inbox and spam folder.',
+  },
+  {
     question: 'How will I know if I won?',
-    answer: 'Winners are contacted by email at the address provided on their application. Keep your inbox and spam folder checked.',
+    answer: 'Selected winners are notified by email as part of our application review process. Keep your contact information current and check your inbox regularly.',
   },
   {
     question: 'Which countries can apply?',
@@ -26,6 +30,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'What happens after I submit my application?',
-    answer: 'Your application is recorded and included in the next scheduled drawing. Keep your contact information current so we can reach you by email if you are selected.',
+    answer: 'Your application is recorded and reviewed personally. You will receive an email within 24 hours. If selected in a drawing, prize details follow by email.',
   },
 ];

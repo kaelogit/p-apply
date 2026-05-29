@@ -53,7 +53,7 @@ export const PRIZE_GROUPS: PrizeGroup[] = [
     amountRange: `Up to ${MAX_LUMP_SUM_PRIZE}`,
     shortDescription: `Flagship lump-sum prizes — from ${SUPER_PRIZE_AMOUNT} SuperPrizes up to ${MAX_LUMP_SUM_PRIZE} Mega Prize.`,
     longDescription:
-      `Our largest drawings award life-changing lump-sum cash prizes. Real winners receive varied amounts — $1,000,000, ${SUPER_PRIZE_AMOUNT}, ${MAX_LUMP_SUM_PRIZE} Mega Prize, and more — selected at random and notified by email.`,
+      `Our largest drawings award life-changing lump-sum cash prizes. Real winners receive varied amounts — $1,000,000, ${SUPER_PRIZE_AMOUNT}, ${MAX_LUMP_SUM_PRIZE} Mega Prize, and more — selected at random. Every applicant receives a personal email within 24 hours.`,
     icon: Trophy,
     impactFilter: 'SuperPrize',
   },

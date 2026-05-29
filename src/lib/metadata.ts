@@ -63,10 +63,6 @@ export function createMetadata(options: {
       description,
       images: [image],
     },
-    icons: {
-      icon: '/logo.png',
-      apple: '/logo.png',
-    },
     robots: options.noIndex
       ? { index: false, follow: true }
       : { index: true, follow: true },

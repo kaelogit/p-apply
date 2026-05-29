@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { WinnerGallery } from '@/components/winners/WinnerGallery';
+import { WINNERS_TAGLINE } from '@/lib/site';
 
 export function WinnersSection() {
   return (
@@ -14,7 +15,7 @@ export function WinnersSection() {
             People who applied and won
           </h2>
           <p className="text-[var(--pch-text-muted)] max-w-xl">
-            Real winners with their PCH prize checks — USA, Canada, UK, Germany, Australia, and more.
+            {WINNERS_TAGLINE}
           </p>
         </div>
 

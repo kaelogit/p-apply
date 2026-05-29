@@ -84,7 +84,7 @@ function CheckGrid({
             onClick={() => setVisibleCount((c) => Math.min(c + LOAD_MORE_COUNT, winners.length))}
             className="btn-outline px-5 py-2.5 text-sm"
           >
-            Load more ({winners.length - visibleCount} remaining)
+            Load more
           </button>
         </div>
       )}

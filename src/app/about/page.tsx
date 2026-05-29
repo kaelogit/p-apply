@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Trophy, Heart, Shield } from 'lucide-react';
 import { createMetadata } from '@/lib/metadata';
+import { ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'About',
@@ -25,7 +26,7 @@ const sections = [
     href: '/impact',
     icon: Heart,
     title: 'Impact Stories',
-    desc: 'Real winners from the USA, Canada, UK, Germany, Australia, and beyond.',
+    desc: 'How real winners applied, heard back within 24 hours, and changed their lives.',
   },
   {
     href: '/security',
@@ -74,9 +75,9 @@ export default function AboutPage() {
           <h2 className="font-semibold text-[var(--pch-text)] mb-4">The PCH promise</h2>
           <ul className="space-y-2 text-sm text-[var(--pch-text-muted)]">
             {[
-              'Open to USA, Canada, UK, Germany, Australia, and eligible regions',
+              ELIGIBLE_REGIONS_SHORT,
+              'Every applicant emailed within 24 hours',
               'Winners selected through random drawings',
-              'Winners contacted by email',
               'One application per person',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2">

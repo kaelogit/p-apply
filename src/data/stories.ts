@@ -21,7 +21,7 @@ export const winnerStories: WinnerStory[] = [
     amount: '$2,500,000',
     paragraphs: [
       'Carol had been entering Publisher\'s Clearing House prize drawings for eleven years — sometimes from her laptop at the kitchen table, sometimes from her phone while waiting for the streetcar. She never told coworkers at the hospital pharmacy where she worked; it felt like a private hope, the kind you keep folded in your pocket.',
-      'The notification did not come with trumpets. It came as a plain email from an address ending in applypch.com, subject line: "Important message regarding your PCH application." Carol read it three times in the break room before her hands stopped shaking.',
+      'Carol submitted her latest PCH application from her phone before a hospital shift. Within twenty-four hours, a personal email arrived from applypch.com — subject line: "Important message regarding your PCH application." Carol read it three times in the break room before her hands stopped shaking.',
       'Verification took several days. When the Prize Patrol van pulled up on a rainy Thursday, her husband Dennis was still convinced someone was filming a commercial. Then the oversized check appeared — $2,500,000 Mega Prize — and the neighborhood came out onto the sidewalk.',
       'Carol and Dennis paid off the mortgage on their bungalow, set aside tuition trusts for two grandchildren, and funded Carol\'s plan to reduce to part-time hours without losing her benefits. They did not move away. They upgraded the kitchen and finally took the trip to Nova Scotia they had postponed since 2019.',
       'What surprised Carol most was how ordinary the process felt once the shock wore off. Forms, signatures, a wire transfer, thank-you photos with the check. Real paperwork. Real money. Real silence in the house the first night after the deposit cleared — the kind of quiet that follows a life rearranging itself.',
@@ -52,7 +52,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Malik\'s startup was three people and a whiteboard when he submitted his PCH application from a co-working space in Ancoats. He was building logistics software for small importers — unglamorous, useful, perpetually one invoice away from trouble.',
       'He had seen the Official Rules linked at the bottom of the apply page and actually read them, which his cofounder found hilarious. "Someone has to know we are eligible," Malik said. He was a UK resident, over eighteen, applying under his own name. That was the whole requirement.',
-      'The winner email arrived during a stand-up meeting. Malik muted his microphone, read the message twice, and finished discussing sprint priorities before telling anyone. He wanted to be sure.',
+      'Within twenty-four hours of applying, Malik received a personal email from applypch.com confirming his submission was under review. When selected for the SuperPrize, a follow-up message arrived the same week. Malik muted his microphone during a stand-up meeting to read it twice before telling anyone.',
       'The $1,000,000 SuperPrize arrived as a lump-sum award after standard verification. Malik did not buy a sports car. He hired four engineers, paid down personal debt that was bleeding into company decisions, and moved the team into an office with heat that worked in winter.',
       'Eighteen months later the company processes customs paperwork for two hundred and forty small businesses. Malik still enters new PCH drawings when they open. His team teases him about it. He tells them the rules allow it and keeps a framed photo of the Prize Patrol visit above the coffee machine.',
       '"The check was real. The paperwork was boring. The outcome was everything we had been building toward without knowing it," Malik says.',
@@ -67,7 +67,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'After Elena\'s husband died in a construction accident, she raised three children on two jobs — clinic reception in the morning, office cleaning at night. Sleep was something that happened between alarms. Hope was something she did not discuss.',
       'She entered PCH prize drawings on her phone during the ten-minute break between shifts. Not every day. Not with confidence. Just consistently, the way she paid bills: because stopping was worse than continuing.',
-      'The email that changed her life landed in spam. Her oldest daughter found it while helping Elena set up a new phone and said, "Mom, this looks official." The return domain was applypch.com. The instructions were clear: respond within forty-eight hours.',
+      'Within twenty-four hours of applying, Elena received a personal email from applypch.com. It had landed in spam; her oldest daughter found it while helping Elena set up a new phone and said, "Mom, this looks official." When selected for the SuperPrize, follow-up instructions were clear: respond within forty-eight hours.',
       'Elena\'s $1,000,000 SuperPrize paid off the house, covered two years of tuition for her youngest, and let her quit the cleaning job. She kept the clinic work — four days a week now, not seven.',
       'The Prize Patrol visit was filmed for her family, not for television. Neighbors brought tamales. Her son cried in the driveway and then pretended he had something in his eye. Elena laughed for the first time in months.',
       '"I almost deleted the message," Elena says. "My daughter almost saved my future by accident."',
@@ -83,8 +83,7 @@ export const winnerStories: WinnerStory[] = [
     amount: '$5,000/week',
     paragraphs: [
       'James grew up watching his mother leave for double shifts at a hospital laundry. He swore he would learn a trade that paid enough for one job to be enough. At twenty-six he was enrolled in an electrical technician program and working weekends at a grocery store to cover rent.',
-      'He submitted a PCH application during lunch in the program\'s parking lot — phone propped on the steering wheel, sun too bright on the screen, form filled out in eleven minutes. He selected "All Active Prizes" because he did not know which drawing he might qualify for and did not think it mattered.',
-      'Months passed. James forgot the entry entirely until an email notified him he had been selected for $5,000 A Week For Life — guaranteed weekly payments for the rest of his life, subject to the Official Rules and verification.',
+      'He submitted a PCH application during lunch in the program\'s parking lot — phone propped on the steering wheel, form filled out in eleven minutes. Within twenty-four hours, a personal email from applypch.com confirmed his submission. When selected for $5,000 A Week For Life, follow-up verification arrived the same week.',
       'The weekly deposits started after verification. They covered tuition, tools, and the rent his grocery job had barely met. James graduated first in his class. His instructor said he was the only student who never missed a lab because he was never forced to pick up an extra shift.',
       'James now works on commercial electrical projects across Houston. His mother retired the year he finished school — not because he bought her a mansion, but because he could finally say, "I have got this."',
       'The Prize Patrol did not visit for weekly-for-life winners the same way they do for lump-sum checks; James received his award letter and payment schedule by secure mail. The moment felt less cinematic than he expected. The deposits felt more real than any camera could.',
@@ -99,8 +98,7 @@ export const winnerStories: WinnerStory[] = [
     amount: '$5,000/week',
     paragraphs: [
       'Patricia managed a school cafeteria for thirty-one years. She knew every child who needed an extra milk carton and every teacher who tipped with a thank-you note instead of cash. She planned to work until her knees gave out because her pension math never quite closed the gap.',
-      'Her granddaughter showed her the PCH apply page on a tablet during Thanksgiving. "Just try, Grandma." Patricia tried. She had tried before, quietly, for years — but this time the form went through on the first attempt.',
-      'At sixty-four, Patricia learned she had won $5,000 A Week For Life. The letter arrived in a envelope thicker than anything else in her mailbox that week. She read it at the kitchen table with reading glasses she kept for fine print.',
+      'Patricia\'s granddaughter showed her the PCH apply page on a tablet during Thanksgiving. Patricia applied that evening. Within twenty-four hours, a personal email from applypch.com confirmed her submission. When selected for $5,000 A Week For Life at sixty-four, follow-up instructions arrived by mail.',
       'She retired mid-semester. The school threw a small party with sheet cake. The weekly payments covered her car loan, her property taxes, and four college savings accounts — one for each grandchild — opened in the same week at the credit union she had used since 1987.',
       'Patricia still substitutes when they are short-staffed. The difference is she leaves when the bell rings instead of scrubbing pots until dark. She enters new PCH drawings from the same tablet her granddaughter charged for her.',
       '"Weekly for life means I know what is coming every Friday," Patricia says. "After thirty-one years of not knowing, that is luxury."',
@@ -115,7 +113,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Carlos left the Army with commendations and a résumé that civilian employers did not know how to read. He bounced between warehouse jobs and VA workshops, sleeping light, waking heavy. His wife Elena said he smiled less each year.',
       'At a job training session, a fellow veteran mentioned PCH prize drawings. "It is not gambling," the man said. "You apply. They draw names." Carlos applied that night from the VA computer lab.',
-      'He was selected for $2,500 A Week For Life — half the top weekly tier, but more than enough to change his arithmetic. Verification required ID, service records, and patience. Carlos had learned patience in harder schools.',
+      'Carlos applied that night from the VA computer lab. Within twenty-four hours, a personal email from applypch.com confirmed his submission. When selected for $2,500 A Week For Life, verification required ID, service records, and patience — Carlos had learned patience in harder schools.',
       'The weekly payments let him complete a commercial driving certification without choosing between rent and tuition. He passed on the first attempt. His first route kept him home four nights a week — a schedule warehouse work never offered.',
       'Elena says the lines around his eyes softened somewhere around month six of steady deposits. Carlos does not talk about the win much. He talks about routes, weather, and being home for dinner.',
       '"People want a big check story," Carlos says. "I got a small deposit every week until small changed everything."',
@@ -133,7 +131,7 @@ export const winnerStories: WinnerStory[] = [
       'When the Eaton Fire swept through Altadena, the Martinez home — two bedrooms, a lemon tree out back, fifteen years of birthday marks on a door frame — burned to the slab. Insurance paid part of rebuilding. Not enough. Not close.',
       'Mrs. Martinez, Rosa, slept in a rental in Pasadena with her husband and two children, scrolling phone photos of what used to be their kitchen. A neighbor sent her the link to applypch.com. "Enter," the neighbor wrote. "What do you have to lose?"',
       'Rosa submitted her application from the rental\'s back step while her son did homework inside. She chose the Dream Home prize category because the description said winners could take a home or the cash equivalent. She needed cash equivalent.',
-      'Six months later, Rosa\'s winner email arrived. After verification, the family received $420,000 toward their Dream Home award — enough to rebuild on the original lot instead of abandoning the neighborhood.',
+      'Within twenty-four hours of applying, Rosa received a personal email from applypch.com. When selected in the Dream Home drawing, the family received $420,000 — enough to rebuild on the original lot instead of abandoning the neighborhood.',
       'Construction took fourteen months. Neighbors brought pozole. The children returned to the same school district. The lemon tree was replanted from a nursery cutting because the original was gone.',
       'The Prize Patrol visit happened on the unfinished porch, check posed against framing studs instead of a front door. Rosa cried anyway.',
       '"We did not win a mansion," Rosa says. "We won the right to stay where we belong."',
@@ -163,7 +161,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Michael taught history at a regional high school two hours from Brisbane. He lived on property his grandparents had cleared by hand — a weatherboard house, a shed full of tools, and a view of hills that made grading papers tolerable.',
       'For three years he entered PCH drawings from his kitchen table, always selecting Dream Home because he liked the idea of choice: take the house or take the cash. Michael already had the house. He wanted the option.',
-      'The winner notification arrived during term break. Michael was marking essays on colonial trade routes when his phone buzzed with an email from applypch.com. He finished the essay in the stack before opening it — old habits.',
+      'Within twenty-four hours of applying, Michael received a personal email from applypch.com while marking essays on colonial trade routes during term break. When selected for the Dream Home prize, he finished the essay in the stack before opening the winner details — old habits.',
       'He chose the $500,000 cash equivalent. Half went to renovating the weatherboard and expanding the shed into a community learning space. The rest funded scholarships for six students who could not afford exam fees.',
       'The learning space opens three evenings a week now. Former students tutor current ones. Michael still teaches full-time. He says the building is the prize; the money was just how he built it.',
       '"Publisher\'s Clearing House let me keep my grandfather\'s land and share it," Michael says. "That is a Dream Home prize even without a new address."',
@@ -178,7 +176,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Helen and Richard rented a flat in Birmingham for twelve years. Every raise at work seemed to match a rent increase. Their twins slept in a bunk bed in a room that also held Richard\'s desk and Helen\'s nursing textbooks.',
       'Richard entered PCH drawings first. Helen entered separately — her own application, her own email, as the rules required. "If one of us wins," Richard said, "it counts." Helen won.',
-      'The notification came during a night shift at the hospital. Helen read it in the staff lounge under fluorescent lights that made everyone look tired. She called Richard at 3 a.m. He thought something was wrong. Something was right.',
+      'Helen\'s application received a personal email response within twenty-four hours. When selected for the Dream Home prize, a follow-up arrived during a night shift at the hospital. Helen read it in the staff lounge under fluorescent lights that made everyone look tired. She called Richard at 3 a.m. He thought something was wrong. Something was right.',
       'Helen selected the cash option on the $350,000 Dream Home award. They put a deposit on a three-bedroom house with a garden in Erdington. The twins picked their own wall colors — blue and green, mercifully not purple.',
       'Richard still submits his own applications. Helen still submits hers. They have a running joke about whose turn it is next.',
       'The Prize Patrol photo happened on moving day, check held in front of boxes labeled KITCHEN and KIDS. Neighbors helped carry furniture. Someone brought tea.',
@@ -196,7 +194,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Sarah ran a youth program from a borrowed church hall in Jacksonville — homework help, meals on Fridays, basketball when someone donated a ball. She had no salary. She had a clipboard and parents who trusted her with their kids.',
       'Board members told her to incorporate, to fundraise, to apply for grants. Sarah also applied for PCH prize drawings because a parent mentioned it and because Sarah believed in trying every door, not just the obvious ones.',
-      'Her $250,000 cash prize arrived six months after an application she barely remembered submitting. Verification felt like applying for a mortgage in reverse — prove you are real, prove you exist, prove the money should go to you.',
+      'Within twenty-four hours of applying, Sarah received a personal email from applypch.com. When selected in a cash prize drawing, her $250,000 award followed after verification — prove you are real, prove you exist, prove the money should go to you.',
       'She leased a permanent facility, hired two part-time tutors, and expanded meals to three days a week. Local businesses donated laptops after reading about the win in the neighborhood newsletter Sarah still printed herself.',
       'Forty kids enrolled the first month in the new space. Sarah hung the oversized check photo in the lobby — not to boast, but so parents would believe her when she said PCH was legitimate.',
       '"Two hundred and fifty thousand dollars is a line item on a grant application," Sarah says. "On my bank statement it was forty kids with somewhere safe to go after school."',
@@ -211,7 +209,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Aisha commuted two hours each way to a biomedical engineering program while working weekends at a café near King\'s Cross. She slept on a mattress on the floor of a flat she shared with three other students. Her thesis idea — affordable prosthetic sensors — stayed in a notebook because lab time cost money she did not have.',
       'She entered a PCH cash prize drawing from the café during a slow Sunday shift. The form took less time than making a latte. She selected a $150,000 tier because it matched the gap in her funding math almost exactly, which she later called "superstitious and correct."',
-      'The winner email arrived mid-semester. Aisha read it in the library basement where the Wi-Fi worked best. She did not scream. She opened a spreadsheet and listed every expense the prize could cover.',
+      'Within twenty-four hours of applying, Aisha received a personal email from applypch.com. When selected for the cash prize, she opened a spreadsheet and listed every expense the award could cover.',
       'Tuition balance, housing deposit, lab materials, conference travel to present her prototype. The $150,000 cash prize paid each line. She graduated with distinction.',
       'Today she works on medical devices designed for clinics that cannot afford premium equipment. Her first production run shipped last spring.',
       '"I applied between orders at a café," Aisha says. "The Prize Patrol did not visit — just a wire and a letter. The wire mattered more."',
@@ -226,7 +224,7 @@ export const winnerStories: WinnerStory[] = [
     paragraphs: [
       'Naomi built prosthetic prototypes in her apartment workshop — carbon fiber strips, 3D-printed joints, designs tested on mannequins because clinical trials cost more than she earned as a freelance mechanical engineer.',
       'She read PCH eligibility rules carefully: German resident, eligible country, apply under her own name. She submitted at midnight when her neighbors were asleep and her printer was finally quiet.',
-      'The $100,000 cash prize selection came four months later. Naomi used it for regulatory testing, material batches, and the first shipment to a clinic in Lisbon willing to pilot her designs.',
+      'Within twenty-four hours of applying, Naomi received a personal email from applypch.com. When selected for the $100,000 cash prize, she used it for regulatory testing, material batches, and the first shipment to a clinic in Lisbon willing to pilot her designs.',
       'Recipients reported improved mobility at a fraction of traditional device costs. Naomi cried reading the feedback emails — not dramatically, at her desk, with coffee gone cold.',
       'She still enters new drawings when promotions open. Her workshop moved out of the apartment into a small industrial unit. The apartment is just for sleeping now.',
       '"One hundred thousand dollars in Munich buys precision," Naomi says. "Measurements, certifications, proof. PCH bought me proof."',
@@ -287,8 +285,7 @@ export const winnerStories: WinnerStory[] = [
     amount: '$10,000',
     paragraphs: [
       'Kevin taught English in Seoul while his parents aged in Ohio. He visited once a year, video-called weekly, and carried a low-grade guilt that never quite went away no matter how many lessons he taught.',
-      'During a Christmas visit home, he submitted a PCH application from his parents\' kitchen — same house he grew up in, same table, new laptop. He flew back to Seoul and forgot about it.',
-      'The winner email arrived in March. Kevin was grading vocabulary quizzes when he saw the notification. His father had fallen ill — not critically, but enough to need help with appointments and stairs.',
+      'Kevin applied during a Christmas visit home from his parents\' kitchen. Within twenty-four hours, a personal email from applypch.com confirmed his submission. When later selected in a daily drawing, a follow-up arrived while he was grading vocabulary quizzes in Seoul. His father had fallen ill — not critically, but enough to need help with appointments and stairs.',
       'The $10,000 daily drawing prize paid for a last-minute flight, three weeks of expenses at home, and a handrail installed on the back steps. Kevin did not have to choose between his job and his family.',
       'He returned to Seoul when his father stabilized. The handrail is still there. Kevin enters drawings from both countries now, always checking eligibility first.',
       '"Ten thousand dollars bought time," Kevin says. "Time is the prize they do not print on the check."',

@@ -27,9 +27,11 @@ import {
   RECENT_PRIZE_AWARDS,
   GUIDED_QUESTIONS,
   APPLY_FAQS,
+  WHATSAPP_APPLICATION_MESSAGE,
+  buildWhatsAppApplicationUrl,
 } from '@/data/apply-form';
 import { PRIZE_GROUPS, tiersForGroup, getPrizeTier } from '@/data/prize-categories';
-import { MAX_LUMP_SUM_PRIZE } from '@/lib/site';
+import { MAX_LUMP_SUM_PRIZE, APPLICATION_RESPONSE_HOURS, ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '';
 
@@ -123,6 +125,14 @@ export default function ApplyPage() {
     `Why applying: ${guidedAnswers.reason}\n\nPrize hoped for: ${guidedAnswers.prize}\n\nHow winning would help: ${guidedAnswers.impact}`;
 
   const handleGuidedNext = () => {
+    const key = GUIDED_QUESTIONS[guidedStep].id as keyof typeof guidedAnswers;
+    if (!guidedAnswers[key].trim()) {
+      setErrorMsg('Please answer this question before continuing.');
+      setStatus('error');
+      return;
+    }
+    setErrorMsg('');
+    setStatus('idle');
     if (guidedStep < GUIDED_QUESTIONS.length - 1) {
       setGuidedStep((s) => s + 1);
     } else {
@@ -133,6 +143,11 @@ export default function ApplyPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.message.trim()) {
+      setErrorMsg('Please tell us why you are applying — your message is required.');
+      setStatus('error');
+      return;
+    }
     if (!form.ageConfirm || !form.rulesConfirm) {
       setErrorMsg('Please confirm you are 18+ and agree to the Official Rules.');
       setStatus('error');
@@ -171,7 +186,7 @@ export default function ApplyPage() {
           </div>
           <h1 className="text-2xl font-semibold text-[var(--pch-text)] mb-3">Application submitted</h1>
           <p className="text-[var(--pch-text-muted)] text-sm leading-relaxed mb-4">
-            Your application has been received. If selected, we will contact you by email.
+            Your application has been received. Expect a personal email from us within {APPLICATION_RESPONSE_HOURS} hours.
           </p>
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
             Keep your email inbox and spam folder checked.
@@ -204,11 +219,11 @@ export default function ApplyPage() {
             <span className="text-[var(--pch-orange)]">win.</span>
           </h1>
           <p className="text-[var(--pch-text-muted)] mb-8 max-w-xl mx-auto">
-            Open to applicants in the USA, Canada, UK, Germany, Australia, and eligible regions worldwide.
+            {ELIGIBLE_REGIONS_SHORT}
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--pch-text-muted)]">
             <span className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--pch-orange)]" /> Up to {MAX_LUMP_SUM_PRIZE} in prizes</span>
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--pch-orange)]" /> Processed for next drawing</span>
+            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--pch-orange)]" /> Email within {APPLICATION_RESPONSE_HOURS} hours</span>
             <span className="flex items-center gap-2"><Lock className="w-4 h-4 text-[var(--pch-orange)]" /> Confidential</span>
           </div>
         </div>
@@ -223,8 +238,8 @@ export default function ApplyPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { label: 'Submit', desc: 'Your application', icon: Mail },
-              { label: 'Review', desc: 'Personal processing', icon: Clock },
-              { label: 'Drawing', desc: 'Random selection', icon: Shield },
+              { label: 'Contact', desc: `Email within ${APPLICATION_RESPONSE_HOURS} hrs`, icon: Clock },
+              { label: 'Review', desc: 'Personal processing', icon: Shield },
               { label: 'Prize', desc: 'Prize Patrol delivery', icon: Award },
             ].map(({ label, desc, icon: Icon }) => (
               <div key={label} className="text-center">
@@ -267,29 +282,50 @@ export default function ApplyPage() {
               </div>
 
               {submissionMethod === 'whatsapp' ? (
-                <div className="text-center py-8">
-                  <MessageCircle className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
-                  <h3 className="font-semibold text-[var(--pch-text)] mb-2">Apply via WhatsApp</h3>
-                  <p className="text-sm text-[var(--pch-text-muted)] mb-6 max-w-sm mx-auto">
-                    Send us your name, country, city, and which prize you are applying for. Each person must apply on their own.
-                  </p>
-                  {WHATSAPP_NUMBER ? (
-                    <a
-                      href={`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, '')}?text=${encodeURIComponent('Hi, I would like to apply for a PCH prize.')}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary px-6 py-3 inline-flex"
-                    >
-                      Open WhatsApp
-                    </a>
-                  ) : (
-                    <p className="text-xs text-[var(--pch-text-muted)]">
-                      Set <code>NEXT_PUBLIC_WHATSAPP_NUMBER</code> in .env.local to enable.
+                <div className="py-4">
+                  <div className="text-center mb-6">
+                    <MessageCircle className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
+                    <h3 className="font-semibold text-[var(--pch-text)] mb-2">Apply via WhatsApp</h3>
+                    <p className="text-sm text-[var(--pch-text-muted)] max-w-md mx-auto">
+                      Tap the button below. WhatsApp opens with a prefilled application — complete every field, then send the message.
                     </p>
-                  )}
-                  <button type="button" onClick={() => setSubmissionMethod('form')} className="block mx-auto mt-4 text-sm text-[var(--pch-orange)] hover:underline">
-                    Use online form instead
-                  </button>
+                  </div>
+
+                  <div className="rounded-lg border border-[var(--pch-border)] bg-[var(--pch-gray-50)] p-4 mb-6 max-w-md mx-auto">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-3">
+                      Message preview
+                    </p>
+                    <pre className="text-xs text-[var(--pch-text)] whitespace-pre-wrap font-sans leading-relaxed">
+                      {WHATSAPP_APPLICATION_MESSAGE}
+                    </pre>
+                  </div>
+
+                  <div className="text-center">
+                    {WHATSAPP_NUMBER ? (
+                      <a
+                        href={buildWhatsAppApplicationUrl(WHATSAPP_NUMBER)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary px-6 py-3 inline-flex"
+                      >
+                        Open WhatsApp &amp; complete application
+                      </a>
+                    ) : (
+                      <p className="text-xs text-[var(--pch-text-muted)]">
+                        Set <code>NEXT_PUBLIC_WHATSAPP_NUMBER</code> in .env.local to enable.
+                      </p>
+                    )}
+                    <p className="text-xs text-[var(--pch-text-muted)] mt-4 max-w-sm mx-auto">
+                      Each person must apply on their own. You will receive a reply by email within 24 hours.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setSubmissionMethod('form')}
+                      className="block mx-auto mt-4 text-sm text-[var(--pch-orange)] hover:underline"
+                    >
+                      Use online form instead
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -315,6 +351,7 @@ export default function ApplyPage() {
                         {GUIDED_QUESTIONS[guidedStep].question}
                       </h3>
                       <textarea
+                        required
                         className="input-field min-h-[120px] mb-4 bg-white"
                         placeholder={GUIDED_QUESTIONS[guidedStep].placeholder}
                         value={guidedAnswers[GUIDED_QUESTIONS[guidedStep].id as keyof typeof guidedAnswers]}
@@ -403,9 +440,10 @@ export default function ApplyPage() {
                   </Field>
 
                   {!useGuidedMode && (
-                    <Field label="Your message (optional)">
+                    <Field label="Your message *">
                       <div className="relative">
                         <textarea
+                          required
                           className="input-field min-h-[100px] resize-y pr-12"
                           value={form.message}
                           onChange={(e) => update('message', e.target.value)}
@@ -496,9 +534,9 @@ export default function ApplyPage() {
             <div className="card p-5 flex gap-3">
               <Mail className="w-5 h-5 text-[var(--pch-orange)] shrink-0" />
               <div>
-                <p className="text-sm font-medium text-[var(--pch-text)] mb-1">Winner notification</p>
+                <p className="text-sm font-medium text-[var(--pch-text)] mb-1">Application response</p>
                 <p className="text-xs text-[var(--pch-text-muted)] leading-relaxed">
-                  If selected, you will be contacted by email at the address you provide.
+                  Every applicant receives a personal email within {APPLICATION_RESPONSE_HOURS} hours. Selected winners receive prize details by email.
                 </p>
               </div>
             </div>

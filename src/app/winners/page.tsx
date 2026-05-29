@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { CheckWinnersGallery } from '@/components/winners/WinnerGallery';
 import { createMetadata } from '@/lib/metadata';
+import { WINNERS_TAGLINE } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Winners',
-  description:
-    'PCH winners who applied and received life-changing prizes — real people with their prize checks from the USA, Canada, UK, and beyond.',
+  description: `${WINNERS_TAGLINE} See real people who applied and won.`,
   path: '/winners',
 });
 
@@ -20,8 +20,7 @@ export default function WinnersPage() {
             People who applied and won
           </h1>
           <p className="text-[var(--pch-text-muted)] max-w-2xl">
-            Real winners from the USA, Canada, UK, Germany, Australia, and beyond — with their
-            PCH prize checks.
+            {WINNERS_TAGLINE}
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
 
 interface StatProps {
   value: number;
@@ -64,7 +65,7 @@ export function StatsSection() {
     <section ref={ref} className="py-16 bg-[var(--pch-gray-50)] border-y border-[var(--pch-border)]">
       <div className="container-page">
         <p className="text-center text-xs text-[var(--pch-text-muted)] mb-10">
-          Open to applicants in the USA, Canada, United Kingdom, Germany, Australia, and more.
+          {ELIGIBLE_REGIONS_SHORT}
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           <Stat value={500} suffix="M+" prefix="$" label="Prizes awarded" delay={0} visible={visible} />

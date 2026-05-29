@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
 
 export function HeroSection() {
   return (
@@ -15,8 +16,7 @@ export function HeroSection() {
               <span className="text-[var(--pch-orange)]">win.</span>
             </h1>
             <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed mb-8 max-w-lg">
-              Submit your application for PCH prize drawings. Open to applicants
-              across the USA, Canada, United Kingdom, Germany, Australia, and beyond.
+              Submit your application for PCH prize drawings. {ELIGIBLE_REGIONS_SHORT}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
