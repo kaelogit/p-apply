@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { Viewport } from 'next';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { Analytics } from '@/components/analytics/Analytics';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({ path: '/' });
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
+      <Analytics />
     </html>
   );
 }

@@ -23,3 +23,6 @@ export const ELIGIBLE_REGIONS_SHORT =
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '') ?? '';
 
 export const WHATSAPP_ENABLED = WHATSAPP_NUMBER.length > 0;
+
+/** Google Analytics 4 measurement ID (e.g. G-XXXXXXXXXX). Set in Vercel env. */
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';
