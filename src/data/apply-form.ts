@@ -106,6 +106,10 @@ export const GUIDED_QUESTIONS = [
 ] as const;
 
 export const APPLY_FAQS = [
+  {
+    q: 'Is PCH still operating after the bankruptcy?',
+    a: 'Yes. PCH continues under new ownership through PCH Digital. New prize drawings and applications are active. Current applications are for new promotions under our Official Rules.',
+  },
   { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the USA, Canada, UK, Germany, Australia, and other eligible regions. See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },
   { q: 'How will I hear back after applying?', a: 'Every applicant receives a personal email within 24 hours at the address on their application. Check your inbox and spam folder.' },

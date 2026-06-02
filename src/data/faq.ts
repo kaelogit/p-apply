@@ -5,6 +5,11 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
+    question: 'Is PCH still operating after the bankruptcy?',
+    answer:
+      'Yes. Publishers Clearing House continues under new ownership through PCH Digital (ARB Interactive Group). New sweepstakes are active, applications are accepted here at applypch.com, and new winners are still being awarded — including in-person Prize Patrol presentations for current prizes. Some long-term prizes granted before the restructuring were handled separately under the prior entity; applications submitted today are for new prize drawings governed by our Official Rules.',
+  },
+  {
     question: 'How do I apply?',
     answer: 'Complete the application form on our Apply page with your personal details. Each person submits their own application.',
   },

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Quote, Target, Shield, Globe } from 'lucide-react';
 import { createMetadata } from '@/lib/metadata';
-import { ELIGIBLE_REGIONS_SHORT, APPLICATION_RESPONSE_HOURS } from '@/lib/site';
+import { ELIGIBLE_REGIONS_SHORT, APPLICATION_RESPONSE_HOURS, PCH_OWNERSHIP_NOTE } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Our Story',
@@ -20,10 +20,13 @@ export default function StoryPage() {
             Real prizes. Real winners.{' '}
             <span className="text-[var(--pch-orange)]">Since 1953.</span>
           </h1>
-          <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed max-w-2xl mx-auto mb-4">
             Publishers Clearing House was built on a simple belief: ordinary people deserve
             extraordinary chances. For over seven decades, people have applied,
             won, and had their lives changed by the famous Prize Patrol.
+          </p>
+          <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed max-w-2xl mx-auto">
+            {PCH_OWNERSHIP_NOTE}
           </p>
         </div>
       </section>

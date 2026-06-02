@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import { PchLogo } from '@/components/brand/PchLogo';
-import { CONTACT_EMAIL } from '@/lib/site';
+import {
+  CONTACT_EMAIL,
+  PCH_BRAND_NAME,
+  PCH_OPERATOR,
+  PCH_ADDRESS_LINE1,
+  PCH_ADDRESS_LINE2,
+} from '@/lib/site';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -83,7 +89,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-[var(--pch-border)]">
           <p className="text-sm text-[var(--pch-text-muted)]">
-            © {year} Publishers Clearing House
+            © {year} {PCH_BRAND_NAME}. Operated by {PCH_OPERATOR}.
           </p>
         </div>
       </div>

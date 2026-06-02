@@ -1,5 +1,12 @@
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
 import { createMetadata } from '@/lib/metadata';
+import {
+  PCH_BRAND_NAME,
+  PCH_OPERATOR,
+  PCH_ADDRESS_LINE1,
+  PCH_ADDRESS_LINE2,
+  PCH_OWNERSHIP_NOTE,
+} from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Official Rules',
@@ -35,7 +42,8 @@ export default function RulesPage() {
         Winners may be required to sign and return an Affidavit of Eligibility and Release of Liability.
       </LegalSection>
       <LegalSection title="Sponsor">
-        Publishers Clearing House, 382 Channel Drive, Port Washington, NY 11050.
+        {PCH_BRAND_NAME}. Sweepstakes administered by {PCH_OPERATOR}. {PCH_OWNERSHIP_NOTE}{' '}
+        Mailing address: {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
       </LegalSection>
     </LegalLayout>
   );

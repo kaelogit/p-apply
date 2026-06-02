@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Trophy, Heart, Shield } from 'lucide-react';
 import { createMetadata } from '@/lib/metadata';
-import { ELIGIBLE_REGIONS_SHORT } from '@/lib/site';
+import { ELIGIBLE_REGIONS_SHORT, PCH_OWNERSHIP_NOTE } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'About',
@@ -45,9 +45,12 @@ export default function AboutPage() {
           <h1 className="text-3xl md:text-4xl font-semibold text-[var(--pch-text)] mb-4">
             Publishers Clearing House
           </h1>
-          <p className="text-[var(--pch-text-muted)] leading-relaxed">
+          <p className="text-[var(--pch-text-muted)] leading-relaxed mb-4">
             Since 1953, PCH has awarded hundreds of millions of dollars in prizes to
             applicants worldwide.
+          </p>
+          <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
+            {PCH_OWNERSHIP_NOTE}
           </p>
         </div>
       </div>

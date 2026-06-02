@@ -1,5 +1,6 @@
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
 import { createMetadata } from '@/lib/metadata';
+import { PCH_BRAND_NAME, PCH_OPERATOR } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Terms of Service',
@@ -16,9 +17,9 @@ export default function TermsPage() {
         of Service. If you do not agree, please do not use this site.
       </LegalSection>
       <LegalSection title="Sweepstakes Participation">
-        Participation in PCH sweepstakes is subject to the Official Rules of each promotion.
-        In the event of a conflict between these Terms and the Official Rules, the Official
-        Rules shall govern.
+        {PCH_BRAND_NAME} prize sweepstakes on this site are administered by {PCH_OPERATOR}.
+        Participation is subject to the Official Rules of each promotion. In the event of a
+        conflict between these Terms and the Official Rules, the Official Rules shall govern.
       </LegalSection>
       <LegalSection title="Prohibited Conduct">
         You may not use automated systems, bots, or scripts to submit entries. Fraudulent

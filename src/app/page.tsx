@@ -15,9 +15,9 @@ export default function HomePage() {
       <HeroSection />
       <LiveTicker />
       <PrizesSection />
+      <WinnersSection />
       <ProcessSection />
       <RealStoriesSection />
-      <WinnersSection />
       <StatsSection />
       <VideoSection />
       <FaqSection />

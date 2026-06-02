@@ -1,5 +1,11 @@
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
-import { CONTACT_EMAIL } from '@/lib/site';
+import {
+  CONTACT_EMAIL,
+  PCH_BRAND_NAME,
+  PCH_OPERATOR,
+  PCH_ADDRESS_LINE1,
+  PCH_ADDRESS_LINE2,
+} from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
@@ -31,7 +37,7 @@ export default function PrivacyPage() {
         by contacting us at {CONTACT_EMAIL}.
       </LegalSection>
       <LegalSection title="Contact">
-        Publishers Clearing House, 382 Channel Drive, Port Washington, NY 11050.
+        {PCH_BRAND_NAME}. Operated by {PCH_OPERATOR}. {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
         Email: {CONTACT_EMAIL}
       </LegalSection>
     </LegalLayout>
