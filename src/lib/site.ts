@@ -28,10 +28,13 @@ export const WINNERS_TAGLINE =
 export const ELIGIBLE_REGIONS_SHORT =
   'Open to applicants worldwide — USA, Canada, UK, Germany, Australia, and more.';
 
-/** WhatsApp apply — country code + number, digits only (e.g. 15551234567). Set in Vercel env. */
-export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '') ?? '';
+/** Text/SMS apply — digits only for sms: links */
+export const APPLY_SMS_NUMBER_DIGITS =
+  process.env.NEXT_PUBLIC_APPLY_SMS_NUMBER?.replace(/\D/g, '') ?? '19177430256';
 
-export const WHATSAPP_ENABLED = WHATSAPP_NUMBER.length > 0;
+/** Display format for the apply-by-text number */
+export const APPLY_SMS_NUMBER_DISPLAY =
+  process.env.NEXT_PUBLIC_APPLY_SMS_DISPLAY ?? '+1 (917) 743-0256';
 
 /** Google Analytics 4 measurement ID (e.g. G-XXXXXXXXXX). Set in Vercel env. */
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';

@@ -12,7 +12,7 @@ import {
   ChevronLeft,
   Clock,
   Mail,
-  MessageCircle,
+  Smartphone,
   Mic,
   MicOff,
   Award,
@@ -27,18 +27,24 @@ import {
   RECENT_PRIZE_AWARDS,
   GUIDED_QUESTIONS,
   APPLY_FAQS,
-  WHATSAPP_APPLICATION_MESSAGE,
-  buildWhatsAppApplicationUrl,
+  TEXT_APPLICATION_MESSAGE,
+  buildSmsApplicationUrl,
 } from '@/data/apply-form';
 import { PRIZE_GROUPS, tiersForGroup, getPrizeTier } from '@/data/prize-categories';
-import { MAX_LUMP_SUM_PRIZE, APPLICATION_RESPONSE_HOURS, ELIGIBLE_REGIONS_SHORT, WHATSAPP_ENABLED, WHATSAPP_NUMBER } from '@/lib/site';
+import {
+  MAX_LUMP_SUM_PRIZE,
+  APPLICATION_RESPONSE_HOURS,
+  ELIGIBLE_REGIONS_SHORT,
+  APPLY_SMS_NUMBER_DIGITS,
+  APPLY_SMS_NUMBER_DISPLAY,
+} from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export default function ApplyPage() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [submissionMethod, setSubmissionMethod] = useState<'form' | 'whatsapp'>('form');
+  const [submissionMethod, setSubmissionMethod] = useState<'form' | 'text'>('form');
   const [useGuidedMode, setUseGuidedMode] = useState(false);
   const [guidedStep, setGuidedStep] = useState(0);
   const [guidedAnswers, setGuidedAnswers] = useState({ reason: '', prize: '', impact: '' });
@@ -258,7 +264,7 @@ export default function ApplyPage() {
           <div className="lg:col-span-2">
             <div className="card p-6 md:p-8">
               {/* Method toggle */}
-              <div className={`flex gap-1 p-1 bg-[var(--pch-gray-100)] rounded-lg mb-8 ${WHATSAPP_ENABLED ? '' : 'hidden'}`}>
+              <div className="flex gap-1 p-1 bg-[var(--pch-gray-100)] rounded-lg mb-8">
                 <button
                   type="button"
                   onClick={() => setSubmissionMethod('form')}
@@ -270,45 +276,49 @@ export default function ApplyPage() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setSubmissionMethod('whatsapp')}
+                  onClick={() => setSubmissionMethod('text')}
                   className={`flex-1 py-2.5 px-3 rounded-md text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
-                    submissionMethod === 'whatsapp' ? 'bg-white text-[var(--pch-text)] shadow-sm' : 'text-[var(--pch-text-muted)]'
+                    submissionMethod === 'text' ? 'bg-white text-[var(--pch-text)] shadow-sm' : 'text-[var(--pch-text-muted)]'
                   }`}
                 >
-                  <MessageCircle className="w-4 h-4" /> WhatsApp
+                  <Smartphone className="w-4 h-4" /> Apply by text
                 </button>
               </div>
 
-              {submissionMethod === 'whatsapp' && WHATSAPP_ENABLED ? (
+              {submissionMethod === 'text' ? (
                 <div className="py-4">
                   <div className="text-center mb-6">
-                    <MessageCircle className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
-                    <h3 className="font-semibold text-[var(--pch-text)] mb-2">Apply via WhatsApp</h3>
-                    <p className="text-sm text-[var(--pch-text-muted)] max-w-md mx-auto">
-                      Tap the button below. WhatsApp opens with a prefilled application — complete every field, then send the message.
+                    <Smartphone className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
+                    <h3 className="font-semibold text-[var(--pch-text)] mb-2">Apply by text message</h3>
+                    <p className="text-sm text-[var(--pch-text-muted)] max-w-md mx-auto mb-4">
+                      Text your application to the number below. Fill in every line in the message, then send. <strong className="text-[var(--pch-text)]">Text only</strong> — do not call this number.
+                    </p>
+                    <p className="text-lg font-semibold text-[var(--pch-text)] tracking-wide">
+                      {APPLY_SMS_NUMBER_DISPLAY}
                     </p>
                   </div>
 
-                  <div className="rounded-lg border border-[var(--pch-border)] bg-[var(--pch-gray-50)] p-4 mb-6 max-w-md mx-auto">
+                  <div className="rounded-lg border border-[var(--pch-border)] bg-[var(--pch-gray-50)] p-4 mb-4 max-w-md mx-auto">
                     <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-3">
-                      Message preview
+                      What to send
+                    </p>
+                    <p className="text-xs text-[var(--pch-text-muted)] mb-3 leading-relaxed">
+                      Copy this message (or use the button below to open your texting app with it prefilled). Replace each blank line with your information, then send.
                     </p>
                     <pre className="text-xs text-[var(--pch-text)] whitespace-pre-wrap font-sans leading-relaxed">
-                      {WHATSAPP_APPLICATION_MESSAGE}
+                      {TEXT_APPLICATION_MESSAGE}
                     </pre>
                   </div>
 
                   <div className="text-center">
                     <a
-                      href={buildWhatsAppApplicationUrl(WHATSAPP_NUMBER)}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={buildSmsApplicationUrl(APPLY_SMS_NUMBER_DIGITS)}
                       className="btn-primary px-6 py-3 inline-flex"
                     >
-                      Open WhatsApp &amp; complete application
+                      Open messaging app
                     </a>
                     <p className="text-xs text-[var(--pch-text-muted)] mt-4 max-w-sm mx-auto">
-                      Each person must apply on their own. You will receive a response within 24 hours.
+                      On desktop, you may need to text {APPLY_SMS_NUMBER_DISPLAY} manually from your phone. Each person must apply on their own. You will receive a response within {APPLICATION_RESPONSE_HOURS} hours.
                     </p>
                     <button
                       type="button"

@@ -117,8 +117,8 @@ export const APPLY_FAQS = [
   { q: 'Is my information secure?', a: 'Yes. Your data is handled securely per our Privacy Policy.' },
 ];
 
-/** Prefilled WhatsApp message — applicant completes each line, then sends */
-export const WHATSAPP_APPLICATION_MESSAGE = `PCH PRIZE APPLICATION
+/** Text message template — applicant fills in each line, then sends to APPLY_SMS_NUMBER */
+export const TEXT_APPLICATION_MESSAGE = `PCH PRIZE APPLICATION
 
 Full name:
 Email:
@@ -133,9 +133,9 @@ Why I am applying:
 
 I confirm I am 18 or older and submitting my own application.
 
-Please fill in every line above, then tap Send.`;
+Please fill in every line above, then send this text.`;
 
-export function buildWhatsAppApplicationUrl(phone: string): string {
-  const digits = phone.replace(/\D/g, '');
-  return `https://wa.me/${digits}?text=${encodeURIComponent(WHATSAPP_APPLICATION_MESSAGE)}`;
+export function buildSmsApplicationUrl(phoneDigits: string): string {
+  const digits = phoneDigits.replace(/\D/g, '');
+  return `sms:+${digits}?body=${encodeURIComponent(TEXT_APPLICATION_MESSAGE)}`;
 }
