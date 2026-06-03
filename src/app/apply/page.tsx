@@ -40,6 +40,9 @@ import {
   applicantResponseBadge,
   applicantContactWithin,
   APPLICANT_CONTACT_MONITOR,
+  APPLICANT_CASE_MANAGER_NAME,
+  APPLICANT_CASE_MANAGER_TITLE,
+  applicantCaseManagerIntro,
   WINNER_NOTIFICATION,
 } from '@/lib/site';
 
@@ -194,11 +197,23 @@ export default function ApplyPage() {
           </div>
           <h1 className="text-2xl font-semibold text-[var(--pch-text)] mb-3">Application submitted</h1>
           <p className="text-[var(--pch-text-muted)] text-sm leading-relaxed mb-4">
-            Your application has been received. Expect a personal email and text from us within{' '}
-            {APPLICATION_RESPONSE_HOURS} hours.
+            Your application has been received and is now under review.
           </p>
+          <div className="rounded-lg border border-[var(--pch-border)] bg-[var(--pch-gray-50)] p-4 mb-4 text-left">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-2">
+              Your application coordinator
+            </p>
+            <p className="text-base font-semibold text-[var(--pch-text)] mb-1">
+              {APPLICANT_CASE_MANAGER_NAME}
+            </p>
+            <p className="text-xs text-[var(--pch-text-muted)] mb-3">{APPLICANT_CASE_MANAGER_TITLE}</p>
+            <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
+              {applicantCaseManagerIntro()}
+            </p>
+          </div>
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
-            {APPLICANT_CONTACT_MONITOR}
+            {APPLICANT_CONTACT_MONITOR} Messages may come from {APPLICANT_CASE_MANAGER_NAME} or from{' '}
+            support@applypch.com / {APPLY_SMS_NUMBER_DISPLAY}.
           </p>
           <Link href="/" className="btn-primary px-6 py-3">Back to home</Link>
         </div>

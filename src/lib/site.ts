@@ -49,6 +49,14 @@ export const APPLICANT_CONTACT_CHANNEL_NOTE =
 export const WINNER_NOTIFICATION =
   'Selected winners receive prize details and next steps by email and text.';
 
+/** Name shown on apply success — matches who reaches out in Email/Text 1 */
+export const APPLICANT_CASE_MANAGER_NAME = 'Dave Sayer';
+export const APPLICANT_CASE_MANAGER_TITLE = 'PCH Application Coordinator';
+
+export function applicantCaseManagerIntro(hours = APPLICATION_RESPONSE_HOURS): string {
+  return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal response from him by email and text within ${hours} hours.`;
+}
+
 export const WINNERS_TAGLINE =
   'Real winners with their PCH prize checks from around the world.';
 
