@@ -1,3 +1,12 @@
+import {
+  APPLICATION_RESPONSE_HOURS,
+  applicantContactWithin,
+  APPLICANT_CONTACT_MONITOR,
+  APPLICANT_CONTACT_CHANNEL_NOTE,
+  WINNER_NOTIFICATION,
+  APPLY_SMS_NUMBER_DISPLAY,
+} from '@/lib/site';
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -11,15 +20,16 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'How do I apply?',
-    answer: 'Complete the application form on our Apply page with your personal details. Each person submits their own application.',
+    answer:
+      'Complete the application form on our Apply page, or apply by text using the instructions on the Apply page. Each person submits their own application.',
   },
   {
     question: 'When will I hear back after applying?',
-    answer: 'Every applicant receives a personal email within 24 hours at the address provided on their application. Check your inbox and spam folder.',
+    answer: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_MONITOR}`,
   },
   {
     question: 'How will I know if I won?',
-    answer: 'Selected winners are notified by email as part of our application review process. Keep your contact information current and check your inbox regularly.',
+    answer: `${WINNER_NOTIFICATION} Keep your email and phone number current. ${APPLICANT_CONTACT_MONITOR}`,
   },
   {
     question: 'Which countries can apply?',
@@ -35,6 +45,10 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'What happens after I submit my application?',
-    answer: 'Your application is recorded and reviewed personally. You will receive an email within 24 hours. If selected in a drawing, prize details follow by email.',
+    answer: `Your application is recorded and reviewed personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_CHANNEL_NOTE} If selected in a drawing, prize details and next steps follow by email and text.`,
+  },
+  {
+    question: 'Can I apply or communicate by text message?',
+    answer: `Yes. You may apply by text from the Apply page to ${APPLY_SMS_NUMBER_DISPLAY} (text only). After you apply, we contact you by email and text. ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
   },
 ];

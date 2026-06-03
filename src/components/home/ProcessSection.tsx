@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Mail, Users, Send, ArrowRight } from 'lucide-react';
-import { APPLICATION_RESPONSE_HOURS } from '@/lib/site';
+import {
+  APPLICATION_RESPONSE_HOURS,
+  applicantContactWithin,
+  WINNER_NOTIFICATION,
+  APPLICANT_CONTACT_CHANNEL_NOTE,
+} from '@/lib/site';
 
 interface ProcessStepProps {
   number: string;
@@ -67,15 +72,15 @@ export function ProcessSection() {
       number: '2',
       title: 'Personal Review',
       description:
-        `Our team reviews every application personally. You will receive an email from us within ${APPLICATION_RESPONSE_HOURS} hours.`,
+        `Our team reviews every application personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)}`,
       icon: <Users className="w-5 h-5" />,
       delay: 150,
     },
     {
       number: '3',
-      title: 'Email Response',
+      title: 'Email & Text Response',
       description:
-        'Every applicant is contacted by email within 24 hours. Selected winners receive prize details and next steps at the address on their application.',
+        `${WINNER_NOTIFICATION} ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
       icon: <Send className="w-5 h-5" />,
       delay: 300,
     },

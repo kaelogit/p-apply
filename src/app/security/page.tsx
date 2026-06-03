@@ -1,5 +1,11 @@
-import { Lock, ShieldCheck, Mail, UserX } from 'lucide-react';
-import { CONTACT_EMAIL, APPLICATION_RESPONSE_HOURS } from '@/lib/site';
+import { Lock, ShieldCheck, Smartphone, UserX } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  APPLICATION_RESPONSE_HOURS,
+  applicantContactWithin,
+  WINNER_NOTIFICATION,
+  APPLY_SMS_NUMBER_DISPLAY,
+} from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
@@ -18,12 +24,12 @@ const blocks = [
   {
     icon: ShieldCheck,
     title: 'Secure verification',
-    desc: 'When winners are verified, we use professional-grade security practices. We will never ask for your passwords through email.',
+    desc: 'When winners are verified, we use professional-grade security practices. We will never ask for your passwords through email or text.',
   },
   {
-    icon: Mail,
-    title: 'Email response',
-    desc: `Every applicant receives a personal email within ${APPLICATION_RESPONSE_HOURS} hours at the address on their application. Selected winners receive further details from an official applypch.com address.`,
+    icon: Smartphone,
+    title: 'Email & text response',
+    desc: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${WINNER_NOTIFICATION} Official text: ${APPLY_SMS_NUMBER_DISPLAY} (text only).`,
   },
   {
     icon: UserX,
@@ -72,12 +78,17 @@ export default function SecurityPage() {
             <p className="text-sm text-[var(--pch-text-muted)] mb-4 leading-relaxed">
               Contact our team directly with any privacy or security questions.
             </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="text-[var(--pch-orange)] font-semibold hover:underline"
-            >
-              {CONTACT_EMAIL}
-            </a>
+            <div className="space-y-2 text-sm">
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="block text-[var(--pch-orange)] font-semibold hover:underline"
+              >
+                {CONTACT_EMAIL}
+              </a>
+              <p className="text-[var(--pch-text-muted)]">
+                Text: {APPLY_SMS_NUMBER_DISPLAY} (text only)
+              </p>
+            </div>
           </div>
         </div>
       </section>

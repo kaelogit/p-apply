@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import { ArrowRight, Quote, Target, Shield, Globe } from 'lucide-react';
 import { createMetadata } from '@/lib/metadata';
-import { ELIGIBLE_REGIONS_SHORT, APPLICATION_RESPONSE_HOURS, PCH_OWNERSHIP_NOTE } from '@/lib/site';
+import {
+  ELIGIBLE_REGIONS_SHORT,
+  APPLICATION_RESPONSE_HOURS,
+  PCH_OWNERSHIP_NOTE,
+  applicantContactWithin,
+  WINNER_NOTIFICATION,
+} from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Our Story',
@@ -44,9 +50,8 @@ export default function StoryPage() {
               big check in hand — to tell people their application had won.
             </p>
             <p className="text-[var(--pch-text-muted)] leading-relaxed">
-              {ELIGIBLE_REGIONS_SHORT} Every application receives a personal email within{' '}
-              {APPLICATION_RESPONSE_HOURS} hours. Winners are selected through random drawings
-              overseen by independent judges.
+              {ELIGIBLE_REGIONS_SHORT} {applicantContactWithin(APPLICATION_RESPONSE_HOURS)} Winners are
+              selected through random drawings overseen by independent judges.
             </p>
           </div>
 
@@ -87,7 +92,7 @@ export default function StoryPage() {
               {
                 icon: Shield,
                 title: '24-hour response',
-                desc: `Every applicant receives a personal email within ${APPLICATION_RESPONSE_HOURS} hours. Selected winners receive prize details at the address on their application.`,
+                desc: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${WINNER_NOTIFICATION}`,
               },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="space-y-4">

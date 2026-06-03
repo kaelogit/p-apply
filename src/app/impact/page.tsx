@@ -23,7 +23,7 @@ export default function ImpactPage() {
             Changing lives, one winner at a time.
           </h1>
           <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed">
-            Real people who applied, heard back within 24 hours, and went on to win life-changing prizes.
+            Real people who applied, heard back by email and text within 24 hours, and went on to win life-changing prizes.
           </p>
         </div>
       </section>

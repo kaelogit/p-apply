@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { PchLogo } from '@/components/brand/PchLogo';
 import {
   CONTACT_EMAIL,
+  APPLY_SMS_NUMBER_DIGITS,
+  APPLY_SMS_NUMBER_DISPLAY,
   PCH_BRAND_NAME,
   PCH_OPERATOR,
   PCH_ADDRESS_LINE1,
@@ -54,9 +56,15 @@ export function Footer() {
             </h4>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-[var(--pch-text-muted)] hover:text-[var(--pch-orange)] transition-colors"
+              className="text-sm text-[var(--pch-text-muted)] hover:text-[var(--pch-orange)] transition-colors block"
             >
               {CONTACT_EMAIL}
+            </a>
+            <a
+              href={`sms:+${APPLY_SMS_NUMBER_DIGITS}`}
+              className="text-sm text-[var(--pch-text-muted)] hover:text-[var(--pch-orange)] transition-colors block mt-2"
+            >
+              {APPLY_SMS_NUMBER_DISPLAY} (text only)
             </a>
             <p className="text-sm text-[var(--pch-text-muted)] mt-3 leading-relaxed">
               382 Channel Drive<br />

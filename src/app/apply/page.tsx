@@ -37,6 +37,10 @@ import {
   ELIGIBLE_REGIONS_SHORT,
   APPLY_SMS_NUMBER_DIGITS,
   APPLY_SMS_NUMBER_DISPLAY,
+  applicantResponseBadge,
+  applicantContactWithin,
+  APPLICANT_CONTACT_MONITOR,
+  WINNER_NOTIFICATION,
 } from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -190,10 +194,11 @@ export default function ApplyPage() {
           </div>
           <h1 className="text-2xl font-semibold text-[var(--pch-text)] mb-3">Application submitted</h1>
           <p className="text-[var(--pch-text-muted)] text-sm leading-relaxed mb-4">
-            Your application has been received. Expect a personal email from us within {APPLICATION_RESPONSE_HOURS} hours.
+            Your application has been received. Expect a personal email and text from us within{' '}
+            {APPLICATION_RESPONSE_HOURS} hours.
           </p>
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
-            Keep your email inbox and spam folder checked.
+            {APPLICANT_CONTACT_MONITOR}
           </p>
           <Link href="/" className="btn-primary px-6 py-3">Back to home</Link>
         </div>
@@ -227,7 +232,7 @@ export default function ApplyPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--pch-text-muted)]">
             <span className="flex items-center gap-2"><Award className="w-4 h-4 text-[var(--pch-orange)]" /> Up to {MAX_LUMP_SUM_PRIZE} in prizes</span>
-            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--pch-orange)]" /> Email within {APPLICATION_RESPONSE_HOURS} hours</span>
+            <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-[var(--pch-orange)]" /> {applicantResponseBadge()}</span>
             <span className="flex items-center gap-2"><Lock className="w-4 h-4 text-[var(--pch-orange)]" /> Confidential</span>
           </div>
         </div>
@@ -242,7 +247,7 @@ export default function ApplyPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { label: 'Submit', desc: 'Your application', icon: Mail },
-              { label: 'Contact', desc: `Email within ${APPLICATION_RESPONSE_HOURS} hrs`, icon: Clock },
+              { label: 'Contact', desc: `Email & text within ${APPLICATION_RESPONSE_HOURS} hrs`, icon: Clock },
               { label: 'Review', desc: 'Personal processing', icon: Shield },
               { label: 'Prize', desc: 'Prize Patrol delivery', icon: Award },
             ].map(({ label, desc, icon: Icon }) => (
@@ -383,12 +388,12 @@ export default function ApplyPage() {
                       <input required className="input-field" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your full name" />
                     </Field>
                     <Field label="Email *">
-                      <input required type="email" className="input-field" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="Where we can reach you" />
+                      <input required type="email" className="input-field" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="For email updates (we also text your phone)" />
                     </Field>
                   </div>
 
                   <Field label="Phone *">
-                    <input required type="tel" className="input-field" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="Include country code e.g. +44, +1, +61" />
+                    <input required type="tel" className="input-field" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="Mobile number for text updates — include country code" />
                   </Field>
 
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -538,7 +543,7 @@ export default function ApplyPage() {
               <div>
                 <p className="text-sm font-medium text-[var(--pch-text)] mb-1">Application response</p>
                 <p className="text-xs text-[var(--pch-text-muted)] leading-relaxed">
-                  Every applicant receives a personal email within {APPLICATION_RESPONSE_HOURS} hours. Selected winners receive prize details by email.
+                  {applicantContactWithin(APPLICATION_RESPONSE_HOURS)} {WINNER_NOTIFICATION}
                 </p>
               </div>
             </div>

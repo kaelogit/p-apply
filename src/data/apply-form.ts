@@ -1,3 +1,10 @@
+import {
+  APPLICATION_RESPONSE_HOURS,
+  applicantContactWithin,
+  APPLICANT_CONTACT_MONITOR,
+  WINNER_NOTIFICATION,
+} from '@/lib/site';
+
 export const COUNTRY_OPTIONS = [
   { group: 'North America', values: [
     { value: 'USA', label: 'United States' },
@@ -112,8 +119,14 @@ export const APPLY_FAQS = [
   },
   { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the USA, Canada, UK, Germany, Australia, and other eligible regions. See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },
-  { q: 'How will I hear back after applying?', a: 'Every applicant receives a personal email within 24 hours at the address on their application. Check your inbox and spam folder.' },
-  { q: 'How will I know if I won?', a: 'Selected winners are notified by email during our application review process. Keep your contact details up to date.' },
+  {
+    q: 'How will I hear back after applying?',
+    a: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_MONITOR}`,
+  },
+  {
+    q: 'How will I know if I won?',
+    a: `${WINNER_NOTIFICATION} Keep your email and phone number up to date.`,
+  },
   { q: 'Is my information secure?', a: 'Yes. Your data is handled securely per our Privacy Policy.' },
 ];
 

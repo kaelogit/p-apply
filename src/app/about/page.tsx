@@ -26,7 +26,7 @@ const sections = [
     href: '/impact',
     icon: Heart,
     title: 'Impact Stories',
-    desc: 'How real winners applied, heard back within 24 hours, and changed their lives.',
+    desc: 'How real winners applied, heard back by email and text within 24 hours, and changed their lives.',
   },
   {
     href: '/security',
@@ -79,7 +79,7 @@ export default function AboutPage() {
           <ul className="space-y-2 text-sm text-[var(--pch-text-muted)]">
             {[
               ELIGIBLE_REGIONS_SHORT,
-              'Every applicant emailed within 24 hours',
+              'Every applicant contacted by email and text within 24 hours',
               'Winners selected through random drawings',
               'One application per person',
             ].map((item) => (

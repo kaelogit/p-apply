@@ -1,6 +1,7 @@
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
 import {
   CONTACT_EMAIL,
+  APPLY_SMS_NUMBER_DISPLAY,
   PCH_BRAND_NAME,
   PCH_OPERATOR,
   PCH_ADDRESS_LINE1,
@@ -24,7 +25,7 @@ export default function PrivacyPage() {
         is used to process your application and contact you if you win.
       </LegalSection>
       <LegalSection title="How We Use Your Information">
-        Your information is used to administer sweepstakes, notify winners by email, comply with legal
+        Your information is used to administer sweepstakes, notify applicants and winners by email and text message, comply with legal
         requirements, and send promotional communications (with your consent). We do not sell
         your personal information to third parties.
       </LegalSection>
@@ -39,6 +40,8 @@ export default function PrivacyPage() {
       <LegalSection title="Contact">
         {PCH_BRAND_NAME}. Operated by {PCH_OPERATOR}. {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
         Email: {CONTACT_EMAIL}
+        <br />
+        Text: {APPLY_SMS_NUMBER_DISPLAY} (text only — do not call)
       </LegalSection>
     </LegalLayout>
   );
