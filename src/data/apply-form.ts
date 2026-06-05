@@ -5,31 +5,45 @@ import {
   WINNER_NOTIFICATION,
 } from '@/lib/site';
 
-/** Dial codes for apply form — separate from address country to avoid "us" autofill in phone field */
-export const PHONE_COUNTRY_CODES = [
-  { value: '+1', label: '+1 US / Canada' },
-  { value: '+44', label: '+44 UK' },
-  { value: '+49', label: '+49 Germany' },
-  { value: '+61', label: '+61 Australia' },
-  { value: '+33', label: '+33 France' },
-  { value: '+52', label: '+52 Mexico' },
-  { value: '+31', label: '+31 Netherlands' },
-  { value: '+34', label: '+34 Spain' },
-  { value: '+39', label: '+39 Italy' },
-  { value: '+353', label: '+353 Ireland' },
-  { value: '+41', label: '+41 Switzerland' },
-  { value: '+46', label: '+46 Sweden' },
-  { value: '+32', label: '+32 Belgium' },
-  { value: '+43', label: '+43 Austria' },
-  { value: '+48', label: '+48 Poland' },
-  { value: '+351', label: '+351 Portugal' },
-  { value: '+81', label: '+81 Japan' },
-  { value: '+82', label: '+82 South Korea' },
-  { value: '+91', label: '+91 India' },
-  { value: '+27', label: '+27 South Africa' },
-  { value: '+55', label: '+55 Brazil' },
-  { value: '+64', label: '+64 New Zealand' },
-];
+/** ISO-style country value → international dial code (set automatically from Country field on apply form) */
+export const COUNTRY_DIAL_CODES: Record<string, string> = {
+  USA: '+1',
+  Canada: '+1',
+  Mexico: '+52',
+  UK: '+44',
+  Germany: '+49',
+  France: '+33',
+  Netherlands: '+31',
+  Spain: '+34',
+  Italy: '+39',
+  Sweden: '+46',
+  Switzerland: '+41',
+  Ireland: '+353',
+  Belgium: '+32',
+  Austria: '+43',
+  Norway: '+47',
+  Denmark: '+45',
+  Australia: '+61',
+  'New Zealand': '+64',
+  Other: '+1',
+};
+
+export function phoneDialCodeForCountry(country: string): string {
+  return COUNTRY_DIAL_CODES[country] ?? '+1';
+}
+
+export function phonePlaceholderForCountry(country: string): string {
+  const samples: Record<string, string> = {
+    USA: '917 555 0123',
+    Canada: '416 555 0123',
+    UK: '7911 123456',
+    Germany: '151 23456789',
+    Australia: '412 345 678',
+    France: '6 12 34 56 78',
+    Mexico: '55 1234 5678',
+  };
+  return samples[country] ?? 'Your mobile number without country code';
+}
 
 export const COUNTRY_OPTIONS = [
   { group: 'North America', values: [

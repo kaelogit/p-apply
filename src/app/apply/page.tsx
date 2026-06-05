@@ -21,7 +21,8 @@ import {
 } from 'lucide-react';
 import {
   COUNTRY_OPTIONS,
-  PHONE_COUNTRY_CODES,
+  phoneDialCodeForCountry,
+  phonePlaceholderForCountry,
   regionLabel,
   regionPlaceholder,
   APPLY_TESTIMONIALS,
@@ -69,7 +70,6 @@ export default function ApplyPage() {
   const [form, setForm] = useState({
     name: '',
     email: '',
-    phoneCountryCode: '+1',
     phoneNational: '',
     country: '',
     region: '',
@@ -156,11 +156,18 @@ export default function ApplyPage() {
     }
   };
 
+  const phoneDialCode = phoneDialCodeForCountry(form.country);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const phone = formatApplicantPhone(form.phoneCountryCode, form.phoneNational);
+    if (!form.country) {
+      setErrorMsg('Please select your country first — your phone country code is set from that.');
+      setStatus('error');
+      return;
+    }
+    const phone = formatApplicantPhone(phoneDialCode, form.phoneNational);
     if (!form.phoneNational.trim() || !isValidApplicantPhone(phone)) {
-      setErrorMsg('Please enter your full mobile phone number (required — at least 10 digits, numbers only in the phone box).');
+      setErrorMsg('Please enter your full mobile phone number (at least 10 digits in the phone box).');
       setStatus('error');
       return;
     }
@@ -429,38 +436,6 @@ export default function ApplyPage() {
                     </Field>
                   </div>
 
-                  <Field label="Mobile phone * (required)">
-                    <div className="flex gap-2">
-                      <select
-                        required
-                        aria-label="Phone country code"
-                        className="input-field w-[9.5rem] shrink-0 bg-white text-sm"
-                        value={form.phoneCountryCode}
-                        onChange={(e) => update('phoneCountryCode', e.target.value)}
-                      >
-                        {PHONE_COUNTRY_CODES.map(({ value, label }) => (
-                          <option key={value} value={value}>
-                            {label}
-                          </option>
-                        ))}
-                      </select>
-                      <input
-                        required
-                        type="tel"
-                        name="phoneNational"
-                        autoComplete="off"
-                        inputMode="numeric"
-                        className="input-field flex-1 min-w-0"
-                        value={form.phoneNational}
-                        onChange={(e) => update('phoneNational', e.target.value.replace(/[^\d\s\-()]/g, ''))}
-                        placeholder="917 555 0123"
-                      />
-                    </div>
-                    <p className="text-xs text-[var(--pch-text-muted)] mt-1.5">
-                      Required. Enter your full number (not just country). We text winners at this mobile number.
-                    </p>
-                  </Field>
-
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="Country *">
                       <select required className="input-field bg-white" value={form.country} onChange={(e) => update('country', e.target.value)}>
@@ -484,6 +459,40 @@ export default function ApplyPage() {
                       />
                     </Field>
                   </div>
+
+                  <Field label="Mobile phone * (required)">
+                    <div
+                      className={`flex w-full rounded-lg border bg-white overflow-hidden transition-colors ${
+                        form.country
+                          ? 'border-[var(--pch-border)] focus-within:border-[var(--pch-orange)] focus-within:ring-[3px] focus-within:ring-orange-500/10'
+                          : 'border-[var(--pch-border)] opacity-70'
+                      }`}
+                    >
+                      <span
+                        className="flex items-center justify-center min-w-[5.25rem] px-3 py-3 bg-[var(--pch-gray-100)] border-r border-[var(--pch-border)] text-base font-semibold text-[var(--pch-text)] shrink-0"
+                        aria-hidden
+                      >
+                        {form.country ? phoneDialCode : '—'}
+                      </span>
+                      <input
+                        required
+                        type="tel"
+                        name="phoneNational"
+                        autoComplete="off"
+                        inputMode="tel"
+                        disabled={!form.country}
+                        className="flex-1 w-full min-w-0 px-4 py-3 text-sm text-[var(--pch-text)] bg-white border-0 outline-none placeholder:text-[var(--pch-text-muted)] disabled:cursor-not-allowed disabled:bg-[var(--pch-gray-50)]"
+                        value={form.phoneNational}
+                        onChange={(e) => update('phoneNational', e.target.value.replace(/[^\d\s\-()]/g, ''))}
+                        placeholder={form.country ? phonePlaceholderForCountry(form.country) : 'Select country above first'}
+                      />
+                    </div>
+                    <p className="text-xs text-[var(--pch-text-muted)] mt-1.5">
+                      {form.country
+                        ? `Country code ${phoneDialCode} is set from your country. Enter your mobile number only (no country code). We text winners at this number.`
+                        : 'Select your country above — your phone country code will appear automatically.'}
+                    </p>
+                  </Field>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Field label="City *">
