@@ -5,6 +5,32 @@ import {
   WINNER_NOTIFICATION,
 } from '@/lib/site';
 
+/** Dial codes for apply form — separate from address country to avoid "us" autofill in phone field */
+export const PHONE_COUNTRY_CODES = [
+  { value: '+1', label: '+1 US / Canada' },
+  { value: '+44', label: '+44 UK' },
+  { value: '+49', label: '+49 Germany' },
+  { value: '+61', label: '+61 Australia' },
+  { value: '+33', label: '+33 France' },
+  { value: '+52', label: '+52 Mexico' },
+  { value: '+31', label: '+31 Netherlands' },
+  { value: '+34', label: '+34 Spain' },
+  { value: '+39', label: '+39 Italy' },
+  { value: '+353', label: '+353 Ireland' },
+  { value: '+41', label: '+41 Switzerland' },
+  { value: '+46', label: '+46 Sweden' },
+  { value: '+32', label: '+32 Belgium' },
+  { value: '+43', label: '+43 Austria' },
+  { value: '+48', label: '+48 Poland' },
+  { value: '+351', label: '+351 Portugal' },
+  { value: '+81', label: '+81 Japan' },
+  { value: '+82', label: '+82 South Korea' },
+  { value: '+91', label: '+91 India' },
+  { value: '+27', label: '+27 South Africa' },
+  { value: '+55', label: '+55 Brazil' },
+  { value: '+64', label: '+64 New Zealand' },
+];
+
 export const COUNTRY_OPTIONS = [
   { group: 'North America', values: [
     { value: 'USA', label: 'United States' },
@@ -148,7 +174,9 @@ I confirm I am 18 or older and submitting my own application.
 
 Please fill in every line above, then send this text.`;
 
+const FALLBACK_SMS_DIGITS = '19177430256';
+
 export function buildSmsApplicationUrl(phoneDigits: string): string {
-  const digits = phoneDigits.replace(/\D/g, '');
+  const digits = phoneDigits.replace(/\D/g, '') || FALLBACK_SMS_DIGITS;
   return `sms:+${digits}?body=${encodeURIComponent(TEXT_APPLICATION_MESSAGE)}`;
 }

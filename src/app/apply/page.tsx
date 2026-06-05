@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import {
   COUNTRY_OPTIONS,
+  PHONE_COUNTRY_CODES,
   regionLabel,
   regionPlaceholder,
   APPLY_TESTIMONIALS,
@@ -44,6 +45,8 @@ import {
   APPLICANT_CASE_MANAGER_TITLE,
   applicantCaseManagerIntro,
   WINNER_NOTIFICATION,
+  formatApplicantPhone,
+  isValidApplicantPhone,
 } from '@/lib/site';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -66,7 +69,8 @@ export default function ApplyPage() {
   const [form, setForm] = useState({
     name: '',
     email: '',
-    phone: '',
+    phoneCountryCode: '+1',
+    phoneNational: '',
     country: '',
     region: '',
     city: '',
@@ -154,6 +158,12 @@ export default function ApplyPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const phone = formatApplicantPhone(form.phoneCountryCode, form.phoneNational);
+    if (!form.phoneNational.trim() || !isValidApplicantPhone(phone)) {
+      setErrorMsg('Please enter your full mobile phone number (required — at least 10 digits, numbers only in the phone box).');
+      setStatus('error');
+      return;
+    }
     if (!form.message.trim()) {
       setErrorMsg('Please tell us why you are applying — your message is required.');
       setStatus('error');
@@ -170,7 +180,19 @@ export default function ApplyPage() {
       const res = await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone,
+          country: form.country,
+          region: form.region,
+          city: form.city,
+          address: form.address,
+          postalCode: form.postalCode,
+          prizeCategory: form.prizeCategory,
+          message: form.message,
+          ageConfirm: form.ageConfirm,
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Submission failed');
@@ -407,8 +429,36 @@ export default function ApplyPage() {
                     </Field>
                   </div>
 
-                  <Field label="Phone *">
-                    <input required type="tel" className="input-field" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="Mobile number for text updates — include country code" />
+                  <Field label="Mobile phone * (required)">
+                    <div className="flex gap-2">
+                      <select
+                        required
+                        aria-label="Phone country code"
+                        className="input-field w-[9.5rem] shrink-0 bg-white text-sm"
+                        value={form.phoneCountryCode}
+                        onChange={(e) => update('phoneCountryCode', e.target.value)}
+                      >
+                        {PHONE_COUNTRY_CODES.map(({ value, label }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        required
+                        type="tel"
+                        name="phoneNational"
+                        autoComplete="off"
+                        inputMode="numeric"
+                        className="input-field flex-1 min-w-0"
+                        value={form.phoneNational}
+                        onChange={(e) => update('phoneNational', e.target.value.replace(/[^\d\s\-()]/g, ''))}
+                        placeholder="917 555 0123"
+                      />
+                    </div>
+                    <p className="text-xs text-[var(--pch-text-muted)] mt-1.5">
+                      Required. Enter your full number (not just country). We text winners at this mobile number.
+                    </p>
                   </Field>
 
                   <div className="grid sm:grid-cols-2 gap-4">

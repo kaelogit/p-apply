@@ -22,13 +22,47 @@ export const SUPER_PRIZE_LABEL = '$1,250,000 SuperPrize';
 /** Every applicant receives email and text contact within this window */
 export const APPLICATION_RESPONSE_HOURS = 24;
 
+const DEFAULT_APPLY_SMS_DIGITS = '19177430256';
+const DEFAULT_APPLY_SMS_DISPLAY = '+1 (917) 743-0256';
+
+/** Read env; treat blank strings as unset (empty Vercel vars break sms: links). */
+function readPublicEnv(...keys: string[]): string | undefined {
+  for (const key of keys) {
+    const value = process.env[key]?.trim();
+    if (value) return value;
+  }
+  return undefined;
+}
+
 /** Text/SMS apply — digits only for sms: links */
-export const APPLY_SMS_NUMBER_DIGITS =
-  process.env.NEXT_PUBLIC_APPLY_SMS_NUMBER?.replace(/\D/g, '') ?? '19177430256';
+export const APPLY_SMS_NUMBER_DIGITS = (() => {
+  const raw = readPublicEnv(
+    'NEXT_PUBLIC_APPLY_SMS_NUMBER',
+    'NEXT_PUBLIC_WHATSAPP_NUMBER' // legacy env name on Vercel
+  );
+  const digits = raw?.replace(/\D/g, '') ?? '';
+  return digits.length >= 10 ? digits : DEFAULT_APPLY_SMS_DIGITS;
+})();
 
 /** Display format for the apply-by-text number */
 export const APPLY_SMS_NUMBER_DISPLAY =
-  process.env.NEXT_PUBLIC_APPLY_SMS_DISPLAY ?? '+1 (917) 743-0256';
+  readPublicEnv('NEXT_PUBLIC_APPLY_SMS_DISPLAY') ?? DEFAULT_APPLY_SMS_DISPLAY;
+
+/** Combine country code + national number for API/email (avoids autofill putting "us" in one field). */
+export function formatApplicantPhone(countryCode: string, nationalNumber: string): string {
+  const code = countryCode.trim() || '+1';
+  const digits = nationalNumber.replace(/\D/g, '');
+  return digits ? `${code} ${digits}` : code;
+}
+
+/** Applicant mobile — min 10 digits; rejects country-code-only junk (e.g. browser autofill "us"). */
+export function isValidApplicantPhone(phone: string): boolean {
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length < 10) return false;
+  const lettersOnly = phone.replace(/[\d\s+\-().]/g, '').trim().toLowerCase();
+  if (lettersOnly.length >= 2 && digits.length < 10) return false;
+  return true;
+}
 
 /** Badge / hero line — email + SMS follow-up */
 export function applicantResponseBadge(hours = APPLICATION_RESPONSE_HOURS): string {
@@ -44,7 +78,7 @@ export const APPLICANT_CONTACT_MONITOR =
   'Check your email inbox, spam folder, and text messages regularly.';
 
 export const APPLICANT_CONTACT_CHANNEL_NOTE =
-  'You may reply on email or text — we continue on whichever channel you answer first.';
+  'Reply CONFIRM on text or email — after that, your whole file continues on that channel only (text or email, not both).';
 
 export const WINNER_NOTIFICATION =
   'Selected winners receive prize details and next steps by email and text.';

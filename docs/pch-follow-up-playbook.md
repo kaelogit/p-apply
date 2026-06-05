@@ -1,899 +1,1400 @@
-# PCH Applicant Follow-Up Playbook
+# PCH Send Playbook
 
-Official email: support@applypch.com  
-Official text (SMS only): +1 (917) 743-0256 — do not call  
-Application site: applypch.com
+support@applypch.com · +1 (917) 743-0256 (text only) · applypch.com · Dave Sayer
 
 ---
 
-## Dual-channel rule
+## Rules
 
-1. After someone applies (online form or text), send both email and SMS when you have both addresses.
-2. Use the same reference number on every message (email and text).
-3. Whichever channel they reply on first — continue the conversation only on that channel until the file is closed. Do not ask them to switch unless they stop responding on one channel for 24+ hours; then send one reminder on the other channel only.
-4. If they applied by text only and you have no email, use text only. If they applied online and gave email + phone, use both.
-5. Text messages must come only from +1 (917) 743-0256. Official emails come only from support@applypch.com.
+1. Steps 1–2: Email + Text if you have both.
+2. CONFIRM on text → text only. CONFIRM on email → email only.
+3. Same ref every message. Sign texts: `Dave Sayer, PCH Application Coordinator`
+4. Send the **hold** message below each step before the next send.
+5. No decline — guide forward.
+6. Payment flow: **PAY MENU** (they pick method) → **PAY DETAILS** (you send cashier info for that method). Fill `[PAY TO]` from your sheet.
+7. Standard files ($800): Apple Pay, Zelle, Cash App, bank transfer. **Wire + cashier's check only for $2,500,000 Super Prize** (higher admin amount — use `[ADMIN AMOUNT]`).
 
-### Payment channel rule
+| Step | Text | Email |
+|------|------|-------|
+| 1 | Text 1 | Email 1 |
+| 2 | Text 2 | Email 2 |
+| 3–7 | Text… | Email… |
+| Pay menu | Text PAY MENU | Email PAY MENU |
+| Pay details | Text PAY DETAILS | Email PAY DETAILS |
+| Delivery | ↓ bottom | ↓ bottom |
 
-After they reply READY TO PROCEED WITH PAYMENT:
-
-- If they replied on text → send full payment instructions by text (Text PAY-1 through PAY-5 below). They can pay and confirm payment entirely by text.
-- If they replied on email → send payment instructions by email (Email PAY below). They confirm by email reply.
-- If you have both and they have not replied yet → send payment options on both channels when you send Email 7 follow-up, OR match whichever channel they used for READY.
-- Text-only applicants (no email / never checks email) → use text payment flow only. Do not tell them to check email.
-
-Payment details must only come from +1 (917) 743-0256 (text) or support@applypch.com (email) — never from a personal number or random address.
-
-### SMS writing rule — texts must stand alone
-
-Many applicants never open email and some do not know how to use email at all. Every text sequence below is a full version of the email, including payment. Send all parts in order (1–2 minutes apart).
+**Tone:** Professional + courteous (Publishers Clearing House, reference numbers, clear deadlines). Warm but official — not slang, not overly casual.
 
 ---
 
-## Email 1 — Within 24 hours (every applicant)
+# STEP 1 — Application received (both if possible)
 
-Subject: Your PCH Application Has Been Received — Ref PCH-[DATE]-[ID]
-
-Dear [First Name],
-
-Thank you for submitting your Publishers Clearing House prize application at applypch.com.
-
-We have received your application and it is now under review.
-
-Application reference: PCH-[DATE]-[ID]  
-Prize category selected: [category]  
-Date submitted: [MM-DD-YYYY]
-
-You have been assigned to Dave Sayer, PCH Application Coordinator. I will be your point of contact for this application.
-
-You do not need to do anything right now. If your application moves to the next stage, I will reach out by email from support@applypch.com and by text from +1 (917) 743-0256 within the next 5 hours.
-
-Please check your spam folder if you do not see our email.  
-Please monitor your text messages regularly.
-
-Dave Sayer  
-PCH Application Coordinator  
-Publishers Clearing House  
-support@applypch.com
-
-### Text 1-1 (send with Email 1)
+**Email 1** — Subject: Your PCH Application Has Been Received — Ref PCH-[DATE]-[ID]
 
 ```
-Publishers Clearing House — official text (+1 917-743-0256, text only, do not call).
+Dear [First Name],
 
-Hi [First Name], this is Dave Sayer, PCH Application Coordinator. Thank you for applying at applypch.com — we received your prize application and it is under review.
-
-You have been assigned to me for this file.
+Thank you for submitting your Publishers Clearing House prize application at applypch.com. We have received your application and it is under review.
 
 Application reference: PCH-[DATE]-[ID]
 Prize category: [category]
 Date submitted: [MM-DD-YYYY]
 
-You do not need to do anything right now.
+You have been assigned to me, Dave Sayer, PCH Application Coordinator, as your point of contact on this file.
+
+You do not need to take any action at this time. If your application advances, I will contact you from support@applypch.com and from +1 (917) 743-0256 within the next 5 hours.
+
+Please monitor your email and text messages.
+
+Dave Sayer
+PCH Application Coordinator
+Publishers Clearing House
+support@applypch.com
 ```
 
-### Text 1-2 (send 1 min after Text 1-1)
-
+**Text 1**
 ```
-If your application advances, I will contact you by email from support@applypch.com AND by text from this number (+1 917-743-0256) within the next 5 hours with next steps.
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
-You may reply on text or email — we will continue the conversation on whichever channel you answer first.
+Thank you for applying at applypch.com. We have received your application and it is under review.
 
-Save this reference: PCH-[DATE]-[ID]. Monitor your texts regularly.
+Reference: PCH-[DATE]-[ID]
+Prize category: [category]
+Date submitted: [MM-DD-YYYY]
+
+You have been assigned to me on this file. No action needed right now. If your application advances, I will contact you from this number within 5 hours.
+
+When you reply later, use this text line or email — whichever you use first is where your file will continue.
+
+Dave Sayer
+PCH Application Coordinator
 ```
 
 ---
 
-## Email 2 — Day 2–4 (shortlisted only)
+# STEP 2 — Verification invite (both if possible)
 
-Subject: Your PCH Application Has Advanced to Verification
+**Email 2** — Subject: Your PCH Application Has Advanced to Verification
 
+```
 Dear [First Name],
 
-Your application has advanced to the verification stage for the current prize drawing.
+Your application has advanced to the verification stage for the current Publishers Clearing House prize drawing.
 
-This is not a final prize award yet. We need to confirm your information before any prize decision is made.
+Please note: this is not a final prize award. We must confirm your information before any prize determination.
 
-Reply to this email or reply to our text from +1 (917) 743-0256 within 12 hours with the word:
+Please reply to this email within 12 hours with the word:
 
 CONFIRM
 
-If we do not hear from you within 12 hours, your application may be placed on hold.
+If we do not receive your response within 12 hours, your application may be placed on hold.
 
-Publishers Clearing House  
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 2-1 (send with Email 2)
-
-```
-Publishers Clearing House — Ref PCH-[DATE]-[ID]
-
-Hi [First Name], your application has advanced to the VERIFICATION stage for the current prize drawing.
-
-Important: This is NOT a final prize award yet. We must confirm your information before any prize decision is made.
 ```
 
-### Text 2-2 (send 1 min after Text 2-1)
-
+**Text 2**
 ```
-Reply to THIS text or to our email at support@applypch.com within 12 hours with exactly one word:
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
-CONFIRM
+Your application (Ref PCH-[DATE]-[ID]) has advanced to the verification stage for the current prize drawing. This is not a final prize award yet.
 
-If we do not receive CONFIRM within 12 hours, your application may be placed on hold.
+Please reply CONFIRM on this text within 12 hours.
 
-Official text number: +1 (917) 743-0256 (text only). Continue on whichever channel you reply first.
+If you confirm on this text, your file will continue on this official text line.
+
+Dave Sayer
+PCH Application Coordinator
 ```
 
 ---
 
-## Email 3 — After they reply CONFIRM
+# STEP 3 — ID verification (channel locked)
 
-Subject: PCH Verification Required
+**When they reply CONFIRM — send hold first:**
 
+Text hold:
+```
+Thank you, [First Name]. We have received your CONFIRM for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I access your file in our system. I will contact you shortly with the next step.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
 Dear [First Name],
 
-Please reply with the following information to verify your identity:
+Thank you for confirming. We have received your CONFIRM for reference PCH-[DATE]-[ID]. Kindly allow a brief moment while I access your file. I will email you shortly with the next step.
 
-1. Full legal name  
-2. Date of birth (MM/DD/YYYY)  
-3. Address on your application  
-4. Last 4 digits of the phone number you submitted  
-5. Prize category you selected when you applied
-
-Reply to this email or to our text from +1 (917) 743-0256 within 12 hours.
-
-Publishers Clearing House  
-support@applypch.com
-
-### Text 3-1 (send with Email 3)
-
-```
-Publishers Clearing House — Verification Required
-Ref PCH-[DATE]-[ID]
-
-Hi [First Name], thank you for confirming. We now need the following information to verify your identity.
+Dave Sayer
+PCH Application Coordinator
 ```
 
-### Text 3-2 (send 1 min after Text 3-1)
-
+**Then send Text 3** (text track)
 ```
-Reply to THIS text or email support@applypch.com within 12 hours with ALL of the following (copy and fill in):
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
+
+To complete verification, please reply on this text within 12 hours with the following:
 
 1. Full legal name:
 2. Date of birth (MM/DD/YYYY):
 3. Address on your application:
-4. Last 4 digits of the phone number you submitted:
-5. Prize category you selected when you applied:
+4. Last 4 digits of the phone number on your application:
+5. Prize category you selected:
 
-Send as one text message if possible. Missing items will delay your file.
+Reference: PCH-[DATE]-[ID]
+
+Thank you,
+Dave Sayer
 ```
 
----
+**Then send Email 3** (email track) — Subject: PCH Verification Required
 
-## Email 4 — After verification passes
-
-Subject: Complete Your PCH Applicant Profile
-
+```
 Dear [First Name],
 
-Your verification is approved. You are now in the final review stage.
+To complete verification, please reply to this email within 12 hours with the following:
 
-Reply with answers to the following (email or text within 12 hours):
+1. Full legal name
+2. Date of birth (MM/DD/YYYY)
+3. Address on your application
+4. Last 4 digits of the phone number on your application
+5. Prize category you selected
 
-1. Marital status  
-2. Number of dependents  
-3. Employment status  
-4. Monthly income  
-5. Biggest financial pressure right now (debt, rent, medical, family, business, or other)  
-6. If awarded a tier below the Mega Prize, would you still accept? (Yes or No)  
-7. Confirm your full mailing address  
-8. Confirm phone number  
+Reference: PCH-[DATE]-[ID]
 
-Publishers Clearing House  
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 4-1 (send with Email 4)
-
-```
-Publishers Clearing House — Applicant Profile
-Ref PCH-[DATE]-[ID]
-
-Hi [First Name], your verification is APPROVED. You are now in the final review stage.
-
-Please reply to THIS text or email support@applypch.com within 12 hours with answers to ALL questions below.
-```
-
-### Text 4-2 (send 1 min after Text 4-1)
-
-```
-1. Marital status:
-2. Number of dependents:
-3. Employment status:
-4. Monthly income:
-5. Biggest financial pressure right now (debt, rent, medical, family, business, or other):
-6. If awarded a tier below the Mega Prize, would you still accept? (Yes or No):
-7. Confirm your full mailing address:
-8. Confirm your phone number:
-
-Reply with all 8 answers in one message if you can. Ref PCH-[DATE]-[ID]
 ```
 
 ---
 
-## Email 5 — Prize selection
+# STEP 4 — Profile (channel locked)
 
-Subject: PCH Selection Notice — Prize Determination
+**When they send ID info — send hold first:**
 
+Text hold:
+```
+Thank you, [First Name]. We have received your verification details for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I process your verification with our office. I will be back in touch shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
 Dear [First Name],
 
-Following verification and final review, you have been selected as a prize recipient in the current Publishers Clearing House drawing.
+Thank you. We have received your verification details for reference PCH-[DATE]-[ID]. Kindly allow a brief moment while I process your verification. I will email you shortly.
 
-Prize awarded: [Mega Prize / SuperPrize / Weekly Cash / For Life]  
-Prize structure: [lump sum / weekly payments / ongoing]  
-Reference number: PCH-WIN-[ID]
+Dave Sayer
+PCH Application Coordinator
+```
 
-This selection is conditional until the final steps below are complete.
+**When verification passes — send hold first:**
 
-Please reply within 12 hours with:
+Text hold:
+```
+Good news, [First Name]. Your verification has been approved for reference PCH-[DATE]-[ID]. I am moving your file to final review now. You will receive the next step from me shortly.
 
-1. ACCEPT — to confirm you accept this prize tier  
-2. Delivery preference: CHECK (Prize Patrol bank check delivery to your address) or CASH (Prize Patrol cash delivery to your address)
+Dave Sayer
+PCH Application Coordinator
+```
 
-We will send your Affidavit of Eligibility after we receive your reply.
+Email hold:
+```
+Dear [First Name],
 
-Publishers Clearing House  
+Your verification has been approved for reference PCH-[DATE]-[ID]. Your file is now in final review. I will email you the next step shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Text 4**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
+
+Your verification is approved. You are now in the final review stage. Please reply on this text within 12 hours with:
+
+1. Marital status
+2. Number of dependents
+3. Employment status
+4. Monthly income
+5. Biggest financial pressure (debt, rent, medical, family, business, financially stable, or other)
+6. If you won the Mega Prize, what would you do with it?
+7. If awarded a tier below the Mega Prize, would you still accept? (Yes or No)
+8. Full mailing address
+9. Phone number
+
+Reference: PCH-[DATE]-[ID]
+
+Dave Sayer
+```
+
+**Then send Email 4** — Subject: Complete Your PCH Applicant Profile
+
+```
+Dear [First Name],
+
+Your verification is approved. You are now in the final review stage. Please reply within 12 hours with answers to all 9 items listed in your text message (or request the list again by reply).
+
+Reference: PCH-[DATE]-[ID]
+
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 5-1 (send with Email 5)
-
-```
-Publishers Clearing House — SELECTION NOTICE
-Ref PCH-WIN-[ID]
-
-Hi [First Name], following verification and final review, you have been selected as a prize recipient in the current PCH drawing.
-
-Prize awarded: [Mega Prize / SuperPrize / Weekly Cash / For Life]
-Prize structure: [lump sum / weekly payments / ongoing]
-
-This selection is CONDITIONAL until the final steps below are complete.
-```
-
-### Text 5-2 (send 1 min after Text 5-1)
-
-```
-Reply to THIS text or email support@applypch.com within 12 hours with:
-
-1. The word ACCEPT (to confirm you accept this prize tier)
-
-2. Your delivery preference — reply CHECK or CASH:
-   CHECK = Prize Patrol bank check delivery to your address
-   CASH = Prize Patrol cash delivery to your address
-
-After we receive your reply, we will send your Affidavit of Eligibility link.
-
-Ref PCH-WIN-[ID]
 ```
 
 ---
 
-## Email 6 — Affidavit
+# STEP 5 — Selection (channel locked)
 
-Subject: PCH Affidavit of Eligibility — Action Required
+**When they send profile answers — send hold first:**
 
+Text hold:
+```
+Thank you, [First Name]. We have received your responses for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
+Dear [First Name],
+
+Thank you. We have received your responses. Kindly allow a brief moment while I review your file. I will email you shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Text 5**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
+
+Congratulations. Following verification and final review, you have been selected as a prize recipient in the current drawing.
+
+Prize awarded: [tier + amount]
+Prize structure: [lump sum / weekly / ongoing]
+Reference: PCH-WIN-[ID]
+
+This selection is conditional until final steps are complete.
+
+Please reply on this text within 12 hours with:
+1. ACCEPT
+2. CHECK (bank check delivery to your address) or CASH (Prize Patrol cash delivery)
+
+I will send your Affidavit of Eligibility link on this text after your reply.
+
+Congratulations,
+Dave Sayer
+```
+
+**Then send Email 5** — Subject: PCH Selection Notice — Prize Determination
+
+```
+Dear [First Name],
+
+Congratulations. Following verification and final review, you have been selected as a prize recipient in the current Publishers Clearing House drawing.
+
+Prize awarded: [tier]
+Prize structure: [structure]
+Reference: PCH-WIN-[ID]
+
+This selection is conditional until final steps are complete.
+
+Please reply within 12 hours with ACCEPT and your delivery preference (CHECK or CASH).
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+---
+
+# STEP 6 — Affidavit (channel locked)
+
+**When they reply ACCEPT + CHECK/CASH — send hold first:**
+
+Text hold:
+```
+Thank you, [First Name]. We have received your acceptance for reference PCH-WIN-[ID]. I am preparing your Affidavit of Eligibility now. You will receive the link in my next message.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
+Dear [First Name],
+
+Thank you for your acceptance. I am preparing your Affidavit of Eligibility and will email you the link shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Text 6**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
+
+Please complete your Affidavit of Eligibility at:
+
+https://applypch.com/documents/affidavit-of-eligibility.html
+
+Instructions:
+- Complete every field
+- Type your full legal name as your electronic signature
+- Check the agreement box and submit
+
+You may save a PDF copy for your records. When finished, reply on this text: AFFIDAVIT SUBMITTED
+
+Reference: PCH-WIN-[ID]
+
+Dave Sayer
+```
+
+**Then send Email 6** — Subject: PCH Affidavit of Eligibility — Action Required
+
+```
 Dear [First Name],
 
 Please complete your Affidavit of Eligibility:
 
 https://applypch.com/documents/affidavit-of-eligibility.html
-Fill in every field, type your full legal name as your electronic signature, check the agreement box, and click Submit affidavit. You will receive a confirmation email when we receive it.
 
-You may use Save as PDF on that page to keep a copy for your records.
+Complete every field, sign electronically, and submit. Reply AFFIDAVIT SUBMITTED to this email when finished.
 
-Reply to this email or text AFFIDAVIT SUBMITTED once done so we can proceed.
+Reference: PCH-WIN-[ID]
 
-Publishers Clearing House  
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 6-1 (send with Email 6)
-
-```
-Publishers Clearing House — Affidavit Required
-Ref PCH-WIN-[ID]
-
-Hi [First Name], please complete your Affidavit of Eligibility at:
-
-https://applypch.com/documents/affidavit-of-eligibility.html
-```
-
-### Text 6-2 (send 1 min after Text 6-1)
-
-```
-Instructions:
-- Fill in every field on the form
-- Type your full legal name as your electronic signature
-- Check the agreement box
-- Click Submit affidavit
-
-You will receive a confirmation email when we receive it. You may use Save as PDF on that page for your records.
-
-When finished, reply to THIS text or email with: AFFIDAVIT SUBMITTED
-
-Ref PCH-WIN-[ID]
 ```
 
 ---
 
-## Email 7 — Delivery & processing (after affidavit approved)
+# STEP 7 — Processing / $800 (channel locked)
 
-Subject: Your PCH Prize — Final Processing & Delivery
+**When they reply AFFIDAVIT SUBMITTED — send hold first:**
 
+Text hold:
+```
+Thank you, [First Name]. We have received your affidavit submission notice for reference PCH-WIN-[ID]. Kindly hold on briefly while I confirm your Affidavit of Eligibility in our system. I will update you shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
+Dear [First Name],
+
+Thank you. We have received your affidavit submission notice. Kindly allow a brief moment while I confirm your Affidavit in our system. I will email you shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**When affidavit approved — send hold first:**
+
+Text hold:
+```
+Good news, [First Name]. Your Affidavit of Eligibility has been approved for reference PCH-WIN-[ID]. I am completing your release paperwork now. You will receive delivery and final processing instructions in my next message.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
+Dear [First Name],
+
+Your Affidavit of Eligibility has been approved. I am completing your release paperwork and will email you delivery and final processing instructions shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Optional — Prize File Summary** (same channel, before Step 7 send):
+```
+PCH PRIZE FILE SUMMARY — PCH-WIN-[ID]
+Name: [Name] | Coordinator: Dave Sayer
+Status: Affidavit of Eligibility APPROVED
+Prize: [amount] | Delivery: [Check/Cash]
+Completed: Application, Verification, Selection, Affidavit
+Remaining: Administrative processing ($800) — dispatch within 12 hours of verified payment
+Publishers Clearing House | PCH Digital
+```
+
+**Then send Text 7** (text track, one message)
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
+
+Your Affidavit of Eligibility has been APPROVED. Your prize is approved for release.
+
+Reference: PCH-WIN-[ID]
+Prize: [amount / tier]
+Delivery preference: [Check / Cash]
+Target dispatch: within 12 hours of completed processing
+
+Upon delivery, a Prize Approval Certificate will be issued in your name. Prize Patrol will deliver your award presentation and payment instrument (big check presentation and bankable check, or cash per your selection) to your confirmed address.
+
+Important: PCH does not charge a fee to enter or be selected. Third-party case processing and secure Prize Patrol delivery require a mandatory administrative amount of $800.00 USD (recipient responsibility). This finalizes your certificate, schedules delivery, and covers applicable tax clearance paperwork. After verified payment, your file is finalized for immediate dispatch.
+
+Your payment receipt will generate a Secret Reference Code for delivery security — shared only with you and Prize Patrol at handoff.
+
+Address on file: [address]. Reply Yes or send corrected address.
+
+Please reply on this text within 12 hours with:
+1. Full legal name for payment (as on documents)
+2. CHECK or CASH confirmed
+3. READY TO PROCEED WITH PAYMENT
+
+I will send official payment instructions on this text. Questions are welcome.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Email 7** — Subject: Your PCH Prize — Final Processing & Delivery
+
+```
 Dear [First Name],
 
 Your Affidavit of Eligibility has been approved. Your prize is approved for release.
 
-Reference: PCH-WIN-[ID]  
-Prize: [amount / tier]  
-Delivery preference: [Check / Cash — as chosen in Email 5]  
-Expected delivery window: Within 12 hours of completed processing
+Reference: PCH-WIN-[ID]
+Prize: [amount / tier]
+Delivery: [Check / Cash]
 
----
+Prize Patrol will deliver your award presentation and payment instrument to your confirmed address.
 
-Upon delivery, an official Prize Approval Certificate will be issued in your name for your records.
+Administrative processing of $800.00 USD is required (case file and secure delivery — not an entry fee). After verified payment, dispatch is scheduled within 12 hours. A Secret Reference Code will be issued for delivery security.
 
-Our Prize Patrol delivery team is prepared to deliver your award presentation and your payment instrument (big check presentation and bankable check, as applicable) to your confirmed address.
-
----
-
-Important: Publishers Clearing House does not charge a fee to enter or to be selected. However, third-party processing and secure delivery involve mandatory administrative costs that are the responsibility of the recipient. These include:
-
-- Case file processing  
-- Prize Patrol secure delivery & coordination  
-
-Total administrative amount: $800.00 USD
-
-Payment of this amount allows our office to:
-
-- Finalize your Prize Money Approval Certificate  
-- Complete secure delivery scheduling with our authorized team  
-- Issue documentation for your files, including tax clearance paperwork associated with this award (as applicable to your situation)
-
-Once payment is received and verified, your file will be finalized and your package will be scheduled for immediate dispatch. Delivery is targeted within 12 hours of verified payment, subject to location and security procedures.
-
----
-
-Security notice: Your payment receipt generates a unique Secret Reference Code. This code is shared only with you and our authorized Prize Patrol delivery team. At delivery, they will ask you for this code to confirm you are the approved recipient before funds are released.
-
----
+Address on file: [address] — reply Yes or send correction.
 
 Reply within 12 hours with:
-1. Full legal name for payment (as it should appear on documents)  
-2. Address correct? [full address on file] — Yes or No (if No, send corrected address)  
-3. Confirm delivery preference again: CHECK or CASH  
-4. Reply READY TO PROCEED WITH PAYMENT so we can send your payment options (by email or text, on the same channel you use to reply)
+1. Legal name for payment
+2. CHECK or CASH
+3. READY TO PROCEED WITH PAYMENT
 
-If you have any questions, reply to this email or text before proceeding.
-
-Official contact: support@applypch.com (email) · +1 (917) 743-0256 (text only)
-
-Publishers Clearing House  
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 7-1 (send with Email 7)
-
-```
-Publishers Clearing House — Prize Approved for Release
-Ref PCH-WIN-[ID]
-
-Hi [First Name], your Affidavit of Eligibility has been APPROVED. Your prize is approved for release.
-
-Prize: [amount / tier]
-Delivery preference on file: [Check / Cash]
-Expected delivery window: Within 12 hours of completed processing
-
-Upon delivery, an official Prize Approval Certificate will be issued in your name.
 ```
 
-### Text 7-2 (send 1 min after Text 7-1)
-
+**Itemized $800** (if they hesitate — breakdown only):
 ```
-Our Prize Patrol delivery team will deliver your award presentation and payment instrument (big check presentation and bankable check of [amount], or cash per your selection) to your confirmed address.
-
-[Use CHECK line OR CASH line from email — paste full sentence here.]
-```
-
-### Text 7-3 (send 1 min after Text 7-2)
-
-```
-IMPORTANT — Administrative processing (not an entry fee):
-
-PCH does not charge a fee to enter or to be selected. Third-party case file processing and secure Prize Patrol delivery require mandatory administrative costs paid by the recipient:
-
-- Case file processing
-- Prize Patrol secure delivery and coordination
-
-Total administrative amount: $800.00 USD
+Administrative processing breakdown — reference PCH-WIN-[ID] (prize amount separate):
+• Case file & Prize Money Approval Certificate — $285
+• Tax clearance paperwork — $165
+• Prize Patrol secure delivery — $350
+Total: $800.00 USD
 ```
 
-### Text 7-4 (send 1 min after Text 7-3)
-
+**Itemized $800 + encouraging close** (after scam doubts at payment step — send as separate message after Reply 2 stack):
 ```
-Paying $800 allows us to:
-- Finalize your Prize Money Approval Certificate
-- Schedule secure delivery with our authorized team
-- Issue documentation including tax clearance paperwork (as applicable)
+Administrative processing breakdown — reference PCH-WIN-[ID]:
 
-Once payment is received and verified, your file is finalized and dispatch is scheduled immediately. Delivery targeted within 12 hours of verified payment (location and security procedures apply).
+• Case file & Prize Money Approval Certificate — $285
+• Tax clearance paperwork — $165
+• Prize Patrol secure delivery — $350
+Total: $800.00 USD
+
+[First Name], here is the breakdown. You are doing the right thing by moving forward with this step. If your payment is completed today, you should expect our Prize Patrol team at your address tomorrow. Think about how [prize amount] would help you — bills, family, peace of mind — and what you wanted when you first applied.
+
+When you are ready, reply with A, B, C, or D from the payment options I sent and I will provide the official cashier information for that method.
+
+Dave Sayer
+PCH Application Coordinator
 ```
-
-### Text 7-5 (send 1 min after Text 7-4)
-
-```
-SECURITY: Your payment receipt will generate a unique Secret Reference Code. Only you and our Prize Patrol team will have it. At delivery they will ask for this code before funds are released. Do not share it with anyone else.
-
-Address on file: [full address]
-Is this correct? Reply Yes or send corrected full address.
-```
-
-### Text 7-6 (send 1 min after Text 7-5)
-
-```
-Reply to THIS text within 12 hours with ALL of the following:
-
-1. Full legal name for payment (as on documents):
-2. Address correct? Yes or No (if No, send full corrected address):
-3. Confirm delivery again: CHECK or CASH
-4. The exact phrase: READY TO PROCEED WITH PAYMENT
-
-After you reply READY TO PROCEED WITH PAYMENT, we will send your official payment options on THIS text thread (full instructions — you can complete payment by text without using email). Questions? Reply here first.
-
-Ref PCH-WIN-[ID]
-```
-
-CHECK line for Email 7 body (if they chose CHECK in Email 5):
-> Your selection: CHECK delivery — a bankable check will be prepared for delivery to your confirmed address, along with your award presentation materials.
-
-CASH line for Email 7 body (if they chose CASH):
-> Your selection: CASH delivery — the Prize Patrol will deliver your award presentation and release funds in cash at your confirmed address after identity verification with your Secret Reference Code.
 
 ---
 
-## Email 8 — After payment confirmed
+# STEP 7 reminders (channel locked)
 
-Subject: Payment Confirmed — Delivery Scheduled
+**Text reminder 1**
+```
+Hi [First Name], this is Dave Sayer. Friendly reminder — your prize file PCH-WIN-[ID] is approved and awaiting final administrative processing ($800) so we may schedule your [check/cash] delivery. Please reply READY TO PROCEED WITH PAYMENT and I will send payment instructions on this text. I am available for any questions.
 
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Text reminder 2**
+```
+[First Name], final notice — delivery scheduling for PCH-WIN-[ID] is time-sensitive. Please reply READY TO PROCEED WITH PAYMENT today so I may send payment instructions on this text.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Email reminder 1** — Subject: Reminder — Your PCH Delivery Is Pending
+
+```
+Dear [First Name],
+
+Your prize file PCH-WIN-[ID] is approved and awaiting final administrative processing. Please reply READY TO PROCEED WITH PAYMENT within 12 hours for payment instructions.
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+**Email reminder 2** — Subject: Final Notice — PCH Delivery Window Closing
+
+```
+Dear [First Name],
+
+Final notice for reference PCH-WIN-[ID]. Please reply READY TO PROCEED WITH PAYMENT today to maintain your delivery scheduling.
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+---
+
+# PAYMENT — after READY TO PROCEED WITH PAYMENT (or when clearly ready)
+
+**Flow**
+1. Send **PAY MENU** — explain options, ask which is most convenient.
+2. They reply with letter or name (e.g. `B` or `Zelle`).
+3. Pull cashier info from your sheet → send **PAY DETAILS** for that method only.
+4. They reply **PAYMENT SENT** + proof → hold → verify → Step 8.
+
+**Proven flow when they object after PAY MENU** (e.g. William / $1.25M file):
+```
+YES to pay → Text PAY MENU
+  → "scam" / "$1,250,000 or $2,500,000?" → $1.25M vs $2.5M (if amount confusion) + Mid-payment scam stack (3 texts)
+  → Itemized $800 + encouraging close
+  → silent 24–48h → Silent after PAY MENU + breakdown nudge
+  → picks A/B/C/D → PAY DETAILS only
+```
+
+**Operator sheet (fill once per method)**
+
+| Method | Pay to / details |
+|--------|------------------|
+| Apple Pay | [PAY TO] |
+| Zelle | [PAY TO] |
+| Cash App | [PAY TO] |
+| Bank transfer | [BANK DETAILS] |
+| Wire (2.5M only) | [WIRE DETAILS] |
+| Cashier's check (2.5M only) | [MAILING ADDRESS / PAYABLE TO] |
+
+Memo (all methods): `PCH-WIN-[ID] [Last Name]`
+
+---
+
+## PAY MENU — standard prize (administrative processing $800.00)
+
+Use for all approved files **except** $2,500,000 Super Prize tier.
+
+**When they agreed YES / ready — bridge (optional, then send PAY MENU)**
+```
+Thank you, [First Name]. I appreciate you staying with the process. I will send your payment method options on this thread next — pick the letter that is most convenient for you, and I will send the official cashier information for that option only.
+
+Dave Sayer
+```
+
+**Text PAY MENU** (text track) — *proven send*
+```
+Thank you, [First Name]. We have received your confirmation to proceed with payment steps against your delivery for reference PCH-WIN-[ID].
+
+Please choose how you would like to complete administrative processing.
+
+Different winners use different methods depending on what is fastest and most convenient on their phone or at their bank. The sooner verified payment is received, the sooner we can finalize your file and schedule Prize Patrol delivery for your [prize amount] award — typically within about 12 hours of verification.
+
+Amount due: $800.00 USD exactly (administrative processing and secure delivery — not your prize amount).
+
+Please reply with the letter of your most convenient option:
+
+A) Apple Pay — usually fastest on iPhone
+B) Zelle — fast bank-to-bank from most U.S. banks
+C) Cash App — fast if you already use Cash App
+D) Bank transfer (standard transfer) — use if you prefer paying from your bank app or branch
+
+Note: Bank wire transfer and cashier's check are reserved for $2,500,000 Super Prize files only, where a higher administrative amount is required. They are not used on standard $800 processing files like yours.
+
+Once you tell me A, B, C, or D, I will send the official cashier information available for that option on this text only. Pay only through this line (+1 917-743-0256) or support@applypch.com.
+
+Dave Sayer
+PCH Application Coordinator
+
+If your payment is completed today, you should expect our Prize Patrol team at your address tomorrow.
+```
+
+**Email PAY MENU** — Subject: PCH-WIN-[ID] — Choose Your Payment Method ($800)
+
+```
+Dear [First Name],
+
+Thank you for confirming you are ready to proceed with payment on reference PCH-WIN-[ID].
+
+Recipients complete administrative processing using the method that is most convenient and fastest for them. Verified payment allows our office to finalize your certificate and schedule Prize Patrol delivery — targeted within about 12 hours of verification.
+
+Amount due: $800.00 USD exactly (case certification, tax paperwork, and secure delivery — not your prize amount).
+
+Please reply to this email with the letter of the option you prefer:
+
+A) Apple Pay — typically fastest for iPhone users
+B) Zelle — fast transfer from most U.S. bank accounts
+C) Cash App — convenient if you already have Cash App
+D) Bank transfer (ACH / standard transfer) — pay from your bank app or branch
+
+Bank wire transfer and cashier's check are available only for $2,500,000 Super Prize winners, where a higher administrative processing amount applies. They are not offered on standard $800 files.
+
+Reply with A, B, C, or D and I will send official cashier information for your selected method in this email thread.
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+---
+
+## PAY MENU — $2,500,000 Super Prize only
+
+Use when prize tier is **$2,500,000**. Amount is **`[ADMIN AMOUNT]`** (not $800).
+
+**Text PAY MENU — 2.5M** (text track)
+```
+Thank you, [First Name]. Your $2,500,000 Super Prize file PCH-WIN-[ID] requires elevated administrative processing under PCH Digital before release and Prize Patrol dispatch.
+
+Amount due: [ADMIN AMOUNT] USD (Super Prize tier — not your prize amount).
+
+Please choose the most convenient option and reply with the letter:
+
+A) Apple Pay
+B) Zelle
+C) Cash App
+D) Bank transfer (ACH / standard transfer)
+E) Bank wire transfer — Super Prize tier only
+F) Cashier's check — Super Prize tier only
+
+Standard $800 processing files do not use wire or cashier's check. Your tier requires the higher amount above; wire and check are available because of the size of your award and banking requirements on this file.
+
+Reply A through F and I will send official cashier information for your choice on this text only.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Email PAY MENU — 2.5M** — Subject: PCH-WIN-[ID] — Super Prize Payment Method Selection
+
+```
+Dear [First Name],
+
+Your $2,500,000 Super Prize file (reference PCH-WIN-[ID]) requires elevated administrative processing: [ADMIN AMOUNT] USD.
+
+Please reply with your preferred option:
+
+A) Apple Pay
+B) Zelle
+C) Cash App
+D) Bank transfer (ACH / standard transfer)
+E) Bank wire transfer (Super Prize tier)
+F) Cashier's check (Super Prize tier)
+
+Wire and cashier's check are offered only at this award level due to the higher processing requirement. Standard winners at the $800 tier use options A–D only.
+
+I will send cashier details for your selection in this thread.
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+---
+
+## PAY DETAILS — send ONE block after they pick
+
+**Intro line (paste before any DETAILS block)**
+```
+[First Name], thank you. Here are your official payment details for option [A/B/C/D/E/F] — reference PCH-WIN-[ID]. Use exactly $[800.00 or ADMIN AMOUNT] and the memo below. Reply PAYMENT SENT with screenshot or confirmation ID when complete.
+
+Dave Sayer
+```
+
+**A — Apple Pay**
+```
+Apple Pay
+Amount: $[800.00 or ADMIN AMOUNT] USD exactly
+Send to: [PAY TO]
+Memo/note: PCH-WIN-[ID] [Last Name]
+
+Reply PAYMENT SENT on this thread with confirmation screenshot.
+```
+
+**B — Zelle**
+```
+Zelle
+Amount: $[800.00 or ADMIN AMOUNT] USD exactly
+Send to: [PAY TO]
+Memo/note: PCH-WIN-[ID] [Last Name]
+
+Reply PAYMENT SENT with Zelle confirmation screenshot or transaction ID.
+```
+
+**C — Cash App**
+```
+Cash App
+Amount: $[800.00 or ADMIN AMOUNT] USD exactly
+Send to: [PAY TO]
+Note field: PCH-WIN-[ID] [Last Name]
+
+Reply PAYMENT SENT with Cash App confirmation screenshot.
+```
+
+**D — Bank transfer (standard)**
+```
+Bank transfer (ACH / standard)
+Amount: $[800.00 or ADMIN AMOUNT] USD exactly
+[BANK DETAILS — account name, routing, account number, bank name]
+Reference/memo: PCH-WIN-[ID] [Last Name]
+
+Reply PAYMENT SENT with bank confirmation showing amount, date, and memo.
+```
+
+**E — Bank wire (2.5M only)**
+```
+Bank wire transfer — Super Prize processing only
+Amount: [ADMIN AMOUNT] USD exactly
+[WIRE DETAILS — bank name, beneficiary, account, routing/SWIFT, reference]
+Wire reference: PCH-WIN-[ID] [Last Name]
+
+Reply PAYMENT SENT with wire confirmation or bank receipt when initiated.
+```
+
+**F — Cashier's check (2.5M only)**
+```
+Cashier's check — Super Prize processing only
+Amount: [ADMIN AMOUNT] USD exactly
+Payable to: [PAYABLE TO]
+Mail to: [MAILING ADDRESS]
+Include reference slip or note: PCH-WIN-[ID] [Last Name]
+
+Reply when the check is sent or deposited with tracking or receipt photo if available.
+```
+
+**After PAY DETAILS — closing line**
+```
+Pay only on this official thread. Do not send payment to any other number, email, or person. Upon verification I will send your Secret Reference Code and delivery schedule.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**If they ask "which is fastest?"**
+```
+[First Name], most recipients on your file tier use Apple Pay or Zelle for same-day verification. Bank transfer and wire can take longer depending on your bank. Pick whichever you can complete soonest so we do not lose your delivery window — reply A, B, C, or D and I will send that cashier information.
+
+Dave Sayer
+```
+
+**If they pick two options or are unsure**
+```
+[First Name], choose one option for this payment — A, B, C, or D — and I will send only that cashier information so there is no confusion.
+
+Dave Sayer
+```
+
+**When they reply PAYMENT SENT — send hold first:**
+
+Text hold:
+```
+Thank you, [First Name]. We have received your payment notice for reference PCH-WIN-[ID]. Kindly hold on briefly while our office verifies your administrative payment. I will send your Secret Reference Code and delivery schedule on this text as soon as verification is complete.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+Email hold:
+```
+Dear [First Name],
+
+Thank you. We have received your payment notice. Kindly allow a brief moment while our office verifies your payment. I will email your Secret Reference Code and delivery schedule shortly.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Receipt unclear**
+```
+[First Name], for reference PCH-WIN-[ID], we need a clearer payment confirmation showing $800.00, date, and memo PCH-WIN-[ID]. Please reply on this thread with a screenshot or your bank confirmation ID.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+---
+
+# OBJECTION & DOUBT REPLIES (their channel only)
+
+**How to use this section**
+- Match their emotion first. Facts second. Story third. Payment step last.
+- Do not open with READY TO PROCEED WITH PAYMENT unless they are already asking *how* to pay.
+- Read between the lines — these mean they are close:
+  - "Okay", "I guess", "how do I pay", "what are my options", "send details", "I'll try", "give me a minute", "my daughter said pay", "I can borrow it"
+  - When you see that → send **Text PAY MENU / Email PAY MENU** first; after they pick A–D (or E–F on 2.5M), send **PAY DETAILS**. No need to demand the magic phrase.
+- **Already sent PAY MENU and they say scam / wrong amount:** use **Mid-payment scam stack** (3 texts) → then **Itemized $800 + encouraging close**. Do not resend full PAY MENU until they pick A–D.
+- If still cold after stack + breakdown → **Silent after payment doubts** nudge, then **Neighbor story (full)**.
+- One nudge per message. Stack only the **Mid-payment scam** sequence (separate sends, proven flow).
+
+**Closes to rotate (pick one — not all in one message)**
+- "I'm here on this thread whenever you want the next step."
+- "Reply YES when you want me to send the payment options."
+- "Tell me when you're ready and I'll send Apple Pay / Zelle steps — no rush from me, but your slot won't stay open forever."
+- "What question is holding you back right now?"
+
+---
+
+## Neighbor story — full (use when they waver, hesitate, or go quiet)
+
+```
+[First Name], I want to be honest with you because your file matters to me.
+
+A woman applied the same way you did and was selected for a major award. When she reached this exact step — administrative processing before Prize Patrol delivery — she paused. She could not bring herself to complete it, and her case file was closed.
+
+About two weeks later, a neighbor on her street completed the same processing. Prize Patrol delivered to that home within hours. When she realized what happened, she was devastated. She told our office she wished she had finished when her file was still active. Because her application was already terminated, nothing could be reopened.
+
+I do not want that to be your story. You are not being asked to buy a prize — you already have an approved award on reference PCH-WIN-[ID]. This step releases what you have already earned.
+
+Think about what [prize amount] would change for you — rent, medical bills, helping your family, breathing again without that constant weight. You applied for a reason. That reason is still valid today.
+
+I will stay with you on this thread. When you are ready, tell me and I will send your official payment options from this line only.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+---
+
+## Scam? / Is this real? / Sounds too good to be true
+
+**Reply 1 — validate** (*proven — use after PAY MENU or anytime*)
+```
+[First Name], I respect that question. If something promised [prize amount], I would ask too.
+
+What I can tell you is factual on your file: you applied at applypch.com, you have reference PCH-WIN-[ID], you completed verification and selection, and your Affidavit was approved on our official document page. I am Dave Sayer — the same coordinator assigned to you from the start — messaging you from this official PCH line.
+
+Scams usually ask for gift cards, crypto, or your login. That is not what we are doing here.
+
+What part feels wrong to you specifically — the amount, the $800, or the delivery? Tell me and I will answer it straight.
+
+Dave Sayer
+```
+
+**Reply 2 — if still unsure**
+```
+[First Name], think of it this way: a scam wants quick money with no history. Your file has a history — weeks of steps you already completed.
+
+The $800 is not to win. It is the logistics fee to release an award that is already approved — certificate, tax paperwork, Prize Patrol to your door. Real winners asked the same question before delivery. Then they met our team with their Secret Reference Code.
+
+I am not asking you to trust a random message. I am asking you to trust the file you built with your own name on it.
+
+Dave Sayer
+```
+
+---
+
+## Mid-payment scam stack (after PAY MENU — they say scam / not real)
+
+*Send as **3 separate texts** in order when they object right after payment options. Then send **Itemized $800 + encouraging close** (Step 7 section). Wait for A–D before PAY DETAILS.*
+
+**Stack 1** — same as Scam Reply 1 above.
+
+**Stack 2** — same as Scam Reply 2 above.
+
+**Stack 3** — same as **This is a scam — Reply 2 (calmer)** below.
+
+**Then → Itemized $800 + encouraging close** (do not send PAY MENU again unless they ask for options).
+
+---
+
+## $1,250,000 vs $2,500,000 — "which amount is mine? / how do I know"
+
+*Use when they confuse their award with the Super Prize tier mentioned in PAY MENU note.*
+
+```
+[First Name], good question — I should make this clear.
+
+Your approved award on file PCH-WIN-[ID] is [prize amount]. That is the amount we are processing for your delivery. It is documented on your application, selection, and affidavit — not taken from the mobile app games screen.
+
+The $2,500,000.00 figure appears only in our payment menu as an explanation: winners at that Super Prize tier use bank wire or cashier's check and pay a higher administrative amount than the standard $800.00. You are not on that tier unless your file explicitly shows $2,500,000 — yours shows [prize amount].
+
+So you are not being asked to pay for a $2.5 million prize you did not win. You are completing $800.00 processing to release the [prize amount] already approved in your name.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+---
+
+## Website says you never pay if you win / this has to be a scam
+
+**Reply 1**
+```
+[First Name], you are right to read what the website says — and I am glad you asked.
+
+applypch.com means you do not pay to apply, to be selected, or to receive the prize award itself. Your [prize amount] is already approved on PCH-WIN-[ID] with affidavit complete.
+
+The $800.00 is administrative processing under PCH Digital to release delivery — not a fee to win. The website warns against scams that demand gift cards, crypto, or instant wires before any real file. Your file has weeks of documented steps on applypch.com first.
+
+Dave Sayer
+```
+
+**Reply 2**
+```
+[First Name], a scam wants money with no history. You have verification, selection, and an approved affidavit. The $800 completes release logistics — certificate, tax paperwork, Prize Patrol. That is the split the site is protecting you to understand.
+
+Dave Sayer
+```
+
+---
+
+## This is a scam / fraud / you're lying / angry
+
+**Reply 1**
+```
+[First Name], I hear the frustration, and I am not going to argue with you. I am going to explain.
+
+Your application is on record. Your affidavit is approved. This office does not use gift cards, Bitcoin, or wire to a personal name. If anyone contacted you that way, that was not us.
+
+I work on approved files only. Yours is PCH-WIN-[ID]. You deserve a clear answer, not pressure — so ask me the one thing that made you feel this is fake, and I will respond to that only.
+
+Dave Sayer
+```
+
+**Reply 2 — calmer**
+```
+[First Name], I have seen people burned online. That is exactly why this process is documented step by step. You did not receive a random link from nowhere — you applied, you were verified, you were selected, you signed your affidavit on applypch.com.
+
+I am still here because your file is real and incomplete, not because I am trying to trick you. When the doubt clears even a little, tell me and I will walk you through the last step in plain language.
+
+Dave Sayer
+```
+
+---
+
+## Why do I have to pay? / I thought the prize was free
+
+**Reply 1**
+```
+[First Name], that is a fair question. You are right — you do not pay to apply, and you do not pay to be selected.
+
+Your [prize amount] is already approved. The $800 is separate. It covers the official case file, tax clearance paperwork, and secure Prize Patrol delivery to your address with your certificate. Without that processing, the logistics team cannot release what is already in your name.
+
+It feels unfair because the win feels like it should be the end. In large releases, this middle step is what turns an approval on paper into a check or cash at your door.
+
+Dave Sayer
+```
+
+**Reply 2 — emotional**
+```
+[First Name], nobody explained this to you at the kitchen table when you applied — I understand that. But imagine the opposite: you are approved for [prize amount], everything is ready, and the delivery team cannot leave the office because the file was never finalized. That is where you are now — not at the beginning, at the doorway.
+
+You have already done the hard part. This is the part that opens the door.
+
+Dave Sayer
+```
+
+---
+
+## I don't have $800 / fixed income / broke / elderly
+
+**Reply 1**
+```
+[First Name], thank you for telling me honestly. That matters.
+
+Many people on Social Security, disability, or a fixed pension said the exact same words to me before their delivery. They were not rich. Some borrowed from a son or daughter for one day. Some used Apple Pay from a family member's phone. The $800 was not comfortable — but [prize amount] changed the shape of their month afterward.
+
+I am not judging your situation. I am telling you what I have seen on real files. If there is any way to gather it for 24–48 hours, your approved award is still active on PCH-WIN-[ID].
+
+Could anyone in your family help you complete this one step? Sometimes that is the difference.
+
+Dave Sayer
+```
+
+**Reply 2 — fixed income letter (long)**
+```
+[First Name], I want to speak to you respectfully.
+
+A fixed income does not mean you do not deserve relief. It often means you need it more than anyone. The recipients who hesitate here are usually the ones carrying rent, medicine, and groceries on the same small check every month.
+
+The $800 is not PCH charging you to win. Your win is already on file. This is the release cost — and after verified processing, delivery is targeted within about 12 hours.
+
+Picture one month from now: still juggling the same bills, or standing with a Prize Patrol delivery at your address for [prize amount]. I know which future most people hoped for when they first applied.
+
+I will not rush you disrespectfully. But I will be honest — waiting too long has cost other people their slot. If you can find a way, even once, tell me and I will make the payment steps as simple as possible on this thread.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+---
+
+## I need to think / talk to my wife, husband, son, lawyer
+
+**Reply 1**
+```
+[First Name], you should talk to someone you trust. A real decision deserves that.
+
+If it helps, you can show them this: reference PCH-WIN-[ID], applypch.com application, affidavit approved, $800 for delivery processing only — not an entry fee. Official contact is only this thread and support@applypch.com.
+
+When you have their input, come back here. I will answer any question they would ask me too.
+
+Dave Sayer
+```
+
+**Reply 2 — spouse angle**
+```
+[First Name], when you speak with your [wife/husband], ask them: "If I already won [prize amount] on paper, does it make sense to stop at the delivery step?" Most families say no — they say find a way.
+
+You are not being foolish. You are being careful. There is a difference.
+
+Dave Sayer
+```
+
+---
+
+## Send proof / want documents / lawyer asked
+
+```
+[First Name], absolutely. Here is what I can point to on your file right now:
+
+• Application at applypch.com
+• Reference PCH-WIN-[ID]
+• Verification and selection completed
+• Affidavit of Eligibility submitted and approved on our site
+
+I can resend your Prize File Summary on this thread. The $800 receipt, when you complete processing, generates your Secret Reference Code for delivery — that is your handoff protection with Prize Patrol.
+
+Tell me what document or detail would help you feel steady, and I will provide what this channel allows.
+
+Dave Sayer
+```
+
+---
+
+## Will I actually get the money? / what if you disappear
+
+**Reply 1**
+```
+[First Name], that is the heart of it, isn't it.
+
+Your prize is not a promise in a random inbox — it is an approved file with affidavit complete. The $800 does not buy the award. It schedules Prize Patrol to your confirmed address with a bankable check or cash per your selection, plus your certificate.
+
+After verified processing, you receive a Secret Reference Code on this thread. Our team asks for that code at delivery — only you and Prize Patrol have it. That is how you know the handoff is real.
+
+I stay on this file until delivery is done. You are not alone in it.
+
+Dave Sayer
+```
+
+**Reply 2**
+```
+[First Name], think about how far you already came. Scammers do not keep you for weeks through verification, selection, and a signed affidavit. They ask for iTunes cards in ten minutes.
+
+You are at the release stage. I know that is scary. It is also what happens when something real is finally close.
+
+Dave Sayer
+```
+
+---
+
+## Can I pay less? / $200? / discount?
+
+```
+[First Name], I wish I could adjust it for you. For this award tier the administrative amount is fixed at $800 — case certification, tax paperwork, and secure delivery on a [prize amount] release.
+
+What I can do is make payment as easy as possible: Apple Pay, Zelle, or Cash App — whichever is fastest for you. The processing fee is small next to what you are releasing.
+
+If you are trying to find a way to make it work, tell me and we will look at the fastest option together.
+
+Dave Sayer
+```
+
+---
+
+## I'll pay later / next week / when I get paid
+
+**Reply 1**
+```
+[First Name], I understand waiting for payday. I also have to be honest — delivery scheduling on approved files does not always wait. I have seen people plan to pay Friday and lose the slot by Wednesday.
+
+If there is any way to move sooner — borrow, Apple Pay from family, split between two people — your file PCH-WIN-[ID] is ready now. What day were you thinking, and is there any chance to move earlier?
+
+Dave Sayer
+```
+
+**Reply 2**
+```
+[First Name], when you say "later," I hear someone who wants this but is scared. That is human. Just do not let "later" become "never." The neighbor story I mentioned happens on "later."
+
+Dave Sayer
+```
+
+---
+
+## I already paid someone / wrong number / sent to wrong person
+
+```
+[First Name], I am sorry if that happened — that would shake anyone.
+
+Please hear me: your release for PCH-WIN-[ID] processes only through this official thread (+1 917-743-0256) or support@applypch.com. If money went elsewhere, it did not go to our processing office and your file here is still open.
+
+Do not pay twice out of fear. Come back to this thread only. I will send the correct steps when you are ready.
+
+Dave Sayer
+```
+
+---
+
+## Gift cards / Bitcoin / wire to personal account?
+
+```
+[First Name], then you are right to be suspicious — because that would be a scam.
+
+We do not use gift cards, crypto, or personal wires. Official methods are Apple Pay, Zelle, Cash App, or bank transfer with memo PCH-WIN-[ID]. That is one way you know this office is legitimate.
+
+Dave Sayer
+```
+
+---
+
+## How do I pay? / Apple Pay? / what's fastest?  → SEND PAY MENU (they are ready)
+
+```
+[First Name], thank you — I will send your payment method options now. Reply with the letter that is most convenient for you (Apple Pay, Zelle, Cash App, or bank transfer), and I will send the official cashier information for that option only.
+
+[Send Text PAY MENU or Email PAY MENU — no need to ask for READY again]
+
+Dave Sayer
+```
+
+---
+
+## They said yes / okay / I'll try / send info — ready without magic words
+
+```
+[First Name], thank you. I appreciate you staying with the process. I am sending your payment method options on this thread — pick the one that is fastest for you, reply with the letter, and I will send the exact cashier details for that option.
+
+[Send Text PAY MENU or Email PAY MENU]
+
+Dave Sayer
+```
+
+---
+
+## Gone quiet / read but no reply (24–48 hrs)
+
+**Nudge 1 — soft**
+```
+[First Name], just checking in on your file PCH-WIN-[ID]. No pressure from me — I want you to know your award is still showing approved on my side. If something is worrying you, reply with one sentence and I will answer it.
+
+Dave Sayer
+```
+
+**Silent after PAY MENU + scam stack + breakdown** (*no reply since itemized close — use first*)
+```
+[First Name], I have not heard back since I sent your processing breakdown for PCH-WIN-[ID]. Your [prize amount] file is still active on my side. If the scam concern is what stopped you, reply with the one thing that still feels wrong — the amount, the $800, or tomorrow's delivery — and I will answer only that.
+
+If you are ready to move forward, reply A, B, C, or D and I will send cashier information for that option today.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Nudge 2 — story**
+```
+[First Name], I have been thinking about your file. I do not want you to be the person who looks out the window while a neighbor receives delivery. If you want to talk it through, I am here.
+
+Dave Sayer
+```
+
+**Nudge 3 — direct but human**
+```
+[First Name], your delivery window on PCH-WIN-[ID] will not stay open indefinitely. If you still want [prize amount], tell me today and I will send payment steps. If something specific is stopping you, tell me that instead — I will address that one thing only.
+
+Dave Sayer
+```
+
+---
+
+## Angry / stop texting / leave me alone
+
+**Reply 1 — de-escalate**
+```
+[First Name], I am sorry this feels like too much. That is not my intention. You have an approved award — I am trying to help you receive it, not harass you.
+
+I will give you space. When you want to continue, this thread is your official file. If you want one clear answer before you go quiet, ask it and I will send one message back.
+
+Dave Sayer
+```
+
+**Reply 2 — later if they reply**
+```
+[First Name], thank you for coming back. Your file is still here. We can take this one step at a time.
+
+Dave Sayer
+```
+
+---
+
+## Objection index
+
+| They say | Start with |
+|----------|------------|
+| Scam? / real? | Scam — Reply 1 |
+| Scam right after PAY MENU | Mid-payment scam stack → Itemized + close |
+| $1.25M vs $2.5M confusion | $1,250,000 vs $2,500,000 |
+| Website says never pay | Website says never pay |
+| Fraud / lying | This is a scam — Reply 1 |
+| Silent after breakdown | Silent after PAY MENU + breakdown |
+| Why $800? | Why pay — Reply 1 |
+| No money / SS / pension | Can't afford — Reply 1 or fixed income letter |
+| Ask spouse | Need to think |
+| Proof | Send proof |
+| Will I get paid? | Will I actually get |
+| Pay less | Pay less |
+| Later | Pay later |
+| Paid wrong place | Paid someone else |
+| Gift cards | Gift cards |
+| How to pay? | PAY MENU |
+| Said yes to pay | PAY MENU (bridge optional) |
+| Okay / yes / send details | They said yes |
+| Silent | Gone quiet |
+| Angry | Angry |
+| Still wavering | Neighbor story — full |
+
+---
+
+# DELIVERY — after payment verified
+
+---
+
+## STEP 8 — Payment confirmed
+
+**Then send Text 8**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
+
+We have received and verified your administrative payment for reference PCH-WIN-[ID]. Your delivery is SCHEDULED.
+
+Secret Reference Code: [CODE]
+(Give this code only to Prize Patrol at delivery — do not share with anyone else.)
+
+Delivery method: [Check / Cash — Prize Patrol]
+Expected arrival: [date/time window]
+
+Your Prize Approval Certificate is being finalized. Please reply on this text with any questions before delivery.
+
+Dave Sayer
+```
+
+**Then send Email 8** — Subject: Payment Confirmed — Delivery Scheduled
+
+```
 Dear [First Name],
 
 We have received and verified your administrative payment for reference PCH-WIN-[ID].
 
-Secret Reference Code: [CODE]  
-Delivery status: Scheduled  
-Method: [Check / Cash — Prize Patrol]  
+Secret Reference Code: [CODE]
+Delivery status: Scheduled
+Method: [Check / Cash — Prize Patrol]
 Expected arrival: [date/time window]
 
-Important: When our team arrives (or when your secured package is delivered), they will ask for your Secret Reference Code. Do not share this code with anyone else.
+Please provide your Secret Reference Code only to Prize Patrol at delivery. Do not share it with anyone else.
 
-Your Prize Approval Certificate and related documents are being finalized now.
-
-If you have questions before delivery, reply on the same channel you used to pay (email or text).
-
-Publishers Clearing House  
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 8-1 (send with Email 8)
-
-```
-Publishers Clearing House — Payment Confirmed
-Ref PCH-WIN-[ID]
-
-Hi [First Name], we have received and verified your administrative payment for reference PCH-WIN-[ID].
-
-Delivery status: SCHEDULED
-Method: [Check by mail / Cash delivery — Prize Patrol]
-Expected arrival: [date/time window]
 ```
 
-### Text 8-2 (send 1 min after Text 8-1)
-
+**In transit** (optional)
 ```
-Your Secret Reference Code is: [CODE]
+[First Name], update for PCH-WIN-[ID]: your package is in transit. Prize Patrol route is confirmed. Please keep your Secret Reference Code ready. Expected arrival: [window].
 
-When our Prize Patrol team arrives (or when your secured package is delivered), they will ask for this code to confirm you are the approved recipient before funds are released.
+Dave Sayer
+```
 
-Do NOT share this code with anyone else — not family, not friends, not anyone claiming to be from PCH on another number.
+**Day of delivery** (optional)
+```
+[First Name], today is your scheduled delivery window for PCH-WIN-[ID]. Please have Secret Reference Code [CODE] ready for Prize Patrol. Method: [Check/Cash]. I am monitoring your file.
 
-Your Prize Approval Certificate and related documents are being finalized now. Questions before delivery? Reply to this text.
-
-Ref PCH-WIN-[ID]
+Dave Sayer
 ```
 
 ---
 
-## Email 9 — Delivery complete / payments begin
+## STEP 9 — Delivered
 
-Subject: Your PCH Prize Has Been Delivered / Payment Active
+**Then send Text 9**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
+Your prize for reference PCH-WIN-[ID] has been DELIVERED on [date].
+
+Delivery type: [Check deposited / Cash / First payment]
+Next step (if applicable): [next payment date]
+
+Please keep your Secret Reference Code and certificate in a safe place. If you have any issue within 24 hours, reply on this text with your reference number.
+
+Congratulations,
+Dave Sayer
+Publishers Clearing House
+```
+
+**Then send Email 9** — Subject: Your PCH Prize Has Been Delivered
+
+```
 Dear [First Name],
 
 Your prize for reference PCH-WIN-[ID] has been delivered on [date].
 
-Delivery type: [Check deposited / Cash delivered / First weekly payment]  
-Next step (if weekly/For Life): [next payment date]
+Delivery type: [type]
+Next step: [if applicable]
 
-Keep your Secret Reference Code and certificate in a safe place.
+Please keep your Secret Reference Code and certificate safe.
 
-For any issue within 24 hours of delivery, reply with your reference number on email or text.
-
-Congratulations,  
-Publishers Clearing House  
+Congratulations,
+Dave Sayer
+PCH Application Coordinator
 support@applypch.com
-
-### Text 9-1 (send with Email 9)
-
-```
-Publishers Clearing House — Prize Delivered
-Ref PCH-WIN-[ID]
-
-Hi [First Name], your prize for reference PCH-WIN-[ID] has been DELIVERED on [date].
-
-Delivery type: [Check deposited / Cash delivered / First weekly payment]
-Next step (if weekly/For Life): [next payment date]
 ```
 
-### Text 9-2 (send 1 min after Text 9-1)
-
+**Post-delivery** (optional, +24 hrs)
 ```
-Keep your Secret Reference Code and Prize Approval Certificate in a safe place.
+[First Name], this is Dave Sayer following up on your delivery for PCH-WIN-[ID]. Please reply if you need assistance within the next few hours. Congratulations again.
 
-If you have any issue within 24 hours of delivery, reply to this text with your reference number PCH-WIN-[ID] and describe the issue.
-
-Congratulations on your prize.
-Publishers Clearing House
+Dave Sayer
 ```
 
 ---
 
-# Optional reply templates
-
-Use the same channel they wrote on. If they texted, reply by text; if they emailed, reply by email.
-
----
-
-## If they ask: “Is this a scam?”
-
-Email subject: Re: Your PCH Prize — Official Processing
-
-Dear [First Name],
-
-We understand your concern. Many winners ask the same question before their delivery is completed.
-
-You applied at applypch.com, received official emails from support@applypch.com, completed verification, were issued a selection notice, and submitted your Affidavit of Eligibility on our website. That is the same process used for documented PCH prize releases.
-
-The administrative fees are not PCH entry fees. They cover third-party case processing and secure Prize Patrol delivery. PCH does not charge you to apply or to win.
-
-You will only receive official payment instructions from support@applypch.com (email) or +1 (917) 743-0256 (text) after you reply READY TO PROCEED WITH PAYMENT — on the same channel you use to reply.
-
-If you are uncomfortable proceeding, you may decline. If you wish to continue, reply READY TO PROCEED WITH PAYMENT and we will send verified payment options by email or text.
-
-Publishers Clearing House  
-support@applypch.com
-
-### Text — “Is this a scam?” (2 parts)
-
-Text scam-Q-1:```
-We understand your concern — many winners ask before delivery is completed.
-
-Your file: you applied at applypch.com, received messages from support@applypch.com and this number (+1 917-743-0256), completed verification, received selection notice PCH-WIN-[ID], and submitted your Affidavit of Eligibility on our website. That matches documented PCH prize release processing.
-```
-
-Text scam-Q-2:```
-The $800 administrative amount is NOT a fee to enter or win. It covers third-party case processing and secure Prize Patrol delivery only.
-
-We do not ask for passwords, gift cards, or wires to random accounts. Official payment instructions come ONLY from support@applypch.com (email) or +1 917-743-0256 (text) after you reply READY TO PROCEED WITH PAYMENT.
-
-Uncomfortable? Reply DECLINE to close your file. To continue, reply READY TO PROCEED WITH PAYMENT — we will send payment steps by text or email.
-```
-
----
-
-## If they SAY: “This is a scam” (accusation, not a question)
-
-Email subject: Re: PCH-WIN-[ID]
-
-Dear [First Name],
-
-We understand why this can feel that way. Being careful is the right instinct.
-
-Common scams: random contact, personal Gmail/Yahoo only, gift cards/crypto/wires to strangers, no reference tied to your application.
-
-Your file: application at applypch.com, messages from support@applypch.com + +1 (917) 743-0256, ref PCH-WIN-[ID], affidavit approved on our site before the $800 delivery processing was discussed.
-
-The $800 is not to win or enter — it is third-party case processing and Prize Patrol delivery on an already approved award.
-
-Reply DECLINE to close your file, or READY TO PROCEED WITH PAYMENT to continue (payment options by email or text on the channel you use).
-
-Publishers Clearing House  
-support@applypch.com
-
-### Text — “This is a scam” (2 parts)
-
-Text scam-A-1:```
-We hear you — being careful is the right instinct. Fake prize scams are common.
-
-Common scams: contact you with no application on record, use random personal emails only, demand gift cards/crypto/wires to strangers, pressure you in minutes, never give a real reference tied to your application.
-```
-
-Text scam-A-2:```
-Your file: application at applypch.com, official contact from support@applypch.com and +1 917-743-0256, reference PCH-WIN-[ID], affidavit approved on our site BEFORE the $800 delivery processing was discussed.
-
-$800 is NOT to win or enter — it is third-party processing and Prize Patrol delivery on an already approved award. We do not ask for gift cards or payment to random accounts.
-
-Reply DECLINE to close your file. Reply READY TO PROCEED WITH PAYMENT to continue (payment options by text or email — same channel you reply on).
-```
-
----
-
-## If they ask: “Why do I have to pay?”
-
-Email subject: Re: Administrative Processing Fees
-
-Dear [First Name],
-
-You do not pay to apply and you do not pay to be selected. Your prize award is separate from processing costs.
-
-Prize releases require case file preparation and secure Prize Patrol delivery (logistics, ID verification at handoff, bankable instrument preparation).
-
-The $800 covers those mandatory third-party administrative and delivery services, not the prize itself.
-
-Once verified, your file is finalized and delivery is scheduled.
-
-To receive official payment options, reply: READY TO PROCEED WITH PAYMENT
-Publishers Clearing House  
-support@applypch.com
-
-### Text — “Why pay?” (2 parts)
-
-Text why-pay-1:```
-You do NOT pay to apply and you do NOT pay to be selected. Your prize award is separate from processing costs.
-
-Large prize releases require case file preparation and certification, plus secure Prize Patrol delivery (logistics, identity verification at handoff, and bankable check or cash preparation).
-```
-
-Text why-pay-2:```
-The $800.00 covers mandatory third-party administrative and delivery services — NOT the prize itself. Once verified, your file is finalized and delivery is scheduled. Without it, your award cannot be released to the delivery team.
-
-To receive official payment options, reply: READY TO PROCEED WITH PAYMENT
-
-We will send full payment steps by text (this number) or email (support@applypch.com) — you can pay without using email. Ref PCH-WIN-[ID]
-```
-
----
-
-## Email 7 follow-up #1 (gentle reminder)
-
-Subject: Reminder — Your PCH Delivery Is Pending
-
-Dear [First Name],
-
-Your prize file for PCH-WIN-[ID] is approved and waiting. The only remaining step is administrative processing so we can schedule your [check / cash] delivery.
-
-Reply READY TO PROCEED WITH PAYMENT within 12 hours (email or text) and we will send payment options immediately.
-
-If we do not hear from you, your file may be placed on hold.
-
-Publishers Clearing House  
-support@applypch.com
-
-### Text 7 follow-up #1 (2 parts)
-
-Text 7-R1-1:```
-Publishers Clearing House — Reminder
-Ref PCH-WIN-[ID]
-
-Hi [First Name], your prize file is APPROVED and waiting. The only remaining step is administrative processing ($800 — third-party case file and secure [check/cash] Prize Patrol delivery) so we can schedule your delivery.
-```
-
-Text 7-R1-2:```
-If you still want to receive your prize, reply to this text within 12 hours with: READY TO PROCEED WITH PAYMENT
-
-We will then send your official payment options on this text thread (full $800 payment instructions — no email required).
-
-If we do not hear from you, your file may be placed on hold. Ref PCH-WIN-[ID]
-```
-
----
-
-## Email 7 follow-up #2 (final notice)
-
-Subject: Final Notice — PCH Delivery Window Closing
-
-Dear [First Name],
-
-This is a final notice for reference PCH-WIN-[ID].
-
-Your delivery slot is reserved for a limited time. After that, we must release the slot to the waiting list.
-
-To keep your prize active, reply today with READY TO PROCEED WITH PAYMENT on email or text.
-
-Publishers Clearing House  
-support@applypch.com
-
-### Text 7 follow-up #2 (2 parts)
-
-Text 7-R2-1:```
-Publishers Clearing House — FINAL NOTICE
-Ref PCH-WIN-[ID]
-
-Hi [First Name], this is a final notice for your prize file. Your delivery slot is reserved for a limited time only.
-```
-
-Text 7-R2-2:```
-After that, we must release your slot to the waiting list.
-
-To keep your prize active, reply to this text TODAY with: READY TO PROCEED WITH PAYMENT
-
-We can answer any question before you proceed — reply here. Ref PCH-WIN-[ID]
-```
-
----
-
-## After they reply READY TO PROCEED WITH PAYMENT
-
-Use the payment channel rule above. Fill in `[PAYMENT METHOD]`, `[PAY TO]`, and `[MEMO/NOTE]` with your real details before sending.
-
----
-
-### Email PAY — Payment options (if they replied on email or you send both)
-
-Subject: PCH-WIN-[ID] — Official Payment Instructions ($800 Administrative Processing)
-
-Dear [First Name],
-
-Thank you for confirming READY TO PROCEED WITH PAYMENT for reference PCH-WIN-[ID].
-
-Amount due: $800.00 USD (administrative processing and secure Prize Patrol delivery — not your prize amount)
-
-Official payment method: [Zelle / Cash App / Bank transfer / other — your choice]
-
-Pay to: [name or handle]  
-Details: [email / phone / account / routing — as applicable]  
-Required memo / note on payment: PCH-WIN-[ID] and [Last Name]
-
-Steps:1. Send exactly $800.00 USD using the method above.  
-2. Use the required memo so we can match your payment to your file.  
-3. Reply to this email with PAYMENT SENT and attach your receipt or screenshot, or include the confirmation / transaction ID.
-
-Once we verify your payment, we will email your Secret Reference Code and schedule delivery (Email 8).
-
-Do not pay anyone who contacts you from another email address, another phone number, or asks for gift cards, crypto, or cash by mail.
-
-Publishers Clearing House  
-support@applypch.com
-
----
-
-### Text PAY — Full payment by text (if they replied on text or text-only)
-
-Send all parts in order. Replace bracketed fields with your real payment details.
-
-Text PAY-1:```
-Publishers Clearing House — Official Payment Instructions
-Ref PCH-WIN-[ID]
-
-Hi [First Name], we received your reply READY TO PROCEED WITH PAYMENT.
-
-Amount due: $800.00 USD
-
-This is for administrative case processing and secure Prize Patrol delivery only — NOT your prize amount. Your prize remains separate and approved.
-```
-
-Text PAY-2:```
-OFFICIAL PAYMENT METHOD (use only these instructions from this number +1 917-743-0256):
-
-Method: [Zelle / Cash App / Bank transfer / etc.]
-Send to: [PAY TO — name, handle, email, or phone]
-Amount: $800.00 USD exactly
-
-Required note/memo on your payment: PCH-WIN-[ID] [Last Name]
-
-Example: When sending, put PCH-WIN-[ID] in the memo line so we can verify your file.
-```
-
-Text PAY-3:```
-STEPS:
-1. Open your [bank app / Zelle / Cash App / etc.]
-2. Send $800.00 to the Pay To details above
-3. Include memo: PCH-WIN-[ID] [Last Name]
-4. When done, reply to THIS text with:
-
-PAYMENT SENT
-
-Plus your confirmation number or a screenshot of the completed payment (photo in text message is fine).
-```
-
-Text PAY-4:```
-SECURITY:
-- Pay ONLY using the instructions in this text thread from +1 917-743-0256
-- Do NOT pay a different number, personal Venmo, gift cards, crypto, or wire to a stranger
-- PCH will never ask you to buy gift cards
-
-After we verify payment (usually within a few hours), we will text you your Secret Reference Code and delivery schedule (same as Email 8).
-
-Questions before paying? Reply here. Ref PCH-WIN-[ID]
-```
-
----
-
-### After they text PAYMENT SENT (verify, then send Email 8 / Text 8)
-
-Text PAY-VERIFY-1 (while reviewing):
-```
-Thank you — we received your payment notice for PCH-WIN-[ID]. Our office is verifying your $800 administrative payment now. You will receive your Secret Reference Code and delivery schedule on this text thread once verified. Do not share any code with anyone until we send it. Ref PCH-WIN-[ID]
-```
-
-Then send Text 8-1 and Text 8-2 (or Email 8) with Secret Reference Code.
-
-Text PAY-NEED-INFO (if receipt unclear):
-```
-PCH-WIN-[ID]: We need a clearer payment confirmation to verify your file. Please reply with a screenshot showing: amount $800, date, and memo PCH-WIN-[ID]. Or send the transaction/confirmation ID from your bank app. Reply to this number only.
-```
-
----
-
-### Text-only applicants (no email on file)
-
-1. Skip all emails — use Text 1 through Text 9 only.  
-2. After READY, send Text PAY-1 through Text PAY-4 — never say “check your email.”  
-3. After payment verified, send Text 8 and Text 9 on the same thread.  
-4. If they ask for email, offer to add one optional — but do not require it to finish.
-
----
-
-# Personal / friend texts (optional — not from +1 917 number)
-
-Use only if you are a friend who referred them — not as official PCH. Official steps always come from support@applypch.com and +1 (917) 743-0256.
-
-After Email 7 sent:
-> Hey — did you get the PCH email and text? Reply READY TO PROCEED WITH PAYMENT on whichever you use. Check spam too.
-
-If they say scam:
-> I asked the same. Everything official comes from support@applypch.com and that 917 number. Only pay when THEY send options on text or email — nothing else.
-
-If they hesitate:
-> Your file's already approved. The $800 is delivery processing. Once it's paid they schedule within 12 hours. Don't let the slot expire.
-
-After they pay:
-> Watch for your Secret Reference Code — email and text. Only give it to the delivery team.
-
----
-
-# Flow at a glance
-
-| Step | Email | Text parts to send | They reply with |
-|------|-------|------------------|-----------------|
-| 1 | Application received | Text 1-1, 1-2 | — |
-| 2 | Verification stage | Text 2-1, 2-2 | CONFIRM |
-| 3 | Identity questions | Text 3-1, 3-2 | All 5 items |
-| 4 | Profile questions | Text 4-1, 4-2 | All 8 items |
-| 5 | Selection | Text 5-1, 5-2 | ACCEPT + CHECK/CASH |
-| 6 | Affidavit link | Text 6-1, 6-2 | AFFIDAVIT SUBMITTED |
-| 7 | Fees + delivery | Text 7-1 through 7-6 | Name, address, CHECK/CASH, READY |
-| PAY | Payment instructions | Text PAY-1–4 or Email PAY | PAYMENT SENT + proof |
-| 8 | Secret code + schedule | Text 8-1, 8-2 | — |
-| 9 | Delivered | Text 9-1, 9-2 | — |
-
-Channel rule: First reply on email or text wins — stay on that channel unless they go silent 24+ hours.
-
----
-
-# Checklist before each send
-
-- [ ] Reference number on both email and text  
-- [ ] Correct name and prize tier  
-- [ ] Email 7: fix “within 12 hours” (not “Your within”)  
-- [ ] Payment sent on same channel they used for READY (text → Text PAY-1–4; email → Email PAY)  
-- [ ] Text-only files: no “check your email” — full pay + confirm by text  
-- [ ] `[PAY TO]` and memo PCH-WIN-[ID] filled in before sending payment texts  
-- [ ] Text only from +1 (917) 743-0256- [ ] Send all text parts for that step (not just the first one)
-- [ ] Text alone contains enough detail if they never open email
+## Objection index
+
+| They say | Section |
+|----------|---------|
+| Scam / fake | Scam? |
+| Fraud | This is a scam |
+| Why pay | Why pay? |
+| No money | Can't afford |
+| Think / lawyer | Need to think |
+| Proof | Send proof |
+| Call | Call me |
+| Will I get paid | Will I receive |
+| Pay less | Pay less? |
+| Later | Pay later |
+| Paid elsewhere | Paid someone |
+| Gift card/crypto | Gift cards |
+| Apple Pay | Apple Pay |
+| Wavering | Neighbor / Long persuasion |

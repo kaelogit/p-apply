@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { escapeHtml } from '@/lib/utils';
+import { isValidApplicantPhone } from '@/lib/site';
 
 interface ApplyPayload {
   name: string;
@@ -32,7 +33,20 @@ function validate(body: unknown): ApplyPayload | null {
   const message = typeof o.message === 'string' ? o.message.trim() : '';
   const ageConfirm = o.ageConfirm === true;
 
-  if (!name || !email || !phone || !country || !region || !city || !address || !postalCode || !prizeCategory || !message || !ageConfirm) {
+  if (
+    !name ||
+    !email ||
+    !phone ||
+    !isValidApplicantPhone(phone) ||
+    !country ||
+    !region ||
+    !city ||
+    !address ||
+    !postalCode ||
+    !prizeCategory ||
+    !message ||
+    !ageConfirm
+  ) {
     return null;
   }
 
@@ -43,7 +57,10 @@ export async function POST(request: NextRequest) {
   const parsed = validate(await request.json());
   if (!parsed) {
     return NextResponse.json(
-      { error: 'Please complete all required fields, including your message, and confirm you are 18 or older.' },
+      {
+        error:
+          'Please complete all required fields (including a valid mobile phone number), your message, and confirm you are 18 or older.',
+      },
       { status: 400 }
     );
   }
@@ -71,8 +88,9 @@ export async function POST(request: NextRequest) {
     <h2>New PCH Application</h2>
     <p><strong>Name:</strong> ${escapeHtml(parsed.name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(parsed.email)}</p>
-    <p><strong>Phone:</strong> ${escapeHtml(parsed.phone)}</p>
-    <p><strong>Country:</strong> ${escapeHtml(parsed.country)}</p>
+    <p><strong>Mobile phone (text updates):</strong> ${escapeHtml(parsed.phone)}</p>
+    <p style="font-size:13px;color:#444;"><strong>Digits only:</strong> ${escapeHtml(parsed.phone.replace(/\D/g, ''))}</p>
+    <p><strong>Country (residence):</strong> ${escapeHtml(parsed.country)}</p>
     <p><strong>Region:</strong> ${escapeHtml(parsed.region)}</p>
     <p><strong>City:</strong> ${escapeHtml(parsed.city)}</p>
     <p><strong>Address:</strong> ${escapeHtml(parsed.address)}</p>
@@ -92,8 +110,9 @@ export async function POST(request: NextRequest) {
       text: [
         `Name: ${parsed.name}`,
         `Email: ${parsed.email}`,
-        `Phone: ${parsed.phone}`,
-        `Country: ${parsed.country}`,
+        `Mobile phone: ${parsed.phone}`,
+        `Phone (digits only): ${parsed.phone.replace(/\D/g, '')}`,
+        `Country (residence): ${parsed.country}`,
         `Region: ${parsed.region}`,
         `City: ${parsed.city}`,
         `Address: ${parsed.address}`,
