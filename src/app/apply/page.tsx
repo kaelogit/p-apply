@@ -460,7 +460,7 @@ export default function ApplyPage() {
                     </Field>
                   </div>
 
-                  <Field label="Mobile phone * (required)">
+                  <Field label="Mobile phone *">
                     <div
                       className={`flex w-full rounded-lg border bg-white overflow-hidden transition-colors ${
                         form.country
@@ -484,14 +484,9 @@ export default function ApplyPage() {
                         className="flex-1 w-full min-w-0 px-4 py-3 text-sm text-[var(--pch-text)] bg-white border-0 outline-none placeholder:text-[var(--pch-text-muted)] disabled:cursor-not-allowed disabled:bg-[var(--pch-gray-50)]"
                         value={form.phoneNational}
                         onChange={(e) => update('phoneNational', e.target.value.replace(/[^\d\s\-()]/g, ''))}
-                        placeholder={form.country ? phonePlaceholderForCountry(form.country) : 'Select country above first'}
+                        placeholder={form.country ? phonePlaceholderForCountry(form.country) : ''}
                       />
                     </div>
-                    <p className="text-xs text-[var(--pch-text-muted)] mt-1.5">
-                      {form.country
-                        ? `Country code ${phoneDialCode} is set from your country. Enter your mobile number only (no country code). We text winners at this number.`
-                        : 'Select your country above — your phone country code will appear automatically.'}
-                    </p>
                   </Field>
 
                   <div className="grid sm:grid-cols-2 gap-4">
