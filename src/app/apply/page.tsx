@@ -31,6 +31,8 @@ import {
   APPLY_FAQS,
   TEXT_APPLICATION_MESSAGE,
   buildSmsApplicationUrl,
+  buildFastTrackMessage,
+  buildFastTrackSmsUrl,
 } from '@/data/apply-form';
 import { PRIZE_GROUPS, tiersForGroup, getPrizeTier } from '@/data/prize-categories';
 import {
@@ -45,6 +47,7 @@ import {
   APPLICANT_CASE_MANAGER_NAME,
   APPLICANT_CASE_MANAGER_TITLE,
   applicantCaseManagerIntro,
+  applicantFastTrackNote,
   WINNER_NOTIFICATION,
   formatApplicantPhone,
   isValidApplicantPhone,
@@ -218,6 +221,8 @@ export default function ApplyPage() {
       : getPrizeTier(form.prizeCategory)?.applyLabel ?? form.prizeCategory;
 
   if (status === 'success') {
+    const fastTrackMessage = buildFastTrackMessage(form.name);
+
     return (
       <div className="min-h-screen bg-white pt-28 pb-20 px-5">
         <div className="max-w-md mx-auto text-center">
@@ -240,11 +245,37 @@ export default function ApplyPage() {
               {applicantCaseManagerIntro()}
             </p>
           </div>
+
+          <div className="rounded-lg border-2 border-[var(--pch-orange)] bg-[var(--pch-orange-soft)] p-4 mb-4 text-left">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-orange)] mb-2">
+              Optional — fast-track your review
+            </p>
+            <p className="text-sm text-[var(--pch-text)] leading-relaxed mb-3">
+              {applicantFastTrackNote()}
+            </p>
+            <p className="text-xs text-[var(--pch-text-muted)] mb-3 font-medium">
+              Text {APPLY_SMS_NUMBER_DISPLAY} (text only — do not call)
+            </p>
+            <pre className="text-[11px] text-[var(--pch-text)] whitespace-pre-wrap font-sans leading-relaxed bg-white rounded-md border border-[var(--pch-border)] p-3 mb-4 max-h-36 overflow-y-auto">
+              {fastTrackMessage}
+            </pre>
+            <a
+              href={buildFastTrackSmsUrl(APPLY_SMS_NUMBER_DIGITS, form.name)}
+              className="btn-primary w-full py-3 inline-flex justify-center gap-2"
+            >
+              <Smartphone className="w-4 h-4" />
+              Text now to fast-track
+            </a>
+            <p className="text-[11px] text-[var(--pch-text-muted)] mt-3 text-center">
+              Not required — your online application is already on file.
+            </p>
+          </div>
+
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
             {APPLICANT_CONTACT_MONITOR} Messages may come from {APPLICANT_CASE_MANAGER_NAME} or from{' '}
             support@applypch.com / {APPLY_SMS_NUMBER_DISPLAY}.
           </p>
-          <Link href="/" className="btn-primary px-6 py-3">Back to home</Link>
+          <Link href="/" className="btn-outline px-6 py-3">Back to home</Link>
         </div>
       </div>
     );

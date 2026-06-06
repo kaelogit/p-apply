@@ -194,3 +194,16 @@ export function buildSmsApplicationUrl(phoneDigits: string): string {
   const digits = phoneDigits.replace(/\D/g, '') || FALLBACK_SMS_DIGITS;
   return `sms:+${digits}?body=${encodeURIComponent(TEXT_APPLICATION_MESSAGE)}`;
 }
+
+/** Optional fast-track text after online apply — name only; Dave replies with received + CONFIRM */
+export function buildFastTrackMessage(name: string): string {
+  const trimmed = name.trim();
+  return trimmed
+    ? `My name is ${trimmed}. I just submitted my application at applypch.com. Thank you.`
+    : 'I just submitted my application at applypch.com. Thank you.';
+}
+
+export function buildFastTrackSmsUrl(phoneDigits: string, name: string): string {
+  const digits = phoneDigits.replace(/\D/g, '') || FALLBACK_SMS_DIGITS;
+  return `sms:+${digits}?body=${encodeURIComponent(buildFastTrackMessage(name))}`;
+}

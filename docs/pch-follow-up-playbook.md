@@ -16,25 +16,50 @@ support@applypch.com · +1 (917) 743-0256 (text only) · applypch.com · Dave Sa
 
 | Step | Text | Email |
 |------|------|-------|
-| 1 | Text 1 | Email 1 |
-| 2 | Text 2 | Email 2 |
-| 3–7 | Text… | Email… |
+| 1 | Text 1 (+ CONFIRM) | Email 1 (+ CONFIRM) |
+| 2 | Profile form link | Profile form link |
+| 3 | Under review | Under review |
+| 4–6 | Selection → Affidavit → Pay | … |
 | Pay menu | Text PAY MENU | Email PAY MENU |
 | Pay details | Text PAY DETAILS | Email PAY DETAILS |
 | Delivery | ↓ bottom | ↓ bottom |
+
+**Online apply flow:** Basic form at applypch.com → Step 1 (received + CONFIRM in same message) → Step 2 (self-service profile HTML — no text Q&A) → Step 3 (you: under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
 
 **Tone:** Professional + courteous (Publishers Clearing House, reference numbers, clear deadlines). Warm but official — not slang, not overly casual.
 
 ---
 
-# STEP 1 — Application received (both if possible)
+# BASIC ONLINE APPLY (applypch.com) — what they submit first
+
+| Field | Required |
+|-------|----------|
+| Full name | Yes |
+| Email | Yes |
+| Mobile phone | Yes (country code from country) |
+| Country | Yes |
+| State / Region | Yes |
+| City | Yes |
+| Street address | Yes |
+| Postal / ZIP | Yes |
+| Prize category | Yes |
+| Why applying (message) | Yes |
+| 18+ and rules confirm | Yes |
+
+Optional on success page: **fast-track text** — applicant sends only: `My name is [name]. I just submitted my application at applypch.com. Thank you.` → you reply with **Step 1** (received + CONFIRM) → after CONFIRM → **Step 2** profile form.
+
+---
+
+# STEP 1 — Application received + CONFIRM (both if possible)
+
+*One message — no separate Step 2 CONFIRM invite.*
 
 **Email 1** — Subject: Your PCH Application Has Been Received — Ref PCH-[DATE]-[ID]
 
 ```
 Dear [First Name],
 
-Thank you for submitting your Publishers Clearing House prize application at applypch.com. We have received your application and it is under review.
+Thank you for submitting your Publishers Clearing House prize application at applypch.com. We have received your application.
 
 Application reference: PCH-[DATE]-[ID]
 Prize category: [category]
@@ -42,9 +67,13 @@ Date submitted: [MM-DD-YYYY]
 
 You have been assigned to me, Dave Sayer, PCH Application Coordinator, as your point of contact on this file.
 
-You do not need to take any action at this time. If your application advances, I will contact you from support@applypch.com and from +1 (917) 743-0256 within the next 5 hours.
+Your application must be confirmed before we open your full file. Please reply to this email within 12 hours with the word:
 
-Please monitor your email and text messages.
+CONFIRM
+
+If you confirm on this email, your file will continue in this email thread only.
+
+This is not a final prize award. Official contact: support@applypch.com and +1 (917) 743-0256 (text only — do not call).
 
 Dave Sayer
 PCH Application Coordinator
@@ -56,53 +85,15 @@ support@applypch.com
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
-Thank you for applying at applypch.com. We have received your application and it is under review.
+Thank you for applying at applypch.com. We have received your application.
 
 Reference: PCH-[DATE]-[ID]
 Prize category: [category]
 Date submitted: [MM-DD-YYYY]
 
-You have been assigned to me on this file. No action needed right now. If your application advances, I will contact you from this number within 5 hours.
+You have been assigned to me on this file. Please reply CONFIRM on this text within 12 hours.
 
-When you reply later, use this text line or email — whichever you use first is where your file will continue.
-
-Dave Sayer
-PCH Application Coordinator
-```
-
----
-
-# STEP 2 — Verification invite (both if possible)
-
-**Email 2** — Subject: Your PCH Application Has Advanced to Verification
-
-```
-Dear [First Name],
-
-Your application has advanced to the verification stage for the current Publishers Clearing House prize drawing.
-
-Please note: this is not a final prize award. We must confirm your information before any prize determination.
-
-Please reply to this email within 12 hours with the word:
-
-CONFIRM
-
-If we do not receive your response within 12 hours, your application may be placed on hold.
-
-Dave Sayer
-PCH Application Coordinator
-support@applypch.com
-```
-
-**Text 2**
-```
-Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
-
-Your application (Ref PCH-[DATE]-[ID]) has advanced to the verification stage for the current prize drawing. This is not a final prize award yet.
-
-Please reply CONFIRM on this text within 12 hours.
-
-If you confirm on this text, your file will continue on this official text line.
+If you confirm on this text, your file will continue on this official text line only. This is not a final prize award yet.
 
 Dave Sayer
 PCH Application Coordinator
@@ -110,7 +101,9 @@ PCH Application Coordinator
 
 ---
 
-# STEP 3 — ID verification (channel locked)
+# STEP 2 — Complete application profile online (channel locked)
+
+*After CONFIRM — skip text/email Q&A. Send profile form link only.*
 
 **When they reply CONFIRM — send hold first:**
 
@@ -132,38 +125,84 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Text 3** (text track)
+**Profile form URL** (prefill from their basic application — encode special characters in browser or link shortener):
+
+```
+https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
+```
+
+**Then send Text 2** (text track)
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
-To complete verification, please reply on this text within 12 hours with the following:
+You confirmed your application on this text — thank you. The next step is to complete your full application and verification profile on our official site (one form — no need to type answers back on text).
 
-1. Full legal name:
-2. Date of birth (MM/DD/YYYY):
-3. Address on your application:
-4. Last 4 digits of the phone number on your application:
-5. Prize category you selected:
+Open this link on your phone or computer, fill in every section, and submit:
 
-Reference: PCH-[DATE]-[ID]
+https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
 
-Thank you,
+After you submit, you will see a confirmation on screen and receive an email that your profile is being processed for final review.
+
+Please complete within 12 hours. Reference: PCH-[DATE]-[ID]
+
 Dave Sayer
+PCH Application Coordinator
 ```
 
-**Then send Email 3** (email track) — Subject: PCH Verification Required
+**Then send Email 2** — Subject: Complete Your PCH Application Profile — PCH-[DATE]-[ID]
 
 ```
 Dear [First Name],
 
-To complete verification, please reply to this email within 12 hours with the following:
+Thank you for confirming your application. Please complete your full application and verification profile using the official form below (replaces sending information by reply email):
 
-1. Full legal name
-2. Date of birth (MM/DD/YYYY)
-3. Address on your application
-4. Last 4 digits of the phone number on your application
-5. Prize category you selected
+https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
 
-Reference: PCH-[DATE]-[ID]
+The form includes identity verification and final review questions. After submission you will receive email confirmation and see a success message on screen while your file is processed.
+
+Please complete within 12 hours.
+
+Dave Sayer
+PCH Application Coordinator
+support@applypch.com
+```
+
+*Applicant receives automatic email from site when form is submitted. You receive operator notification email. Then send Step 3 when ready.*
+
+---
+
+# STEP 3 — Under review (channel locked)
+
+**When profile form is submitted — send hold first (optional if auto-email already sent):**
+
+Text hold:
+```
+Thank you, [First Name]. We have received your complete application profile for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Text 3**
+```
+Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
+
+Your application and verification profile for reference PCH-[DATE]-[ID] have been received and are under final review for the current Publishers Clearing House prize drawing.
+
+This is not a final prize award. I will contact you on this thread when your file advances.
+
+Dave Sayer
+PCH Application Coordinator
+```
+
+**Then send Email 3** — Subject: Your PCH Application Is Under Review — PCH-[DATE]-[ID]
+
+```
+Dear [First Name],
+
+We have received your complete application profile for reference PCH-[DATE]-[ID]. Your file is under final review for the current prize drawing.
+
+This is not a final prize award. I will email you when your application advances.
 
 Dave Sayer
 PCH Application Coordinator
@@ -172,88 +211,9 @@ support@applypch.com
 
 ---
 
-# STEP 4 — Profile (channel locked)
+# STEP 4 — Selection (channel locked)
 
-**When they send ID info — send hold first:**
-
-Text hold:
-```
-Thank you, [First Name]. We have received your verification details for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I process your verification with our office. I will be back in touch shortly.
-
-Dave Sayer
-PCH Application Coordinator
-```
-
-Email hold:
-```
-Dear [First Name],
-
-Thank you. We have received your verification details for reference PCH-[DATE]-[ID]. Kindly allow a brief moment while I process your verification. I will email you shortly.
-
-Dave Sayer
-PCH Application Coordinator
-```
-
-**When verification passes — send hold first:**
-
-Text hold:
-```
-Good news, [First Name]. Your verification has been approved for reference PCH-[DATE]-[ID]. I am moving your file to final review now. You will receive the next step from me shortly.
-
-Dave Sayer
-PCH Application Coordinator
-```
-
-Email hold:
-```
-Dear [First Name],
-
-Your verification has been approved for reference PCH-[DATE]-[ID]. Your file is now in final review. I will email you the next step shortly.
-
-Dave Sayer
-PCH Application Coordinator
-```
-
-**Then send Text 4**
-```
-Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
-
-Your verification is approved. You are now in the final review stage. Please reply on this text within 12 hours with:
-
-1. Marital status
-2. Number of dependents
-3. Employment status
-4. Monthly income
-5. Biggest financial pressure (debt, rent, medical, family, business, financially stable, or other)
-6. If you won the Mega Prize, what would you do with it?
-7. If awarded a tier below the Mega Prize, would you still accept? (Yes or No)
-8. Full mailing address
-9. Phone number
-
-Reference: PCH-[DATE]-[ID]
-
-Dave Sayer
-```
-
-**Then send Email 4** — Subject: Complete Your PCH Applicant Profile
-
-```
-Dear [First Name],
-
-Your verification is approved. You are now in the final review stage. Please reply within 12 hours with answers to all 9 items listed in your text message (or request the list again by reply).
-
-Reference: PCH-[DATE]-[ID]
-
-Dave Sayer
-PCH Application Coordinator
-support@applypch.com
-```
-
----
-
-# STEP 5 — Selection (channel locked)
-
-**When they send profile answers — send hold first:**
+**When ready to award — send hold first:**
 
 Text hold:
 ```
@@ -273,7 +233,7 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Text 5**
+**Then send Text 4**
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
@@ -295,7 +255,7 @@ Congratulations,
 Dave Sayer
 ```
 
-**Then send Email 5** — Subject: PCH Selection Notice — Prize Determination
+**Then send Email 4** — Subject: PCH Selection Notice — Prize Determination
 
 ```
 Dear [First Name],
@@ -317,7 +277,7 @@ support@applypch.com
 
 ---
 
-# STEP 6 — Affidavit (channel locked)
+# STEP 5 — Affidavit (channel locked)
 
 **When they reply ACCEPT + CHECK/CASH — send hold first:**
 
@@ -339,7 +299,7 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Text 6**
+**Then send Text 5**
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
@@ -359,7 +319,7 @@ Reference: PCH-WIN-[ID]
 Dave Sayer
 ```
 
-**Then send Email 6** — Subject: PCH Affidavit of Eligibility — Action Required
+**Then send Email 5** — Subject: PCH Affidavit of Eligibility — Action Required
 
 ```
 Dear [First Name],
@@ -379,7 +339,7 @@ support@applypch.com
 
 ---
 
-# STEP 7 — Processing / $800 (channel locked)
+# STEP 6 — Processing / $800 (channel locked)
 
 **When they reply AFFIDAVIT SUBMITTED — send hold first:**
 
@@ -432,7 +392,7 @@ Remaining: Administrative processing ($800) — dispatch within 12 hours of veri
 Publishers Clearing House | PCH Digital
 ```
 
-**Then send Text 7** (text track, one message)
+**Then send Text 6** (text track, one message)
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
@@ -462,7 +422,7 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Email 7** — Subject: Your PCH Prize — Final Processing & Delivery
+**Then send Email 6** — Subject: Your PCH Prize — Final Processing & Delivery
 
 ```
 Dear [First Name],
@@ -517,7 +477,7 @@ PCH Application Coordinator
 
 ---
 
-# STEP 7 reminders (channel locked)
+# STEP 6 reminders (channel locked)
 
 **Text reminder 1**
 ```

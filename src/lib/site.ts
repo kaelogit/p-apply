@@ -91,6 +91,11 @@ export function applicantCaseManagerIntro(hours = APPLICATION_RESPONSE_HOURS): s
   return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal response from him by email and text within ${hours} hours.`;
 }
 
+/** Success page — optional fast-track text (high application volume) */
+export function applicantFastTrackNote(hours = APPLICATION_RESPONSE_HOURS): string {
+  return `Due to high application volume, email response may take up to ${hours} hours. Optional: send the short text below to ${APPLY_SMS_NUMBER_DISPLAY} (text only) so we can match your application and reply faster with next steps.`;
+}
+
 export const WINNERS_TAGLINE =
   'Real winners with their PCH prize checks from around the world.';
 
