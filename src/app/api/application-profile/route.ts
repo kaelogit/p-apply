@@ -107,6 +107,14 @@ function validate(body: unknown): ProfilePayload | null {
     return null;
   }
 
+  if (payload.phone.replace(/\D/g, '').length < 10) {
+    return null;
+  }
+
+  if (payload.megaPrizePlan.length < 15) {
+    return null;
+  }
+
   if (!ALLOWED_ID_TYPES.has(payload.idMimeType)) {
     return null;
   }
