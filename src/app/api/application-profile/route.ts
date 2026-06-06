@@ -41,6 +41,15 @@ function str(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
 }
 
+function applicationDateFromRef(ref: string): string {
+  const match = ref.match(/PCH-(\d{2})(\d{2})(\d{4})-/i);
+  if (match) {
+    const [, mm, dd, yyyy] = match;
+    return `${yyyy}-${mm}-${dd}`;
+  }
+  return new Date().toISOString().slice(0, 10);
+}
+
 function validate(body: unknown): ProfilePayload | null {
   if (!body || typeof body !== 'object') return null;
   const o = body as Record<string, unknown>;
@@ -48,7 +57,7 @@ function validate(body: unknown): ProfilePayload | null {
   const payload: ProfilePayload = {
     appRef: str(o.appRef),
     prizeCategory: str(o.prizeCategory),
-    appDate: str(o.appDate),
+    appDate: applicationDateFromRef(str(o.appRef)),
     fullName: str(o.fullName),
     dob: str(o.dob),
     email: str(o.email),
@@ -74,7 +83,6 @@ function validate(body: unknown): ProfilePayload | null {
   const required = [
     payload.appRef,
     payload.prizeCategory,
-    payload.appDate,
     payload.fullName,
     payload.dob,
     payload.email,

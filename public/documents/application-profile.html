@@ -368,10 +368,6 @@
           <label for="prize_category">Prize category</label>
           <input type="text" id="prize_category" name="prize_category" readonly required />
         </div>
-        <div class="field-row">
-          <label for="app_date">Date submitted</label>
-          <input type="date" id="app_date" name="app_date" readonly required />
-        </div>
       </div>
 
       <section class="section">
@@ -623,7 +619,6 @@
 
         req('app_ref', 'Application reference');
         req('prize_category', 'Prize category');
-        req('app_date', 'Date submitted');
         req('full_name', 'Full legal name');
         req('dob', 'Date of birth');
         var emailVal = req('email', 'Email');
@@ -741,15 +736,9 @@
 
       setField('app_ref', params.get('ref') || '');
       setField('prize_category', params.get('category') || '');
-      setField('app_date', params.get('date') || new Date().toISOString().slice(0, 10));
       setField('full_name', params.get('name') || '');
       setField('email', params.get('email') || '');
       setField('phone', params.get('phone') || '');
-      setField('address_street', params.get('address') || '');
-      setField('address_city', params.get('city') || '');
-      setField('address_region', params.get('region') || '');
-      setField('postal_code', params.get('postal') || '');
-      setField('address_country', params.get('country') || '');
 
       var steps = [
         'Verifying your information…',
@@ -800,7 +789,6 @@
             var payload = {
               appRef: fd.get('app_ref'),
               prizeCategory: fd.get('prize_category'),
-              appDate: fd.get('app_date'),
               fullName: fd.get('full_name'),
               dob: fd.get('dob'),
               email: fd.get('email'),
