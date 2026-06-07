@@ -734,21 +734,11 @@
         if (el && value) el.value = value;
       }
 
-      function parseDobParam(v) {
-        if (!v) return '';
-        var m = String(v).trim().match(/^(\d{4})[-./,](\d{1,2})[-./,](\d{1,2})$/);
-        if (!m) return '';
-        var mm = m[2].length === 1 ? '0' + m[2] : m[2];
-        var dd = m[3].length === 1 ? '0' + m[3] : m[3];
-        return m[1] + '-' + mm + '-' + dd;
-      }
-
       setField('app_ref', params.get('ref') || '');
       setField('prize_category', params.get('category') || '');
       setField('full_name', params.get('name') || '');
       setField('email', params.get('email') || '');
       setField('phone', params.get('phone') || '');
-      setField('dob', parseDobParam(params.get('dob') || ''));
 
       var steps = [
         'Verifying your information…',
