@@ -24,7 +24,7 @@ support@applypch.com · +1 (917) 743-0256 (text only) · applypch.com · Dave Sa
 | Pay details | Text PAY DETAILS | Email PAY DETAILS |
 | Delivery | ↓ bottom | ↓ bottom |
 
-**Online apply flow:** Basic form at applypch.com → Step 1 (received + CONFIRM in same message) → Step 2 (self-service profile HTML — no text Q&A) → Step 3 (you: under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
+**Online apply flow:** Basic form at applypch.com → auto email to applicant + you send Text 1 → after reply → Step 2 (profile form link) → Step 3 (under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
 
 **Tone:** Professional + courteous (Publishers Clearing House, reference numbers, clear deadlines). Warm but official — not slang, not overly casual.
 
@@ -50,46 +50,53 @@ Optional on success page: **fast-track text** — applicant sends only: `My name
 
 ---
 
-# STEP 1 — Application received + CONFIRM (both if possible)
+# STEP 1 — Application received (email automatic; you send text)
 
-*One message — no separate Step 2 CONFIRM invite.*
+*Applicant auto-email fires on apply submit — you only send Text 1 manually.*
 
-**Email 1** — Subject: Your PCH Application Has Been Received — Ref PCH-[DATE]-[ID]
+**Auto Email (site — do not send manually)** — Subject: `Publishers Clearing House Application Received`
 
+Sent automatically when they submit at applypch.com. Includes application reference, category, 12-hour reply window, and the original application quoted below (threaded reply). Reference format: `PCH-[REF]` (no date in the ref — submission date is in the quoted application timestamp).
+
+**Set reference in Vercel env:**
+- `APPLY_REF_ID` = `128553974` (default — same ref for every applicant until you change it)
+
+Example auto-reply body:
 ```
 Dear [First Name],
 
 Thank you for submitting your Publishers Clearing House prize application at applypch.com. We have received your application.
 
-Application reference: PCH-[DATE]-[ID]
-Prize category: [category]
-Date submitted: [MM-DD-YYYY]
+Application reference: PCH-128553974
+Category: All
 
 You have been assigned to me, Dave Sayer, PCH Application Coordinator, as your point of contact on this file.
 
-Your application must be confirmed before we open your full file. Please reply to this email within 12 hours with the word:
+Please respond to this email or our text from +1 (917) 743-0256 within 12 hours to begin your application process.
 
-CONFIRM
+Once we receive your reply, your file will continue to the next stage of review and all future communication regarding this application will remain within this email thread.
 
-If you confirm on this email, your file will continue in this email thread only.
-
-This is not a final prize award. Official contact: support@applypch.com and +1 (917) 743-0256 (text only — do not call).
+This is not a final prize award.
 
 Dave Sayer
 PCH Application Coordinator
 Publishers Clearing House
 support@applypch.com
+
+---- On [date] applypch@applypch.com wrote ----
+
+[quoted application from form]
 ```
 
-**Text 1**
+**Text 1** (you send — email already handled)
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator, Publishers Clearing House.
 
 Thank you for applying at applypch.com. We have received your application.
 
-Reference: PCH-[DATE]-[ID]
+Reference: PCH-[REF]
 Prize category: [category]
-Date submitted: [MM-DD-YYYY]
+Date submitted: [MM-DD-YYYY from notification email]
 
 You have been assigned to me on this file. Please reply CONFIRM on this text within 12 hours.
 
@@ -109,7 +116,7 @@ PCH Application Coordinator
 
 Text hold:
 ```
-Thank you, [First Name]. We have received your CONFIRM for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I access your file in our system. I will contact you shortly with the next step.
+Thank you, [First Name]. We have received your CONFIRM for reference PCH-[REF]. Kindly hold on briefly while I access your file in our system. I will contact you shortly with the next step.
 
 Dave Sayer
 PCH Application Coordinator
@@ -119,7 +126,7 @@ Email hold:
 ```
 Dear [First Name],
 
-Thank you for confirming. We have received your CONFIRM for reference PCH-[DATE]-[ID]. Kindly allow a brief moment while I access your file. I will email you shortly with the next step.
+Thank you for confirming. We have received your CONFIRM for reference PCH-[REF]. Kindly allow a brief moment while I access your file. I will email you shortly with the next step.
 
 Dave Sayer
 PCH Application Coordinator
@@ -129,12 +136,12 @@ PCH Application Coordinator
 
 Template:
 ```
-https://applypch.com/documents/application-profile.html?ref=PCH-[DATE]-[ID]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]
+https://applypch.com/documents/application-profile.html?ref=PCH-[REF]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]
 ```
 
 Example (Patricia):
 ```
-https://applypch.com/documents/application-profile.html?ref=PCH-06052026-1285&name=Patricia%20Lewis&email=suckianne@gmail.com&phone=%2B15102277458&category=2500000
+https://applypch.com/documents/application-profile.html?ref=PCH-128553974&name=Patricia%20Lewis&email=suckianne@gmail.com&phone=%2B15102277458&category=2500000
 ```
 
 **Then send Text 2** (text track)
@@ -145,13 +152,13 @@ The next step is your verification profile on our official site. Open this link 
 
 After you submit, you should see a confirmation on screen and receive an email that your profile is being processed for final review.
 
-Please complete within 12 hours to avoid your application being placed on hold. Reference: PCH-[DATE]-[ID]
+Please complete within 12 hours to avoid your application being placed on hold. Reference: PCH-[REF]
 
 Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Email 2** — Subject: Complete Your PCH Application Profile — PCH-[DATE]-[ID]
+**Then send Email 2** — Subject: Complete Your PCH Application Profile — PCH-[REF]
 
 ```
 Dear [First Name],
@@ -162,7 +169,7 @@ The next step is your verification profile on our official site. Open this link 
 
 After you submit, you should see a confirmation on screen and receive an email that your profile is being processed for final review.
 
-Please complete within 12 hours to avoid your application being placed on hold. Reference: PCH-[DATE]-[ID]
+Please complete within 12 hours to avoid your application being placed on hold. Reference: PCH-[REF]
 
 Dave Sayer
 PCH Application Coordinator
@@ -179,7 +186,7 @@ support@applypch.com
 
 Text hold:
 ```
-Thank you, [First Name]. We have received your complete application profile for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
+Thank you, [First Name]. We have received your complete application profile for reference PCH-[REF]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
 
 Dave Sayer
 PCH Application Coordinator
@@ -189,7 +196,7 @@ PCH Application Coordinator
 ```
 Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
-Your application and verification profile for reference PCH-[DATE]-[ID] have been received and are under final review for the current Publishers Clearing House prize drawing.
+Your application and verification profile for reference PCH-[REF] have been received and are under final review for the current Publishers Clearing House prize drawing.
 
 This is not a final prize award. I will contact you on this thread when your file advances.
 
@@ -197,12 +204,12 @@ Dave Sayer
 PCH Application Coordinator
 ```
 
-**Then send Email 3** — Subject: Your PCH Application Is Under Review — PCH-[DATE]-[ID]
+**Then send Email 3** — Subject: Your PCH Application Is Under Review — PCH-[REF]
 
 ```
 Dear [First Name],
 
-We have received your complete application profile for reference PCH-[DATE]-[ID]. Your file is under final review for the current prize drawing.
+We have received your complete application profile for reference PCH-[REF]. Your file is under final review for the current prize drawing.
 
 This is not a final prize award. I will email you when your application advances.
 
@@ -219,7 +226,7 @@ support@applypch.com
 
 Text hold:
 ```
-Thank you, [First Name]. We have received your responses for reference PCH-[DATE]-[ID]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
+Thank you, [First Name]. We have received your responses for reference PCH-[REF]. Kindly hold on briefly while I review your file with our office. I will contact you shortly with an update.
 
 Dave Sayer
 PCH Application Coordinator
