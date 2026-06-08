@@ -39,12 +39,8 @@ export function formatPrizeCategoryLabel(value: string): string {
   return value;
 }
 
-function formatQuoteHeader(date: Date, fromEmail: string): string {
-  const stamp = date
-    .toUTCString()
-    .replace('GMT', '+0000')
-    .replace('UTC', '+0000');
-  return `---- On ${stamp} ${fromEmail} wrote ----`;
+export function buildApplicantAutoReplySubject(appRef: string): string {
+  return `Your applypch.com application — Ref ${appRef}`;
 }
 
 export function buildOperatorApplicationText(payload: ApplyEmailPayload): string {
@@ -98,15 +94,9 @@ export function buildOperatorApplicationHtml(payload: ApplyEmailPayload): string
   `;
 }
 
-export function buildApplicantAutoReplyText(
-  payload: ApplyEmailPayload,
-  appRef: string,
-  fromEmail: string,
-  submittedAt: Date
-): string {
+export function buildApplicantAutoReplyText(payload: ApplyEmailPayload, appRef: string): string {
   const first = firstNameFromFullName(payload.name);
   const category = formatPrizeCategoryLabel(payload.prizeCategory);
-  const quoted = buildOperatorApplicationText(payload);
 
   return [
     `Dear ${first},`,
@@ -128,22 +118,12 @@ export function buildApplicantAutoReplyText(
     APPLICANT_CASE_MANAGER_TITLE,
     PCH_BRAND_NAME,
     CONTACT_EMAIL,
-    '',
-    formatQuoteHeader(submittedAt, fromEmail),
-    '',
-    quoted,
   ].join('\n');
 }
 
-export function buildApplicantAutoReplyHtml(
-  payload: ApplyEmailPayload,
-  appRef: string,
-  fromEmail: string,
-  submittedAt: Date
-): string {
+export function buildApplicantAutoReplyHtml(payload: ApplyEmailPayload, appRef: string): string {
   const first = firstNameFromFullName(payload.name);
   const category = formatPrizeCategoryLabel(payload.prizeCategory);
-  const quotedText = buildOperatorApplicationText(payload);
 
   return `
     <p>Dear ${escapeHtml(first)},</p>
@@ -160,9 +140,5 @@ export function buildApplicantAutoReplyHtml(
       ${escapeHtml(PCH_BRAND_NAME)}<br />
       ${escapeHtml(CONTACT_EMAIL)}
     </p>
-    <p style="color:#666;font-size:12px;margin-top:24px;">${escapeHtml(formatQuoteHeader(submittedAt, fromEmail))}</p>
-    <blockquote style="margin:12px 0 0;padding-left:12px;border-left:2px solid #ccc;color:#444;font-size:13px;white-space:pre-wrap;">${escapeHtml(quotedText)}</blockquote>
   `;
 }
-
-export const APPLICANT_AUTO_REPLY_SUBJECT = 'Publishers Clearing House Application Received';

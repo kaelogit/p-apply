@@ -54,9 +54,9 @@ Optional on success page: **fast-track text** — applicant sends only: `My name
 
 *Applicant auto-email fires on apply submit — you only send Text 1 manually.*
 
-**Auto Email (site — do not send manually)** — Subject: `Publishers Clearing House Application Received`
+**Auto Email (site — do not send manually)** — Subject: `Your applypch.com application — Ref PCH-[REF]`
 
-Sent automatically when they submit at applypch.com. Includes application reference, category, 12-hour reply window, and the original application quoted below (threaded reply). Reference format: `PCH-[REF]` (no date in the ref — submission date is in the quoted application timestamp).
+Sent automatically when they submit at applypch.com. Short standalone confirmation (no quoted reply block). Reference format: `PCH-[REF]`.
 
 **Set reference in Vercel env:**
 - `APPLY_REF_ID` = `128553974` (default — same ref for every applicant until you change it)
@@ -82,10 +82,6 @@ Dave Sayer
 PCH Application Coordinator
 Publishers Clearing House
 support@applypch.com
-
----- On [date] applypch@applypch.com wrote ----
-
-[quoted application from form]
 ```
 
 **Text 1** (you send — email already handled)
