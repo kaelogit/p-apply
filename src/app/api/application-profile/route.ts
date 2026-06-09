@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { absoluteSiteUrl } from '@/lib/site';
 import { escapeHtml } from '@/lib/utils';
 
 interface ProfilePayload {
@@ -189,7 +190,7 @@ export async function POST(request: NextRequest) {
       ${row('Accept lower tier', parsed.acceptLowerTier)}
       ${row('ID document', `${parsed.idFileName} (attached)`)}
     </table>
-    <p style="margin-top:16px;color:#666;font-size:12px;">Submitted via applypch.com/documents/application-profile.html</p>
+    <p style="margin-top:16px;color:#666;font-size:12px;">Submitted via ${escapeHtml(absoluteSiteUrl('/documents/application-profile.html'))}</p>
   `;
 
   const idBuffer = Buffer.from(parsed.idData, 'base64');

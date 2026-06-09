@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { MAX_LUMP_SUM_PRIZE, SITE_URL } from '@/lib/site';
+import { absoluteSiteUrl, MAX_LUMP_SUM_PRIZE, SITE_URL } from '@/lib/site';
 
 export const SITE_NAME = "Publisher's Clearing House";
 export const DEFAULT_TITLE = 'Apply to Win PCH Prizes';
@@ -12,8 +12,11 @@ export const OG_IMAGE_HEIGHT = 900;
 export const OG_IMAGE_ALT = 'PCH winner with Prize Patrol and prize check';
 
 export function pageUrl(path = '/'): string {
-  if (!path || path === '/') return SITE_URL;
-  return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+  return absoluteSiteUrl(path || '/');
+}
+
+export function ogImageUrl(imagePath = OG_IMAGE_PATH): string {
+  return absoluteSiteUrl(imagePath);
 }
 
 function fullTitle(title?: string): string {
@@ -31,7 +34,8 @@ export function createMetadata(options: {
   const description = options.description ?? DEFAULT_DESCRIPTION;
   const path = options.path ?? '/';
   const url = pageUrl(path);
-  const image = options.image ?? OG_IMAGE_PATH;
+  const imagePath = options.image ?? OG_IMAGE_PATH;
+  const imageUrl = ogImageUrl(imagePath);
   const imageAlt = options.imageAlt ?? OG_IMAGE_ALT;
   const title = fullTitle(options.title);
 
@@ -49,7 +53,8 @@ export function createMetadata(options: {
       type: 'website',
       images: [
         {
-          url: image,
+          url: imageUrl,
+          secureUrl: imageUrl,
           width: OG_IMAGE_WIDTH,
           height: OG_IMAGE_HEIGHT,
           alt: imageAlt,
@@ -61,10 +66,29 @@ export function createMetadata(options: {
       card: 'summary_large_image',
       title,
       description,
-      images: [image],
+      images: {
+        url: imageUrl,
+        alt: imageAlt,
+      },
     },
     robots: options.noIndex
       ? { index: false, follow: true }
       : { index: true, follow: true },
   };
 }
+
+/** All public marketing routes — used by sitemap.xml */
+export const PUBLIC_ROUTES = [
+  '/',
+  '/apply',
+  '/about',
+  '/story',
+  '/areas',
+  '/impact',
+  '/winners',
+  '/faq',
+  '/security',
+  '/rules',
+  '/privacy',
+  '/terms',
+] as const;

@@ -5,6 +5,7 @@ import {
   APPLICANT_CONTACT_CHANNEL_NOTE,
   WINNER_NOTIFICATION,
   APPLY_SMS_NUMBER_DISPLAY,
+  SITE_DOMAIN,
 } from '@/lib/site';
 
 export interface FaqItem {
@@ -16,7 +17,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'Is PCH still operating after the bankruptcy?',
     answer:
-      'Yes. Publishers Clearing House continues under new ownership through PCH Digital (ARB Interactive Group). New sweepstakes are active, applications are accepted here at applypch.com, and new winners are still being awarded — including in-person Prize Patrol presentations for current prizes. Some long-term prizes granted before the restructuring were handled separately under the prior entity; applications submitted today are for new prize drawings governed by our Official Rules.',
+      `Yes. Publishers Clearing House continues under new ownership through PCH Digital (ARB Interactive Group). New sweepstakes are active, applications are accepted here at ${SITE_DOMAIN}, and new winners are still being awarded — including in-person Prize Patrol presentations for current prizes. Some long-term prizes granted before the restructuring were handled separately under the prior entity; applications submitted today are for new prize drawings governed by our Official Rules.`,
   },
   {
     question: 'How do I apply?',

@@ -1,6 +1,30 @@
-export const SITE_URL = 'https://applypch.com';
-export const SITE_DOMAIN = 'applypch.com';
+const DEFAULT_SITE_URL = 'https://applypch.com';
+
+function normalizeSiteUrl(raw: string | undefined): string {
+  const value = raw?.trim();
+  if (value) return value.replace(/\/$/, '');
+  const vercelHost = process.env.VERCEL_URL?.trim();
+  if (vercelHost) return `https://${vercelHost.replace(/\/$/, '')}`;
+  return DEFAULT_SITE_URL;
+}
+
+export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
+
+export const SITE_DOMAIN = (() => {
+  try {
+    return new URL(SITE_URL).hostname;
+  } catch {
+    return 'applypch.com';
+  }
+})();
+
 export const CONTACT_EMAIL = 'support@applypch.com';
+
+/** Full URL for links in emails and operator templates (respects NEXT_PUBLIC_SITE_URL). */
+export function absoluteSiteUrl(path = ''): string {
+  if (!path) return SITE_URL;
+  return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
+}
 
 export const PCH_BRAND_NAME = 'Publishers Clearing House';
 export const PCH_OPERATOR = 'PCH Digital (ARB Interactive Group)';

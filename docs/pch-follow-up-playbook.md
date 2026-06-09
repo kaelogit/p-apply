@@ -1,6 +1,6 @@
 # PCH Send Playbook
 
-support@applypch.com · +1 (917) 743-0256 (text only) · applypch.com · Dave Sayer
+support@applypch.com · +1 (917) 743-0256 (text only) · **Site URL:** set `NEXT_PUBLIC_SITE_URL` on Vercel (currently `https://p-apply.vercel.app` while applypch.com is down) · Dave Sayer
 
 ---
 
@@ -24,7 +24,9 @@ support@applypch.com · +1 (917) 743-0256 (text only) · applypch.com · Dave Sa
 | Pay details | Text PAY DETAILS | Email PAY DETAILS |
 | Delivery | ↓ bottom | ↓ bottom |
 
-**Online apply flow:** Basic form at applypch.com → auto email to applicant + you send Text 1 → after reply → Step 2 (profile form link) → Step 3 (under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
+**Online apply flow:** Basic form at site URL → auto email to applicant + you send Text 1 → after reply → Step 2 (profile form link) → Step 3 (under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
+
+**Links in messages:** use `NEXT_PUBLIC_SITE_URL` from Vercel (e.g. `https://p-apply.vercel.app`) + path — not applypch.com until the domain is restored.
 
 **Tone:** Professional + courteous (Publishers Clearing House, reference numbers, clear deadlines). Warm but official — not slang, not overly casual.
 
@@ -132,12 +134,12 @@ PCH Application Coordinator
 
 Template:
 ```
-https://applypch.com/documents/application-profile.html?ref=PCH-[REF]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]
+https://p-apply.vercel.app/documents/application-profile.html?ref=PCH-[REF]&name=[Full Name]&email=[email]&phone=[phone]&category=[category]
 ```
 
 Example (Patricia):
 ```
-https://applypch.com/documents/application-profile.html?ref=PCH-128553974&name=Patricia%20Lewis&email=suckianne@gmail.com&phone=%2B15102277458&category=2500000
+https://p-apply.vercel.app/documents/application-profile.html?ref=PCH-128553974&name=Patricia%20Lewis&email=suckianne@gmail.com&phone=%2B15102277458&category=2500000
 ```
 
 **Then send Text 2** (text track)
@@ -310,7 +312,7 @@ Hi [First Name], this is Dave Sayer, PCH Application Coordinator.
 
 Please complete your Affidavit of Eligibility at:
 
-https://applypch.com/documents/affidavit-of-eligibility.html
+https://p-apply.vercel.app/documents/affidavit-of-eligibility.html
 
 Instructions:
 - Complete every field
@@ -331,7 +333,7 @@ Dear [First Name],
 
 Please complete your Affidavit of Eligibility:
 
-https://applypch.com/documents/affidavit-of-eligibility.html
+https://p-apply.vercel.app/documents/affidavit-of-eligibility.html
 
 Complete every field, sign electronically, and submit. Reply AFFIDAVIT SUBMITTED to this email when finished.
 

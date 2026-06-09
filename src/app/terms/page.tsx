@@ -1,10 +1,10 @@
 import { LegalLayout, LegalSection } from '@/components/layout/LegalLayout';
 import { createMetadata } from '@/lib/metadata';
-import { PCH_BRAND_NAME, PCH_OPERATOR } from '@/lib/site';
+import { PCH_BRAND_NAME, PCH_OPERATOR, SITE_DOMAIN } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'Terms of Service',
-  description: 'Terms of service for applypch.com and PCH prize applications.',
+  description: `Terms of service for ${SITE_DOMAIN} and PCH prize applications.`,
   path: '/terms',
 });
 

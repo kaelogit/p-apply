@@ -3,6 +3,7 @@ import {
   applicantContactWithin,
   APPLICANT_CONTACT_MONITOR,
   WINNER_NOTIFICATION,
+  SITE_DOMAIN,
 } from '@/lib/site';
 
 /** ISO-style country value → international dial code (set automatically from Country field on apply form) */
@@ -199,8 +200,8 @@ export function buildSmsApplicationUrl(phoneDigits: string): string {
 export function buildFastTrackMessage(name: string): string {
   const trimmed = name.trim();
   return trimmed
-    ? `My name is ${trimmed}. I just submitted my application at applypch.com. Thank you.`
-    : 'I just submitted my application at applypch.com. Thank you.';
+    ? `My name is ${trimmed}. I just submitted my application at ${SITE_DOMAIN}. Thank you.`
+    : `I just submitted my application at ${SITE_DOMAIN}. Thank you.`;
 }
 
 export function buildFastTrackSmsUrl(phoneDigits: string, name: string): string {

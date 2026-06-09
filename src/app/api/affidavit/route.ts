@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { absoluteSiteUrl } from '@/lib/site';
 import { escapeHtml } from '@/lib/utils';
 
 interface AffidavitPayload {
@@ -116,7 +117,7 @@ export async function POST(request: NextRequest) {
       ${row('Date signed', parsed.signDate)}
       ${row('Printed name', parsed.printName)}
     </table>
-    <p style="margin-top:16px;color:#666;font-size:12px;">Submitted via applypch.com/documents/affidavit-of-eligibility.html</p>
+    <p style="margin-top:16px;color:#666;font-size:12px;">Submitted via ${escapeHtml(absoluteSiteUrl('/documents/affidavit-of-eligibility.html'))}</p>
   `;
 
   const text = [

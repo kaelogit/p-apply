@@ -5,6 +5,7 @@ import {
   APPLICANT_CASE_MANAGER_NAME,
   APPLICANT_CASE_MANAGER_TITLE,
   PCH_BRAND_NAME,
+  SITE_DOMAIN,
 } from '@/lib/site';
 import { escapeHtml } from '@/lib/utils';
 import { firstNameFromFullName } from '@/lib/application-ref';
@@ -40,7 +41,7 @@ export function formatPrizeCategoryLabel(value: string): string {
 }
 
 export function buildApplicantAutoReplySubject(appRef: string): string {
-  return `Your applypch.com application — Ref ${appRef}`;
+  return `Your ${SITE_DOMAIN} application — Ref ${appRef}`;
 }
 
 export function buildOperatorApplicationText(payload: ApplyEmailPayload): string {
@@ -101,7 +102,7 @@ export function buildApplicantAutoReplyText(payload: ApplyEmailPayload, appRef: 
   return [
     `Dear ${first},`,
     '',
-    `Thank you for submitting your ${PCH_BRAND_NAME} prize application at applypch.com. We have received your application.`,
+    `Thank you for submitting your ${PCH_BRAND_NAME} prize application at ${SITE_DOMAIN}. We have received your application.`,
     '',
     `Application reference: ${appRef}`,
     `Category: ${category}`,
@@ -127,7 +128,7 @@ export function buildApplicantAutoReplyHtml(payload: ApplyEmailPayload, appRef: 
 
   return `
     <p>Dear ${escapeHtml(first)},</p>
-    <p>Thank you for submitting your ${escapeHtml(PCH_BRAND_NAME)} prize application at applypch.com. We have received your application.</p>
+    <p>Thank you for submitting your ${escapeHtml(PCH_BRAND_NAME)} prize application at ${escapeHtml(SITE_DOMAIN)}. We have received your application.</p>
     <p><strong>Application reference:</strong> ${escapeHtml(appRef)}<br />
     <strong>Category:</strong> ${escapeHtml(category)}</p>
     <p>You have been assigned to me, ${escapeHtml(APPLICANT_CASE_MANAGER_NAME)}, ${escapeHtml(APPLICANT_CASE_MANAGER_TITLE)}, as your point of contact on this file.</p>
