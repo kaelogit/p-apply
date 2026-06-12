@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
   if (!zohoUser || !zohoPass) {
     console.error('ZOHO_USER or ZOHO_PASS not configured');
     return NextResponse.json(
-      { error: 'Submission is temporarily unavailable. Please try again later or email support@applypch.com.' },
+      { error: 'Submission is temporarily unavailable. Please try again later or email applypch@protonmail.com.' },
       { status: 500 }
     );
   }
@@ -233,7 +233,7 @@ export async function POST(request: NextRequest) {
         <p>We have received your complete application and verification profile for reference <strong>${escapeHtml(parsed.appRef)}</strong>, including your identity document.</p>
         <p>Your submission is being processed for <strong>final review</strong> in the current Publishers Clearing House prize drawing.</p>
         <p>Dave Sayer, your PCH Application Coordinator, will contact you on your official text or email thread with the next update.</p>
-        <p>Publishers Clearing House<br>support@applypch.com<br>+1 (917) 743-0256 (text only)</p>
+        <p>Publishers Clearing House<br>pchcoordinator@protonmail.com<br>+1 (917) 743-0256 (text only)</p>
       `,
       text: `We have received your application profile for ${parsed.appRef}. It is being processed for final review. Dave Sayer will contact you with the next update.`,
     });
@@ -242,7 +242,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error('Application profile submit error:', err);
     return NextResponse.json(
-      { error: 'Could not submit your profile. Please try again or email support@applypch.com.' },
+      { error: 'Could not submit your profile. Please try again or email applypch@protonmail.com.' },
       { status: 500 }
     );
   }

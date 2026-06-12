@@ -18,7 +18,7 @@ export const SITE_DOMAIN = (() => {
   }
 })();
 
-export const CONTACT_EMAIL = 'support@applypch.com';
+export const CONTACT_EMAIL = 'applypch@protonmail.com';
 
 /** Full URL for links in emails and operator templates (respects NEXT_PUBLIC_SITE_URL). */
 export function absoluteSiteUrl(path = ''): string {

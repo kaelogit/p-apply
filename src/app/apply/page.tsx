@@ -273,7 +273,7 @@ export default function ApplyPage() {
 
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
             {APPLICANT_CONTACT_MONITOR} Messages may come from {APPLICANT_CASE_MANAGER_NAME} or from{' '}
-            support@applypch.com / {APPLY_SMS_NUMBER_DISPLAY}.
+            applypch@protonmail.com / {APPLY_SMS_NUMBER_DISPLAY}.
           </p>
           <Link href="/" className="btn-outline px-6 py-3">Back to home</Link>
         </div>

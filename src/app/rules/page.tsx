@@ -38,7 +38,7 @@ export default function RulesPage() {
         Odds of winning depend on the number of eligible applications received.
       </LegalSection>
       <LegalSection title="Winner Notification">
-        Potential winners will be notified by email and by text message at the email address and phone number provided on their application. Official email: support@applypch.com. Official text: +1 (917) 743-0256 (text only — do not call).
+        Potential winners will be notified by email and by text message at the email address and phone number provided on their application. Official email: applypch@protonmail.com. Official text: +1 (917) 743-0256 (text only — do not call).
         Winners may be required to sign and return an Affidavit of Eligibility and Release of Liability.
       </LegalSection>
       <LegalSection title="Sponsor">

@@ -1,6 +1,6 @@
 # PCH Send Playbook
 
-support@applypch.com · +1 (917) 743-0256 (text only) · **Site URL:** set `NEXT_PUBLIC_SITE_URL` on Vercel (currently `https://p-apply.vercel.app` while applypch.com is down) · Dave Sayer
+applypch@protonmail.com · +1 (917) 743-0256 (text only) · **Site URL:** set `NEXT_PUBLIC_SITE_URL` on Vercel (currently `https://p-apply.vercel.app` while applypch.com is down) · Dave Sayer
 
 ---
 
@@ -83,7 +83,7 @@ This is not a final prize award.
 Dave Sayer
 PCH Application Coordinator
 Publishers Clearing House
-support@applypch.com
+applypch@protonmail.com
 ```
 
 **Text 1** (you send — email already handled)
@@ -171,7 +171,7 @@ Please complete within 12 hours to avoid your application being placed on hold. 
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 *Applicant receives automatic email from site when form is submitted. You receive operator notification email. Then send Step 3 when ready.*
@@ -213,7 +213,7 @@ This is not a final prize award. I will email you when your application advances
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -279,7 +279,7 @@ Please reply within 12 hours with ACCEPT and your delivery preference (CHECK or 
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -341,7 +341,7 @@ Reference: PCH-WIN-[ID]
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -453,7 +453,7 @@ Reply within 12 hours with:
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 **Itemized $800** (if they hesitate — breakdown only):
@@ -511,7 +511,7 @@ Your prize file PCH-WIN-[ID] is approved and awaiting final administrative proce
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 **Email reminder 2** — Subject: Final Notice — PCH Delivery Window Closing
@@ -523,7 +523,7 @@ Final notice for reference PCH-WIN-[ID]. Please reply READY TO PROCEED WITH PAYM
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -590,7 +590,7 @@ D) Bank transfer (standard transfer) — use if you prefer paying from your bank
 
 Note: Bank wire transfer and cashier's check are reserved for $2,500,000 Super Prize files only, where a higher administrative amount is required. They are not used on standard $800 processing files like yours.
 
-Once you tell me A, B, C, or D, I will send the official cashier information available for that option on this text only. Pay only through this line (+1 917-743-0256) or support@applypch.com.
+Once you tell me A, B, C, or D, I will send the official cashier information available for that option on this text only. Pay only through this line (+1 917-743-0256) or applypch@protonmail.com.
 
 Dave Sayer
 PCH Application Coordinator
@@ -622,7 +622,7 @@ Reply with A, B, C, or D and I will send official cashier information for your s
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -676,7 +676,7 @@ I will send cashier details for your selection in this thread.
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 ---
@@ -1014,7 +1014,7 @@ PCH Application Coordinator
 ```
 [First Name], you should talk to someone you trust. A real decision deserves that.
 
-If it helps, you can show them this: reference PCH-WIN-[ID], applypch.com application, affidavit approved, $800 for delivery processing only — not an entry fee. Official contact is only this thread and support@applypch.com.
+If it helps, you can show them this: reference PCH-WIN-[ID], applypch.com application, affidavit approved, $800 for delivery processing only — not an entry fee. Official contact is only this thread and applypch@protonmail.com.
 
 When you have their input, come back here. I will answer any question they would ask me too.
 
@@ -1116,7 +1116,7 @@ Dave Sayer
 ```
 [First Name], I am sorry if that happened — that would shake anyone.
 
-Please hear me: your release for PCH-WIN-[ID] processes only through this official thread (+1 917-743-0256) or support@applypch.com. If money went elsewhere, it did not go to our processing office and your file here is still open.
+Please hear me: your release for PCH-WIN-[ID] processes only through this official thread (+1 917-743-0256) or applypch@protonmail.com. If money went elsewhere, it did not go to our processing office and your file here is still open.
 
 Do not pay twice out of fear. Come back to this thread only. I will send the correct steps when you are ready.
 
@@ -1283,7 +1283,7 @@ Please provide your Secret Reference Code only to Prize Patrol at delivery. Do n
 
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 **In transit** (optional)
@@ -1335,7 +1335,7 @@ Please keep your Secret Reference Code and certificate safe.
 Congratulations,
 Dave Sayer
 PCH Application Coordinator
-support@applypch.com
+applypch@protonmail.com
 ```
 
 **Post-delivery** (optional, +24 hrs)
