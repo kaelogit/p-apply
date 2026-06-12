@@ -46,7 +46,6 @@ import {
   APPLICANT_CONTACT_MONITOR,
   APPLICANT_CASE_MANAGER_NAME,
   APPLICANT_CASE_MANAGER_TITLE,
-  APPLICATION_EMAIL,
   CONTACT_EMAIL,
   applicantCaseManagerIntro,
   applicantFastTrackNote,
@@ -274,7 +273,7 @@ export default function ApplyPage() {
           </div>
 
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
-            {APPLICANT_CONTACT_MONITOR} Messages may come from {APPLICANT_CASE_MANAGER_NAME} ({CONTACT_EMAIL}), automated confirmations from {APPLICATION_EMAIL}, or text {APPLY_SMS_NUMBER_DISPLAY}.
+            {APPLICANT_CONTACT_MONITOR} {APPLICANT_CASE_MANAGER_NAME} will reach out by text ({APPLY_SMS_NUMBER_DISPLAY}) or email ({CONTACT_EMAIL}).
           </p>
           <Link href="/" className="btn-outline px-6 py-3">Back to home</Link>
         </div>

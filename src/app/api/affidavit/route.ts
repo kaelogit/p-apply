@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { absoluteSiteUrl } from '@/lib/site';
+import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
 import {
-  COORDINATOR_EMAIL,
   createMailTransporter,
   getOperatorInbox,
   getSmtpCredentials,
@@ -133,20 +133,6 @@ export async function POST(request: NextRequest) {
       subject: `[PCH Affidavit] ${parsed.fullName} — ${parsed.winRef}`,
       text,
       html,
-    });
-
-    await transporter.sendMail({
-      from: mailFromAutomated('Dave Sayer, PCH Application Coordinator'),
-      to: parsed.email,
-      replyTo: COORDINATOR_EMAIL,
-      subject: `Affidavit received — ${parsed.winRef}`,
-      html: `
-        <p>Dear ${escapeHtml(parsed.fullName)},</p>
-        <p>We have received your signed Affidavit of Eligibility for reference <strong>${escapeHtml(parsed.winRef)}</strong>.</p>
-        <p>Our team will review it and contact you regarding the next steps for your prize.</p>
-        <p>Publishers Clearing House<br>${escapeHtml(COORDINATOR_EMAIL)}</p>
-      `,
-      text: `We have received your Affidavit of Eligibility for ${parsed.winRef}. Our team will review it and contact you with next steps.`,
     });
 
     return NextResponse.json({ ok: true });

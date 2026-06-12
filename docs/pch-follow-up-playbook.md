@@ -1,6 +1,6 @@
 # PCH Send Playbook
 
-applypch@protonmail.com (automated) · pchcoordinator@protonmail.com (Dave replies) · +1 (917) 743-0256 (text only) · **Site:** `NEXT_PUBLIC_SITE_URL` on Vercel · Dave Sayer
+pchcoordinator@protonmail.com (Dave) · +1 (917) 743-0256 (text only) · **Site:** `NEXT_PUBLIC_SITE_URL` on Vercel · Dave Sayer
 
 ---
 
@@ -24,7 +24,7 @@ applypch@protonmail.com (automated) · pchcoordinator@protonmail.com (Dave repli
 | Pay details | Text PAY DETAILS | Email PAY DETAILS |
 | Delivery | ↓ bottom | ↓ bottom |
 
-**Online apply flow:** Basic form at site URL → auto email to applicant + you send Text 1 → after reply → Step 2 (profile form link) → Step 3 (under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
+**Online apply flow:** Basic form at site URL → operator notification to Proton → you send Text 1 + Email 1 → after reply → Step 2 (profile form link) → Step 3 (under review) → Step 4 selection → Step 5 affidavit → Step 6 payment → delivery.
 
 **Links in messages:** use `NEXT_PUBLIC_SITE_URL` from Vercel (e.g. `https://p-apply.vercel.app`) + path — not applypch.com until the domain is restored.
 
@@ -52,18 +52,22 @@ Optional on success page: **fast-track text** — applicant sends only: `My name
 
 ---
 
-# STEP 1 — Application received (email automatic; you send text)
+# STEP 1 — Application received (operator notification; you send text + email)
 
-*Applicant auto-email fires on apply submit — you only send Text 1 manually.*
+*Site notifies your Proton inbox on apply submit — no auto-email to applicant. You send Text 1 and Email 1 manually.*
 
-**Auto Email (site — do not send manually)** — Subject: `Your applypch.com application — Ref PCH-[REF]`
+**Operator notification (site — automatic)** — lands in `pchcoordinator@protonmail.com` via Gmail SMTP
 
-Sent automatically when they submit at applypch.com. Short standalone confirmation (no quoted reply block). Reference format: `PCH-[REF]`.
+When someone submits at the site, you receive the full application at your Proton inbox (`TO_EMAIL`). Subject example: `[PCH Application] Jane Doe — Ref PCH-128553974 — Tampa, USA`. Reply-To is the applicant's email.
 
 **Set reference in Vercel env:**
 - `APPLY_REF_ID` = `128553974` (default — same ref for every applicant until you change it)
 
-Example auto-reply body:
+**Email 1** — Subject: Your PCH Application Has Been Received — Ref PCH-[REF]
+
+Send manually from `pchcoordinator@protonmail.com` after you see the notification:
+
+Example body:
 ```
 Dear [First Name],
 

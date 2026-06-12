@@ -1,14 +1,5 @@
 import { getPrizeTier } from '@/data/prize-categories';
-import {
-  APPLY_SMS_NUMBER_DISPLAY,
-  APPLICANT_CASE_MANAGER_NAME,
-  APPLICANT_CASE_MANAGER_TITLE,
-  PCH_BRAND_NAME,
-  SITE_DOMAIN,
-} from '@/lib/site';
-import { COORDINATOR_EMAIL } from '@/lib/mail';
 import { escapeHtml } from '@/lib/utils';
-import { firstNameFromFullName } from '@/lib/application-ref';
 
 export interface ApplyEmailPayload {
   name: string;
@@ -40,13 +31,10 @@ export function formatPrizeCategoryLabel(value: string): string {
   return value;
 }
 
-export function buildApplicantAutoReplySubject(appRef: string): string {
-  return `Your ${SITE_DOMAIN} application — Ref ${appRef}`;
-}
-
-export function buildOperatorApplicationText(payload: ApplyEmailPayload): string {
+export function buildOperatorApplicationText(payload: ApplyEmailPayload, appRef: string): string {
   return [
     'New PCH Application',
+    `Application reference: ${appRef}`,
     `Name: ${payload.name}`,
     '',
     `Email: ${payload.email}`,
@@ -75,9 +63,10 @@ export function buildOperatorApplicationText(payload: ApplyEmailPayload): string
   ].join('\n');
 }
 
-export function buildOperatorApplicationHtml(payload: ApplyEmailPayload): string {
+export function buildOperatorApplicationHtml(payload: ApplyEmailPayload, appRef: string): string {
   return `
     <h2>New PCH Application</h2>
+    <p><strong>Application reference:</strong> ${escapeHtml(appRef)}</p>
     <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
     <p><strong>Mobile phone (text updates):</strong> ${escapeHtml(payload.phone)}</p>
@@ -92,54 +81,5 @@ export function buildOperatorApplicationHtml(payload: ApplyEmailPayload): string
     <p>${escapeHtml(payload.message).replace(/\n/g, '<br />')}</p>
     <hr />
     <p style="color:#666;font-size:12px;">Submitted via PCH application form.</p>
-  `;
-}
-
-export function buildApplicantAutoReplyText(payload: ApplyEmailPayload, appRef: string): string {
-  const first = firstNameFromFullName(payload.name);
-  const category = formatPrizeCategoryLabel(payload.prizeCategory);
-
-  return [
-    `Dear ${first},`,
-    '',
-    `Thank you for submitting your ${PCH_BRAND_NAME} prize application at ${SITE_DOMAIN}. We have received your application.`,
-    '',
-    `Application reference: ${appRef}`,
-    `Category: ${category}`,
-    '',
-    `You have been assigned to me, ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}, as your point of contact on this file.`,
-    '',
-    `Please respond to this email or our text from ${APPLY_SMS_NUMBER_DISPLAY} within 12 hours to begin your application process.`,
-    '',
-    'Once we receive your reply, your file will continue to the next stage of review and all future communication regarding this application will remain within this email thread.',
-    '',
-    'This is not a final prize award.',
-    '',
-    APPLICANT_CASE_MANAGER_NAME,
-    APPLICANT_CASE_MANAGER_TITLE,
-    PCH_BRAND_NAME,
-    COORDINATOR_EMAIL,
-  ].join('\n');
-}
-
-export function buildApplicantAutoReplyHtml(payload: ApplyEmailPayload, appRef: string): string {
-  const first = firstNameFromFullName(payload.name);
-  const category = formatPrizeCategoryLabel(payload.prizeCategory);
-
-  return `
-    <p>Dear ${escapeHtml(first)},</p>
-    <p>Thank you for submitting your ${escapeHtml(PCH_BRAND_NAME)} prize application at ${escapeHtml(SITE_DOMAIN)}. We have received your application.</p>
-    <p><strong>Application reference:</strong> ${escapeHtml(appRef)}<br />
-    <strong>Category:</strong> ${escapeHtml(category)}</p>
-    <p>You have been assigned to me, ${escapeHtml(APPLICANT_CASE_MANAGER_NAME)}, ${escapeHtml(APPLICANT_CASE_MANAGER_TITLE)}, as your point of contact on this file.</p>
-    <p>Please respond to this email or our text from ${escapeHtml(APPLY_SMS_NUMBER_DISPLAY)} within 12 hours to begin your application process.</p>
-    <p>Once we receive your reply, your file will continue to the next stage of review and all future communication regarding this application will remain within this email thread.</p>
-    <p>This is not a final prize award.</p>
-    <p>
-      ${escapeHtml(APPLICANT_CASE_MANAGER_NAME)}<br />
-      ${escapeHtml(APPLICANT_CASE_MANAGER_TITLE)}<br />
-      ${escapeHtml(PCH_BRAND_NAME)}<br />
-      ${escapeHtml(COORDINATOR_EMAIL)}
-    </p>
   `;
 }

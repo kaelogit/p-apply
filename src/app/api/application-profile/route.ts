@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { absoluteSiteUrl, APPLY_SMS_NUMBER_DISPLAY } from '@/lib/site';
+import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
 import {
-  COORDINATOR_EMAIL,
   createMailTransporter,
   getOperatorInbox,
   getSmtpCredentials,

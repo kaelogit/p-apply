@@ -33,13 +33,13 @@ Open [http://localhost:3000](http://localhost:3000).
 Copy `.env.example` to `.env.local`:
 
 ```
-SMTP_USER=applypch@protonmail.com
-SMTP_PASS=your-proton-mail-app-password
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-gmail-app-password
 TO_EMAIL=pchcoordinator@protonmail.com
 NEXT_PUBLIC_SITE_URL=https://p-apply.vercel.app
 ```
 
-**Email roles:** `applypch@protonmail.com` sends automated confirmations; `pchcoordinator@protonmail.com` receives operator notifications and applicant replies (Dave).
+**Email flow:** Gmail SMTP sends operator notifications to `pchcoordinator@protonmail.com`. Dave replies manually from Proton. No auto-email to applicants on apply or affidavit submit.
 
 ## Pages
 

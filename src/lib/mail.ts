@@ -1,11 +1,7 @@
+import 'server-only';
 import nodemailer from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';
-
-/** Automated outbound mail (apply confirmations, form receipts). */
-export const APPLICATION_EMAIL = 'applypch@protonmail.com';
-
-/** Dave Sayer — applicant replies and manual coordinator email. */
-export const COORDINATOR_EMAIL = 'pchcoordinator@protonmail.com';
+import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
 
 function readEnv(...keys: string[]): string | undefined {
   for (const key of keys) {
@@ -16,9 +12,9 @@ function readEnv(...keys: string[]): string | undefined {
 }
 
 export function getSmtpCredentials(): { user: string; pass: string } | null {
-  const user = readEnv('SMTP_USER', 'ZOHO_USER') ?? APPLICATION_EMAIL;
+  const user = readEnv('SMTP_USER', 'ZOHO_USER');
   const pass = readEnv('SMTP_PASS', 'ZOHO_PASS');
-  if (!pass) return null;
+  if (!user || !pass) return null;
   return { user, pass };
 }
 
@@ -30,7 +26,7 @@ export function createMailTransporter(): nodemailer.Transporter<SMTPTransport.Se
   const creds = getSmtpCredentials();
   if (!creds) return null;
 
-  const host = readEnv('SMTP_HOST') ?? 'smtp.protonmail.ch';
+  const host = readEnv('SMTP_HOST') ?? 'smtp.gmail.com';
   const port = Number(readEnv('SMTP_PORT') ?? '587');
   const secure = port === 465;
 
@@ -45,8 +41,8 @@ export function createMailTransporter(): nodemailer.Transporter<SMTPTransport.Se
 
 export function mailFromAutomated(displayName: string): string {
   const creds = getSmtpCredentials();
-  const address = creds?.user ?? APPLICATION_EMAIL;
-  return `"${displayName}" <${address}>`;
+  if (!creds) return `"${displayName}" <noreply@example.com>`;
+  return `"${displayName}" <${creds.user}>`;
 }
 
 export function mailUnavailableMessage(): string {

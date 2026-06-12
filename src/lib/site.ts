@@ -18,10 +18,12 @@ export const SITE_DOMAIN = (() => {
   }
 })();
 
-export { APPLICATION_EMAIL, COORDINATOR_EMAIL } from '@/lib/mail';
+import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
+
+export { COORDINATOR_EMAIL };
 
 /** Public contact — Dave Sayer replies from coordinator inbox. */
-export const CONTACT_EMAIL = 'pchcoordinator@protonmail.com';
+export const CONTACT_EMAIL = COORDINATOR_EMAIL;
 
 /** Full URL for links in emails and operator templates (respects NEXT_PUBLIC_SITE_URL). */
 export function absoluteSiteUrl(path = ''): string {

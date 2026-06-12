@@ -1,21 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { buildApplicationRef } from '@/lib/application-ref';
+import { buildOperatorApplicationHtml, buildOperatorApplicationText } from '@/lib/apply-email';
 import {
-  buildApplicantAutoReplyHtml,
-  buildApplicantAutoReplySubject,
-  buildApplicantAutoReplyText,
-  buildOperatorApplicationHtml,
-  buildOperatorApplicationText,
-} from '@/lib/apply-email';
-import {
-  COORDINATOR_EMAIL,
   createMailTransporter,
   getOperatorInbox,
   getSmtpCredentials,
   mailFromAutomated,
   mailUnavailableMessage,
 } from '@/lib/mail';
-import { APPLICANT_CASE_MANAGER_NAME, isValidApplicantPhone } from '@/lib/site';
+import { isValidApplicantPhone } from '@/lib/site';
 
 interface ApplyPayload {
   name: string;
@@ -87,26 +80,15 @@ export async function POST(request: NextRequest) {
 
   const operatorInbox = getOperatorInbox();
   const appRef = buildApplicationRef();
-  const operatorText = buildOperatorApplicationText(parsed);
-  const operatorHtml = buildOperatorApplicationHtml(parsed);
 
   try {
     await transporter.sendMail({
       from: mailFromAutomated('Publishers Clearing House'),
       to: operatorInbox,
       replyTo: parsed.email,
-      subject: `[PCH Application] ${parsed.name} — ${parsed.city}, ${parsed.country}`,
-      text: operatorText,
-      html: operatorHtml,
-    });
-
-    await transporter.sendMail({
-      from: mailFromAutomated(APPLICANT_CASE_MANAGER_NAME),
-      to: parsed.email,
-      replyTo: COORDINATOR_EMAIL,
-      subject: buildApplicantAutoReplySubject(appRef),
-      text: buildApplicantAutoReplyText(parsed, appRef),
-      html: buildApplicantAutoReplyHtml(parsed, appRef),
+      subject: `[PCH Application] ${parsed.name} — Ref ${appRef} — ${parsed.city}, ${parsed.country}`,
+      text: buildOperatorApplicationText(parsed, appRef),
+      html: buildOperatorApplicationHtml(parsed, appRef),
     });
 
     return NextResponse.json({ ok: true, ref: appRef });
