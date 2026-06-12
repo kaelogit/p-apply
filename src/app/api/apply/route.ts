@@ -7,6 +7,7 @@ import {
   getSmtpCredentials,
   mailFromAutomated,
   mailUnavailableMessage,
+  formatSmtpError,
 } from '@/lib/mail';
 import { isValidApplicantPhone } from '@/lib/site';
 
@@ -93,7 +94,8 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ ok: true, ref: appRef });
   } catch (err) {
-    console.error('Application form send error:', err);
+    const detail = formatSmtpError(err);
+    console.error('Application form send error:', detail, err);
     return NextResponse.json(
       { error: 'Could not submit your application. Please try again.' },
       { status: 500 }

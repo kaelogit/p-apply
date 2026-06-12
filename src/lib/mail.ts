@@ -11,10 +11,17 @@ function readEnv(...keys: string[]): string | undefined {
   return undefined;
 }
 
+function isGmailAddress(email: string): boolean {
+  const lower = email.toLowerCase();
+  return lower.endsWith('@gmail.com') || lower.endsWith('@googlemail.com');
+}
+
 export function getSmtpCredentials(): { user: string; pass: string } | null {
   const user = readEnv('SMTP_USER', 'ZOHO_USER');
-  const pass = readEnv('SMTP_PASS', 'ZOHO_PASS');
-  if (!user || !pass) return null;
+  const passRaw = readEnv('SMTP_PASS', 'ZOHO_PASS');
+  if (!user || !passRaw) return null;
+  // Google app passwords are often copied with spaces — strip them.
+  const pass = passRaw.replace(/\s/g, '');
   return { user, pass };
 }
 
@@ -25,6 +32,14 @@ export function getOperatorInbox(): string {
 export function createMailTransporter(): nodemailer.Transporter<SMTPTransport.SentMessageInfo> | null {
   const creds = getSmtpCredentials();
   if (!creds) return null;
+
+  // Gmail — use built-in service config (ignore stale Proton SMTP_HOST on Vercel).
+  if (isGmailAddress(creds.user)) {
+    return nodemailer.createTransport({
+      service: 'gmail',
+      auth: creds,
+    });
+  }
 
   const host = readEnv('SMTP_HOST') ?? 'smtp.gmail.com';
   const port = Number(readEnv('SMTP_PORT') ?? '587');
@@ -47,4 +62,9 @@ export function mailFromAutomated(displayName: string): string {
 
 export function mailUnavailableMessage(): string {
   return `Submission is temporarily unavailable. Please try again later or email ${COORDINATOR_EMAIL}.`;
+}
+
+export function formatSmtpError(err: unknown): string {
+  if (err instanceof Error) return err.message;
+  return String(err);
 }
