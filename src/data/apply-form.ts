@@ -201,7 +201,7 @@ export function buildFastTrackMessage(name: string): string {
   const trimmed = name.trim();
   return trimmed
     ? `My name is ${trimmed}. I just submitted my application at ${SITE_DOMAIN}. Thank you.`
-    : `I just submitted my application at ${SITE_DOMAIN}. Thank you.`;
+    : `I just submitted my application. Thank you.`;
 }
 
 export function buildFastTrackSmsUrl(phoneDigits: string, name: string): string {

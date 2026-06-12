@@ -48,7 +48,7 @@ pchcoordinator@protonmail.com (Dave) · +1 (917) 743-0256 (text only) · **Site:
 | Why applying (message) | Yes |
 | 18+ and rules confirm | Yes |
 
-Optional on success page: **fast-track text** — applicant sends only: `My name is [name]. I just submitted my application at applypch.com. Thank you.` → you reply with **Step 1** (received + CONFIRM) → after CONFIRM → **Step 2** profile form.
+Optional on success page: **fast-track text** — applicant sends only: `My name is [name]. I just submitted my application at applypch. Thank you.` → you reply with **Step 1** (received + CONFIRM) → after CONFIRM → **Step 2** profile form.
 
 ---
 
