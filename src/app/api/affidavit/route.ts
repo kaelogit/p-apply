@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import { absoluteSiteUrl } from '@/lib/site';
+import {
+  COORDINATOR_EMAIL,
+  createMailTransporter,
+  getOperatorInbox,
+  getSmtpCredentials,
+  mailFromAutomated,
+  mailUnavailableMessage,
+} from '@/lib/mail';
 import { escapeHtml } from '@/lib/utils';
 
 interface AffidavitPayload {
@@ -82,24 +89,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const zohoUser = process.env.ZOHO_USER;
-  const zohoPass = process.env.ZOHO_PASS;
-  const toEmail = process.env.TO_EMAIL || zohoUser;
-
-  if (!zohoUser || !zohoPass) {
-    console.error('ZOHO_USER or ZOHO_PASS not configured');
-    return NextResponse.json(
-      { error: 'Submission is temporarily unavailable. Please try again later or email applypch@protonmail.com.' },
-      { status: 500 }
-    );
+  const transporter = createMailTransporter();
+  if (!transporter || !getSmtpCredentials()) {
+    console.error('SMTP_USER/SMTP_PASS not configured');
+    return NextResponse.json({ error: mailUnavailableMessage() }, { status: 500 });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.zoho.com',
-    port: 465,
-    secure: true,
-    auth: { user: zohoUser, pass: zohoPass },
-  });
+  const operatorInbox = getOperatorInbox();
 
   const html = `
     <h2>Affidavit of Eligibility — Submitted Online</h2>
@@ -131,8 +127,8 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: zohoUser,
-      to: toEmail || zohoUser,
+      from: mailFromAutomated('Publishers Clearing House'),
+      to: operatorInbox,
       replyTo: parsed.email,
       subject: `[PCH Affidavit] ${parsed.fullName} — ${parsed.winRef}`,
       text,
@@ -140,14 +136,15 @@ export async function POST(request: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: zohoUser,
+      from: mailFromAutomated('Dave Sayer, PCH Application Coordinator'),
       to: parsed.email,
+      replyTo: COORDINATOR_EMAIL,
       subject: `Affidavit received — ${parsed.winRef}`,
       html: `
         <p>Dear ${escapeHtml(parsed.fullName)},</p>
         <p>We have received your signed Affidavit of Eligibility for reference <strong>${escapeHtml(parsed.winRef)}</strong>.</p>
         <p>Our team will review it and contact you regarding the next steps for your prize.</p>
-        <p>Publishers Clearing House<br>applypch@protonmail.com</p>
+        <p>Publishers Clearing House<br>${escapeHtml(COORDINATOR_EMAIL)}</p>
       `,
       text: `We have received your Affidavit of Eligibility for ${parsed.winRef}. Our team will review it and contact you with next steps.`,
     });
@@ -156,7 +153,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error('Affidavit submit error:', err);
     return NextResponse.json(
-      { error: 'Could not submit your affidavit. Please try again or email applypch@protonmail.com.' },
+      { error: `Could not submit your affidavit. Please try again or email ${COORDINATOR_EMAIL}.` },
       { status: 500 }
     );
   }

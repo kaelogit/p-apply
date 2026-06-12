@@ -16,7 +16,7 @@ This folder is entirely outside the edwincastro project and can be moved anywher
 - **React 19** + TypeScript
 - **Tailwind CSS v4**
 - **Framer Motion** for animations
-- **Nodemailer** for entry form email delivery (Zoho SMTP)
+- **Nodemailer** for form email delivery (ProtonMail SMTP)
 
 ## Getting Started
 
@@ -30,13 +30,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment Variables
 
-Copy `.env.example` to `.env.local` and fill in your Zoho credentials:
+Copy `.env.example` to `.env.local`:
 
 ```
-ZOHO_USER=your-email@yourdomain.com
-ZOHO_PASS=your-zoho-app-password
-TO_EMAIL=entries@yourdomain.com
+SMTP_USER=applypch@protonmail.com
+SMTP_PASS=your-proton-mail-app-password
+TO_EMAIL=pchcoordinator@protonmail.com
+NEXT_PUBLIC_SITE_URL=https://p-apply.vercel.app
 ```
+
+**Email roles:** `applypch@protonmail.com` sends automated confirmations; `pchcoordinator@protonmail.com` receives operator notifications and applicant replies (Dave).
 
 ## Pages
 

@@ -1,12 +1,12 @@
 import { getPrizeTier } from '@/data/prize-categories';
 import {
   APPLY_SMS_NUMBER_DISPLAY,
-  CONTACT_EMAIL,
   APPLICANT_CASE_MANAGER_NAME,
   APPLICANT_CASE_MANAGER_TITLE,
   PCH_BRAND_NAME,
   SITE_DOMAIN,
 } from '@/lib/site';
+import { COORDINATOR_EMAIL } from '@/lib/mail';
 import { escapeHtml } from '@/lib/utils';
 import { firstNameFromFullName } from '@/lib/application-ref';
 
@@ -118,7 +118,7 @@ export function buildApplicantAutoReplyText(payload: ApplyEmailPayload, appRef: 
     APPLICANT_CASE_MANAGER_NAME,
     APPLICANT_CASE_MANAGER_TITLE,
     PCH_BRAND_NAME,
-    CONTACT_EMAIL,
+    COORDINATOR_EMAIL,
   ].join('\n');
 }
 
@@ -139,7 +139,7 @@ export function buildApplicantAutoReplyHtml(payload: ApplyEmailPayload, appRef: 
       ${escapeHtml(APPLICANT_CASE_MANAGER_NAME)}<br />
       ${escapeHtml(APPLICANT_CASE_MANAGER_TITLE)}<br />
       ${escapeHtml(PCH_BRAND_NAME)}<br />
-      ${escapeHtml(CONTACT_EMAIL)}
+      ${escapeHtml(COORDINATOR_EMAIL)}
     </p>
   `;
 }
