@@ -11,16 +11,10 @@ function readEnv(...keys: string[]): string | undefined {
   return undefined;
 }
 
-function isGmailAddress(email: string): boolean {
-  const lower = email.toLowerCase();
-  return lower.endsWith('@gmail.com') || lower.endsWith('@googlemail.com');
-}
-
 export function getSmtpCredentials(): { user: string; pass: string } | null {
-  const user = readEnv('SMTP_USER', 'ZOHO_USER');
-  const passRaw = readEnv('SMTP_PASS', 'ZOHO_PASS');
+  const user = readEnv('ZOHO_USER', 'SMTP_USER');
+  const passRaw = readEnv('ZOHO_PASS', 'SMTP_PASS');
   if (!user || !passRaw) return null;
-  // Google app passwords are often copied with spaces — strip them.
   const pass = passRaw.replace(/\s/g, '');
   return { user, pass };
 }
@@ -29,19 +23,20 @@ export function getOperatorInbox(): string {
   return readEnv('TO_EMAIL') ?? COORDINATOR_EMAIL;
 }
 
+function resolveSmtpHost(): string {
+  const explicit = readEnv('SMTP_HOST');
+  if (!explicit) return 'smtp.zoho.com';
+  const lower = explicit.toLowerCase();
+  // Ignore stale Gmail/Proton hosts left on Vercel when switching back to Zoho.
+  if (lower.includes('protonmail') || lower.includes('gmail')) return 'smtp.zoho.com';
+  return explicit;
+}
+
 export function createMailTransporter(): nodemailer.Transporter<SMTPTransport.SentMessageInfo> | null {
   const creds = getSmtpCredentials();
   if (!creds) return null;
 
-  // Gmail — use built-in service config (ignore stale Proton SMTP_HOST on Vercel).
-  if (isGmailAddress(creds.user)) {
-    return nodemailer.createTransport({
-      service: 'gmail',
-      auth: creds,
-    });
-  }
-
-  const host = readEnv('SMTP_HOST') ?? 'smtp.gmail.com';
+  const host = resolveSmtpHost();
   const port = Number(readEnv('SMTP_PORT') ?? '587');
   const secure = port === 465;
 

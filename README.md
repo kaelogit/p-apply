@@ -16,7 +16,7 @@ This folder is entirely outside the edwincastro project and can be moved anywher
 - **React 19** + TypeScript
 - **Tailwind CSS v4**
 - **Framer Motion** for animations
-- **Nodemailer** for form email delivery (ProtonMail SMTP)
+- **Nodemailer** + **Zoho Mail SMTP** for form email delivery
 
 ## Getting Started
 
@@ -33,13 +33,13 @@ Open [http://localhost:3000](http://localhost:3000).
 Copy `.env.example` to `.env.local`:
 
 ```
-SMTP_USER=your-gmail@gmail.com
-SMTP_PASS=your-gmail-app-password
+ZOHO_USER=support@yourdomain.com
+ZOHO_PASS=your-zoho-app-password
 TO_EMAIL=pchcoordinator@protonmail.com
 NEXT_PUBLIC_SITE_URL=https://p-apply.vercel.app
 ```
 
-**Email flow:** Gmail SMTP sends operator notifications to `pchcoordinator@protonmail.com`. Dave replies manually from Proton. No auto-email to applicants on apply or affidavit submit.
+**Email flow:** Zoho SMTP sends operator notifications to `TO_EMAIL`. Dave replies manually from Proton. No auto-email to applicants on apply or affidavit submit.
 
 ## Pages
 

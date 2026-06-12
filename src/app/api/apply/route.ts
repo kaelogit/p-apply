@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
 
   const transporter = createMailTransporter();
   if (!transporter || !getSmtpCredentials()) {
-    console.error('SMTP_USER/SMTP_PASS not configured');
+    console.error('ZOHO_USER/ZOHO_PASS not configured');
     return NextResponse.json({ error: mailUnavailableMessage() }, { status: 500 });
   }
 

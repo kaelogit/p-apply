@@ -1,6 +1,6 @@
 /**
- * Test Gmail SMTP credentials locally.
- * Usage: set SMTP_USER and SMTP_PASS in .env.local, then: node scripts/test-smtp.mjs
+ * Test Zoho SMTP credentials locally.
+ * Usage: set ZOHO_USER and ZOHO_PASS in .env.local, then: node scripts/test-smtp.mjs
  */
 import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
@@ -19,30 +19,27 @@ if (existsSync(envPath)) {
   }
 }
 
-const user = process.env.SMTP_USER || process.env.ZOHO_USER;
-const passRaw = process.env.SMTP_PASS || process.env.ZOHO_PASS;
+const user = process.env.ZOHO_USER || process.env.SMTP_USER;
+const passRaw = process.env.ZOHO_PASS || process.env.SMTP_PASS;
 const pass = passRaw?.replace(/\s/g, '');
 const to = process.env.TO_EMAIL || 'pchcoordinator@protonmail.com';
+const host = process.env.SMTP_HOST || 'smtp.zoho.com';
+const port = Number(process.env.SMTP_PORT || 587);
 
 if (!user || !pass) {
-  console.error('Missing SMTP_USER and SMTP_PASS (or ZOHO_* fallbacks) in .env.local');
+  console.error('Missing ZOHO_USER and ZOHO_PASS in .env.local');
   process.exit(1);
 }
 
-const isGmail = user.toLowerCase().endsWith('@gmail.com') || user.toLowerCase().endsWith('@googlemail.com');
-const transporter = nodemailer.createTransport(
-  isGmail
-    ? { service: 'gmail', auth: { user, pass } }
-    : {
-        host: process.env.SMTP_HOST || 'smtp.gmail.com',
-        port: Number(process.env.SMTP_PORT || 587),
-        secure: false,
-        auth: { user, pass },
-        requireTLS: true,
-      }
-);
+const transporter = nodemailer.createTransport({
+  host,
+  port,
+  secure: port === 465,
+  auth: { user, pass },
+  ...(port === 465 ? {} : { requireTLS: true }),
+});
 
-console.log(`Testing SMTP as ${user} → ${to} ...`);
+console.log(`Testing Zoho SMTP as ${user} via ${host}:${port} → ${to} ...`);
 
 try {
   await transporter.verify();
@@ -52,7 +49,7 @@ try {
     from: `"PCH Test" <${user}>`,
     to,
     subject: '[PCH SMTP Test] Connection OK',
-    text: 'If you received this, Gmail SMTP is configured correctly.',
+    text: 'If you received this, Zoho SMTP is configured correctly.',
   });
 
   console.log('✓ Test email sent:', info.messageId);
