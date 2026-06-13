@@ -48,7 +48,7 @@ export const MAX_LUMP_SUM_LABEL = '$2,500,000 Mega Prize';
 export const SUPER_PRIZE_AMOUNT = '$1,250,000';
 export const SUPER_PRIZE_LABEL = '$1,250,000 SuperPrize';
 
-/** Every applicant receives email and text contact within this window */
+/** Coordinator email contact window (hours) */
 export const APPLICATION_RESPONSE_HOURS = 24;
 
 const DEFAULT_APPLY_SMS_DIGITS = '19177430256';
@@ -93,36 +93,36 @@ export function isValidApplicantPhone(phone: string): boolean {
   return true;
 }
 
-/** Badge / hero line — email + SMS follow-up */
+/** Badge / hero line — email follow-up (text = optional reminder) */
 export function applicantResponseBadge(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Email & text within ${hours} hours`;
+  return `Email from coordinator within ${hours} hours`;
 }
 
 /** Standard sentence: who contacts them and when */
 export function applicantContactWithin(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Every applicant is contacted by email (${CONTACT_EMAIL}) and by text (${APPLY_SMS_NUMBER_DISPLAY}, text only — do not call) within ${hours} hours.`;
+  return `Every applicant is contacted by email (${CONTACT_EMAIL}) within ${hours} hours. We may also send a brief text reminder (${APPLY_SMS_NUMBER_DISPLAY}, text only — do not call) to check your inbox.`;
 }
 
 export const APPLICANT_CONTACT_MONITOR =
-  'Check your email inbox, spam folder, and text messages regularly.';
+  'Check your email inbox and spam folder regularly. Reply on the email thread from Dave Sayer.';
 
 export const APPLICANT_CONTACT_CHANNEL_NOTE =
-  'Reply CONFIRM on text or email — after that, your whole file continues on that channel only (text or email, not both).';
+  'Reply CONFIRM on email — your file continues on that email thread through final steps. Text is used only for reminders until payment steps.';
 
 export const WINNER_NOTIFICATION =
-  'Selected winners receive prize details and next steps by email and text.';
+  'Selected winners receive prize details and next steps by email. Text may be used for payment and delivery updates after you agree to proceed.';
 
 /** Name shown on apply success — matches who reaches out in Email/Text 1 */
 export const APPLICANT_CASE_MANAGER_NAME = 'Dave Sayer';
 export const APPLICANT_CASE_MANAGER_TITLE = 'PCH Application Coordinator';
 
 export function applicantCaseManagerIntro(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal response from him by email and text within ${hours} hours.`;
+  return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal email from him at ${CONTACT_EMAIL} within ${hours} hours.`;
 }
 
-/** Success page — optional fast-track text (high application volume) */
+/** Success page — optional text if email is slow */
 export function applicantFastTrackNote(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Due to high application volume, email response may take up to ${hours} hours. Optional: send the short text below to ${APPLY_SMS_NUMBER_DISPLAY} (text only) so we can match your application and reply faster with next steps.`;
+  return `Due to high application volume, email may take up to ${hours} hours. Optional: text ${APPLY_SMS_NUMBER_DISPLAY} (text only) with your name so we can send a reminder to check your inbox.`;
 }
 
 export const WINNERS_TAGLINE =

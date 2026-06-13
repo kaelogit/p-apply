@@ -43,3 +43,6 @@ next-env.d.ts
 # Operator delivery photos (generated locally — scripts/enhance-delivery-photo.py)
 /public/delivery/*
 !/public/delivery/.gitkeep
+
+# Operator playbook (local only — not for public repo)
+/docs/pch-follow-up-playbook.md

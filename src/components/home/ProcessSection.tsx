@@ -78,7 +78,7 @@ export function ProcessSection() {
     },
     {
       number: '3',
-      title: 'Email & Text Response',
+      title: 'Email Response',
       description:
         `${WINNER_NOTIFICATION} ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
       icon: <Send className="w-5 h-5" />,

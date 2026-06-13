@@ -273,7 +273,7 @@ export default function ApplyPage() {
           </div>
 
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
-            {APPLICANT_CONTACT_MONITOR} {APPLICANT_CASE_MANAGER_NAME} will reach out by text ({APPLY_SMS_NUMBER_DISPLAY}) or email ({CONTACT_EMAIL}).
+            {APPLICANT_CONTACT_MONITOR} {APPLICANT_CASE_MANAGER_NAME} will reach out by email ({CONTACT_EMAIL}). You may receive a brief text reminder to check your inbox.
           </p>
           <Link href="/" className="btn-outline px-6 py-3">Back to home</Link>
         </div>

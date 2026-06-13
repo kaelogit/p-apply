@@ -5,6 +5,7 @@ import {
   APPLICANT_CONTACT_CHANNEL_NOTE,
   WINNER_NOTIFICATION,
   APPLY_SMS_NUMBER_DISPLAY,
+  CONTACT_EMAIL,
   SITE_DOMAIN,
 } from '@/lib/site';
 
@@ -46,10 +47,10 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'What happens after I submit my application?',
-    answer: `Your application is recorded and reviewed personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_CHANNEL_NOTE} If selected in a drawing, prize details and next steps follow by email and text.`,
+    answer: `Your application is recorded and reviewed personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_CHANNEL_NOTE} If selected in a drawing, prize details and next steps follow by email.`,
   },
   {
     question: 'Can I apply or communicate by text message?',
-    answer: `Yes. You may apply by text from the Apply page to ${APPLY_SMS_NUMBER_DISPLAY} (text only). After you apply, we contact you by email and text. ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
+    answer: `Yes. You may apply by text from the Apply page to ${APPLY_SMS_NUMBER_DISPLAY} (text only). After you apply, we contact you by email at ${CONTACT_EMAIL}. ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
   },
 ];
