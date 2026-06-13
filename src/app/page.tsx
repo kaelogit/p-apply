@@ -14,8 +14,8 @@ export default function HomePage() {
     <div className="flex flex-col w-full">
       <HeroSection />
       <LiveTicker />
-      <PrizesSection />
       <WinnersSection />
+      <PrizesSection />
       <ProcessSection />
       <RealStoriesSection />
       <StatsSection />
