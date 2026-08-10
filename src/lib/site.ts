@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = 'https://applypch.com';
+const DEFAULT_SITE_URL = 'https://applypchdigital.com';
 
 function normalizeSiteUrl(raw: string | undefined): string {
   const value = raw?.trim();
@@ -14,7 +14,7 @@ export const SITE_DOMAIN = (() => {
   try {
     return new URL(SITE_URL).hostname;
   } catch {
-    return 'applypch.com';
+    return 'applypchdigital.com';
   }
 })();
 
