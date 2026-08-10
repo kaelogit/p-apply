@@ -1,10 +1,9 @@
-import { Lock, ShieldCheck, Smartphone, UserX } from 'lucide-react';
+import { Lock, ShieldCheck, Mail, UserX } from 'lucide-react';
 import {
   CONTACT_EMAIL,
   APPLICATION_RESPONSE_HOURS,
   applicantContactWithin,
   WINNER_NOTIFICATION,
-  APPLY_SMS_NUMBER_DISPLAY,
 } from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
@@ -24,12 +23,12 @@ const blocks = [
   {
     icon: ShieldCheck,
     title: 'Secure verification',
-    desc: 'When winners are verified, we use professional-grade security practices. We will never ask for your passwords through email or text.',
+    desc: 'When winners are verified, we use professional-grade security practices. We will never ask for your passwords through email.',
   },
   {
-    icon: Smartphone,
-    title: 'Email & text response',
-    desc: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${WINNER_NOTIFICATION} Official text: ${APPLY_SMS_NUMBER_DISPLAY} (text only).`,
+    icon: Mail,
+    title: 'Email response',
+    desc: `${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${WINNER_NOTIFICATION}`,
   },
   {
     icon: UserX,
@@ -51,8 +50,8 @@ export default function SecurityPage() {
             Your privacy is our priority.
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed">
-            Publishers Clearing House is committed to protecting every applicant
-            with the highest standards of security and transparency — in the USA and worldwide.
+            Publishers Clearing House is committed to protecting every applicant with the highest
+            standards of security and transparency — in the USA and worldwide.
           </p>
         </div>
       </section>
@@ -85,9 +84,6 @@ export default function SecurityPage() {
               >
                 {CONTACT_EMAIL}
               </a>
-              <p className="text-[var(--pch-text-muted)]">
-                Text: {APPLY_SMS_NUMBER_DISPLAY} (text only)
-              </p>
             </div>
           </div>
         </div>

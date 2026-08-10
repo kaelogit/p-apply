@@ -27,8 +27,8 @@ function resolveSmtpHost(): string {
   const explicit = readEnv('SMTP_HOST');
   if (!explicit) return 'smtp.zoho.com';
   const lower = explicit.toLowerCase();
-  // Ignore stale Gmail/Proton hosts left on Vercel when switching back to Zoho.
-  if (lower.includes('protonmail') || lower.includes('gmail')) return 'smtp.zoho.com';
+  // Prefer Zoho for applypchdigital.com (ignore stale Gmail hosts left in env).
+  if (lower.includes('gmail')) return 'smtp.zoho.com';
   return explicit;
 }
 

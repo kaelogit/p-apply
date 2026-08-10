@@ -1,14 +1,6 @@
 import Link from 'next/link';
 import { PchLogo } from '@/components/brand/PchLogo';
-import {
-  CONTACT_EMAIL,
-  APPLY_SMS_NUMBER_DIGITS,
-  APPLY_SMS_NUMBER_DISPLAY,
-  PCH_BRAND_NAME,
-  PCH_OPERATOR,
-  PCH_ADDRESS_LINE1,
-  PCH_ADDRESS_LINE2,
-} from '@/lib/site';
+import { CONTACT_EMAIL, PCH_BRAND_NAME, PCH_OPERATOR } from '@/lib/site';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -20,8 +12,7 @@ export function Footer() {
           <div>
             <PchLogo className="mb-4" />
             <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
-              Apply for your chance to win life-changing prizes.
-              Real winners worldwide since 1953.
+              Apply for your chance to win life-changing prizes. Real winners worldwide since 1953.
             </p>
           </div>
 
@@ -60,14 +51,9 @@ export function Footer() {
             >
               {CONTACT_EMAIL}
             </a>
-            <a
-              href={`sms:+${APPLY_SMS_NUMBER_DIGITS}`}
-              className="text-sm text-[var(--pch-text-muted)] hover:text-[var(--pch-orange)] transition-colors block mt-2"
-            >
-              {APPLY_SMS_NUMBER_DISPLAY} (text only)
-            </a>
             <p className="text-sm text-[var(--pch-text-muted)] mt-3 leading-relaxed">
-              382 Channel Drive<br />
+              382 Channel Drive
+              <br />
               Port Washington, NY 11050
             </p>
           </div>

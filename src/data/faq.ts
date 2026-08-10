@@ -4,7 +4,6 @@ import {
   APPLICANT_CONTACT_MONITOR,
   APPLICANT_CONTACT_CHANNEL_NOTE,
   WINNER_NOTIFICATION,
-  APPLY_SMS_NUMBER_DISPLAY,
   CONTACT_EMAIL,
   SITE_DOMAIN,
 } from '@/lib/site';
@@ -23,7 +22,7 @@ export const faqItems: FaqItem[] = [
   {
     question: 'How do I apply?',
     answer:
-      'Complete the application form on our Apply page, or apply by text using the instructions on the Apply page. Each person submits their own application.',
+      'Complete the application form on our Apply page. Each person submits their own application. After you apply, we contact you by email.',
   },
   {
     question: 'When will I hear back after applying?',
@@ -31,7 +30,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'How will I know if I won?',
-    answer: `${WINNER_NOTIFICATION} Keep your email and phone number current. ${APPLICANT_CONTACT_MONITOR}`,
+    answer: `${WINNER_NOTIFICATION} Keep your email address current. ${APPLICANT_CONTACT_MONITOR}`,
   },
   {
     question: 'Which countries can apply?',
@@ -47,10 +46,10 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'What happens after I submit my application?',
-    answer: `Your application is recorded and reviewed personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_CHANNEL_NOTE} If selected in a drawing, prize details and next steps follow by email.`,
+    answer: `Your application is recorded and reviewed personally. ${applicantContactWithin(APPLICATION_RESPONSE_HOURS)} ${APPLICANT_CONTACT_CHANNEL_NOTE} If selected in a drawing, prize details and next steps follow by email at ${CONTACT_EMAIL}.`,
   },
   {
-    question: 'Can I apply or communicate by text message?',
-    answer: `Yes. You may apply by text from the Apply page to ${APPLY_SMS_NUMBER_DISPLAY} (text only). After you apply, we contact you by email at ${CONTACT_EMAIL}. ${APPLICANT_CONTACT_CHANNEL_NOTE}`,
+    question: 'How do I contact PCH after applying?',
+    answer: `Email us at ${CONTACT_EMAIL}. All official application follow-up is handled by email.`,
   },
 ];

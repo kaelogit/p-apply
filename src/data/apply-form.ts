@@ -3,7 +3,6 @@ import {
   applicantContactWithin,
   APPLICANT_CONTACT_MONITOR,
   WINNER_NOTIFICATION,
-  SITE_DOMAIN,
 } from '@/lib/site';
 
 /** ISO-style country value → international dial code (set automatically from Country field on apply form) */
@@ -166,45 +165,8 @@ export const APPLY_FAQS = [
   },
   {
     q: 'How will I know if I won?',
-    a: `${WINNER_NOTIFICATION} Keep your email and phone number up to date.`,
+    a: `${WINNER_NOTIFICATION} Keep your email address up to date.`,
   },
   { q: 'Is my information secure?', a: 'Yes. Your data is handled securely per our Privacy Policy.' },
 ];
 
-/** Text message template — applicant fills in each line, then sends to APPLY_SMS_NUMBER */
-export const TEXT_APPLICATION_MESSAGE = `PCH PRIZE APPLICATION
-
-Full name:
-Email:
-Phone:
-Country:
-State / Region:
-City:
-Postal / ZIP code:
-Street address:
-Prize applying for:
-Why I am applying:
-
-I confirm I am 18 or older and submitting my own application.
-
-Please fill in every line above, then send this text.`;
-
-const FALLBACK_SMS_DIGITS = '19177430256';
-
-export function buildSmsApplicationUrl(phoneDigits: string): string {
-  const digits = phoneDigits.replace(/\D/g, '') || FALLBACK_SMS_DIGITS;
-  return `sms:+${digits}?body=${encodeURIComponent(TEXT_APPLICATION_MESSAGE)}`;
-}
-
-/** Optional fast-track text after online apply — name only; Dave replies with received + CONFIRM */
-export function buildFastTrackMessage(name: string): string {
-  const trimmed = name.trim();
-  return trimmed
-    ? `My name is ${trimmed}. I just submitted my application at ${SITE_DOMAIN}. Thank you.`
-    : `I just submitted my application. Thank you.`;
-}
-
-export function buildFastTrackSmsUrl(phoneDigits: string, name: string): string {
-  const digits = phoneDigits.replace(/\D/g, '') || FALLBACK_SMS_DIGITS;
-  return `sms:+${digits}?body=${encodeURIComponent(buildFastTrackMessage(name))}`;
-}

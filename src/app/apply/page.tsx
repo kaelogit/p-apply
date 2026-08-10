@@ -12,7 +12,6 @@ import {
   ChevronLeft,
   Clock,
   Mail,
-  Smartphone,
   Mic,
   MicOff,
   Award,
@@ -29,18 +28,12 @@ import {
   RECENT_PRIZE_AWARDS,
   GUIDED_QUESTIONS,
   APPLY_FAQS,
-  TEXT_APPLICATION_MESSAGE,
-  buildSmsApplicationUrl,
-  buildFastTrackMessage,
-  buildFastTrackSmsUrl,
 } from '@/data/apply-form';
 import { PRIZE_GROUPS, tiersForGroup, getPrizeTier } from '@/data/prize-categories';
 import {
   MAX_LUMP_SUM_PRIZE,
   APPLICATION_RESPONSE_HOURS,
   ELIGIBLE_REGIONS_SHORT,
-  APPLY_SMS_NUMBER_DIGITS,
-  APPLY_SMS_NUMBER_DISPLAY,
   applicantResponseBadge,
   applicantContactWithin,
   APPLICANT_CONTACT_MONITOR,
@@ -48,7 +41,6 @@ import {
   APPLICANT_CASE_MANAGER_TITLE,
   CONTACT_EMAIL,
   applicantCaseManagerIntro,
-  applicantFastTrackNote,
   WINNER_NOTIFICATION,
   formatApplicantPhone,
   isValidApplicantPhone,
@@ -59,7 +51,6 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 export default function ApplyPage() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [submissionMethod, setSubmissionMethod] = useState<'form' | 'text'>('form');
   const [useGuidedMode, setUseGuidedMode] = useState(false);
   const [guidedStep, setGuidedStep] = useState(0);
   const [guidedAnswers, setGuidedAnswers] = useState({ reason: '', prize: '', impact: '' });
@@ -222,8 +213,6 @@ export default function ApplyPage() {
       : getPrizeTier(form.prizeCategory)?.applyLabel ?? form.prizeCategory;
 
   if (status === 'success') {
-    const fastTrackMessage = buildFastTrackMessage(form.name);
-
     return (
       <div className="min-h-screen bg-white pt-28 pb-20 px-5">
         <div className="max-w-md mx-auto text-center">
@@ -247,33 +236,23 @@ export default function ApplyPage() {
             </p>
           </div>
 
-          <div className="rounded-lg border-2 border-[var(--pch-orange)] bg-[var(--pch-orange-soft)] p-4 mb-4 text-left">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-orange)] mb-2">
-              Optional — fast-track your review
+          <div className="rounded-lg border border-[var(--pch-border)] bg-white p-4 mb-4 text-left">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-2">
+              Official contact
             </p>
-            <p className="text-sm text-[var(--pch-text)] leading-relaxed mb-3">
-              {applicantFastTrackNote()}
-            </p>
-            <p className="text-xs text-[var(--pch-text-muted)] mb-3 font-medium">
-              Text {APPLY_SMS_NUMBER_DISPLAY} (text only — do not call)
-            </p>
-            <pre className="text-[11px] text-[var(--pch-text)] whitespace-pre-wrap font-sans leading-relaxed bg-white rounded-md border border-[var(--pch-border)] p-3 mb-4 max-h-36 overflow-y-auto">
-              {fastTrackMessage}
-            </pre>
             <a
-              href={buildFastTrackSmsUrl(APPLY_SMS_NUMBER_DIGITS, form.name)}
-              className="btn-primary w-full py-3 inline-flex justify-center gap-2"
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-sm font-semibold text-[var(--pch-orange)] hover:underline"
             >
-              <Smartphone className="w-4 h-4" />
-              Text now to fast-track
+              {CONTACT_EMAIL}
             </a>
-            <p className="text-[11px] text-[var(--pch-text-muted)] mt-3 text-center">
-              Not required — your online application is already on file.
+            <p className="text-xs text-[var(--pch-text-muted)] mt-2 leading-relaxed">
+              All follow-up is by email. Check your inbox and spam folder.
             </p>
           </div>
 
           <p className="text-xs text-[var(--pch-text-muted)] mb-8">
-            {APPLICANT_CONTACT_MONITOR} {APPLICANT_CASE_MANAGER_NAME} will reach out by email ({CONTACT_EMAIL}). You may receive a brief text reminder to check your inbox.
+            {APPLICANT_CONTACT_MONITOR} {APPLICANT_CASE_MANAGER_NAME} will reach out by email ({CONTACT_EMAIL}).
           </p>
           <Link href="/" className="btn-outline px-6 py-3">Back to home</Link>
         </div>
@@ -322,7 +301,7 @@ export default function ApplyPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { label: 'Submit', desc: 'Your application', icon: Mail },
-              { label: 'Contact', desc: `Email & text within ${APPLICATION_RESPONSE_HOURS} hrs`, icon: Clock },
+              { label: 'Contact', desc: `Email within ${APPLICATION_RESPONSE_HOURS} hrs`, icon: Clock },
               { label: 'Review', desc: 'Personal processing', icon: Shield },
               { label: 'Prize', desc: 'Prize Patrol delivery', icon: Award },
             ].map(({ label, desc, icon: Icon }) => (
@@ -343,73 +322,6 @@ export default function ApplyPage() {
         <div className="container-page grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="card p-6 md:p-8">
-              {/* Method toggle */}
-              <div className="flex gap-1 p-1 bg-[var(--pch-gray-100)] rounded-lg mb-8">
-                <button
-                  type="button"
-                  onClick={() => setSubmissionMethod('form')}
-                  className={`flex-1 py-2.5 px-3 rounded-md text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
-                    submissionMethod === 'form' ? 'bg-white text-[var(--pch-text)] shadow-sm' : 'text-[var(--pch-text-muted)]'
-                  }`}
-                >
-                  <Mail className="w-4 h-4" /> Apply online
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSubmissionMethod('text')}
-                  className={`flex-1 py-2.5 px-3 rounded-md text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
-                    submissionMethod === 'text' ? 'bg-white text-[var(--pch-text)] shadow-sm' : 'text-[var(--pch-text-muted)]'
-                  }`}
-                >
-                  <Smartphone className="w-4 h-4" /> Apply by text
-                </button>
-              </div>
-
-              {submissionMethod === 'text' ? (
-                <div className="py-4">
-                  <div className="text-center mb-6">
-                    <Smartphone className="w-12 h-12 text-[var(--pch-orange)] mx-auto mb-4" />
-                    <h3 className="font-semibold text-[var(--pch-text)] mb-2">Apply by text message</h3>
-                    <p className="text-sm text-[var(--pch-text-muted)] max-w-md mx-auto mb-4">
-                      Text your application to the number below. Fill in every line in the message, then send. <strong className="text-[var(--pch-text)]">Text only</strong> — do not call this number.
-                    </p>
-                    <p className="text-lg font-semibold text-[var(--pch-text)] tracking-wide">
-                      {APPLY_SMS_NUMBER_DISPLAY}
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg border border-[var(--pch-border)] bg-[var(--pch-gray-50)] p-4 mb-4 max-w-md mx-auto">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-3">
-                      What to send
-                    </p>
-                    <p className="text-xs text-[var(--pch-text-muted)] mb-3 leading-relaxed">
-                      Copy this message (or use the button below to open your texting app with it prefilled). Replace each blank line with your information, then send.
-                    </p>
-                    <pre className="text-xs text-[var(--pch-text)] whitespace-pre-wrap font-sans leading-relaxed">
-                      {TEXT_APPLICATION_MESSAGE}
-                    </pre>
-                  </div>
-
-                  <div className="text-center">
-                    <a
-                      href={buildSmsApplicationUrl(APPLY_SMS_NUMBER_DIGITS)}
-                      className="btn-primary px-6 py-3 inline-flex"
-                    >
-                      Open messaging app
-                    </a>
-                    <p className="text-xs text-[var(--pch-text-muted)] mt-4 max-w-sm mx-auto">
-                      On desktop, you may need to text {APPLY_SMS_NUMBER_DISPLAY} manually from your phone. Each person must apply on their own. You will receive a response within {APPLICATION_RESPONSE_HOURS} hours.
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => setSubmissionMethod('form')}
-                      className="block mx-auto mt-4 text-sm text-[var(--pch-orange)] hover:underline"
-                    >
-                      Use online form instead
-                    </button>
-                  </div>
-                </div>
-              ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="flex items-center justify-between">
                     <p className="text-sm text-[var(--pch-text-muted)]">
@@ -463,7 +375,7 @@ export default function ApplyPage() {
                       <input required className="input-field" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="Your full name" />
                     </Field>
                     <Field label="Email *">
-                      <input required type="email" className="input-field" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="For email updates (we also text your phone)" />
+                      <input required type="email" className="input-field" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="For email updates from your coordinator" />
                     </Field>
                   </div>
 
@@ -610,7 +522,7 @@ export default function ApplyPage() {
                     One application per person.
                   </p>
                 </form>
-              )}
+
             </div>
 
             <div className="lg:hidden mt-6 space-y-2">

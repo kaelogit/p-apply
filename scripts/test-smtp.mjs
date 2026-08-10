@@ -22,7 +22,7 @@ if (existsSync(envPath)) {
 const user = process.env.ZOHO_USER || process.env.SMTP_USER;
 const passRaw = process.env.ZOHO_PASS || process.env.SMTP_PASS;
 const pass = passRaw?.replace(/\s/g, '');
-const to = process.env.TO_EMAIL || 'pchcoordinator@protonmail.com';
+const to = process.env.TO_EMAIL || 'support@applypchdigital.com';
 const host = process.env.SMTP_HOST || 'smtp.zoho.com';
 const port = Number(process.env.SMTP_PORT || 587);
 

@@ -7,7 +7,6 @@ import {
   PCH_ADDRESS_LINE2,
   PCH_OWNERSHIP_NOTE,
   COORDINATOR_EMAIL,
-  APPLY_SMS_NUMBER_DISPLAY,
 } from '@/lib/site';
 
 export const metadata = createMetadata({
@@ -22,8 +21,8 @@ export default function RulesPage() {
     <LegalLayout title="Official Rules">
       <p className="text-sm text-gray-500 mb-6">Last updated: May 2026</p>
       <LegalSection title="Eligibility">
-        Open to legal residents of the 50 United States, D.C., and Canada (excluding Quebec)
-        who are 18 years of age or older at time of entry. Void where prohibited.
+        Open to legal residents of the 50 United States, D.C., and Canada (excluding Quebec) who are
+        18 years of age or older at time of entry. Void where prohibited.
       </LegalSection>
       <LegalSection title="How To Apply">
         Apply online by completing the application form. Limit one application per person per day
@@ -31,21 +30,21 @@ export default function RulesPage() {
       </LegalSection>
       <LegalSection title="Prize Description">
         Grand Prize: $2,500,000 ($2,500,000.00) Mega Prize awarded as a lump sum. SuperPrize awards
-        up to $1,250,000 ($1,250,000.00) and additional prizes
-        as described in individual promotion materials. Prizes are not transferable.
-        Taxes are the sole responsibility of the winner.
+        up to $1,250,000 ($1,250,000.00) and additional prizes as described in individual promotion
+        materials. Prizes are not transferable. Taxes are the sole responsibility of the winner.
       </LegalSection>
       <LegalSection title="Winner Selection">
         Winners will be selected in a random drawing from among all eligible applications received.
         Odds of winning depend on the number of eligible applications received.
       </LegalSection>
       <LegalSection title="Winner Notification">
-        Potential winners will be notified by email and by text message at the email address and phone number provided on their application. Coordinator contact: {COORDINATOR_EMAIL}. Official text: {APPLY_SMS_NUMBER_DISPLAY} (text only — do not call).
-        Winners may be required to sign and return an Affidavit of Eligibility and Release of Liability.
+        Potential winners will be notified by email at the email address provided on their
+        application. Coordinator contact: {COORDINATOR_EMAIL}. Winners may be required to sign and
+        return an Affidavit of Eligibility and Release of Liability.
       </LegalSection>
       <LegalSection title="Sponsor">
-        {PCH_BRAND_NAME}. Sweepstakes administered by {PCH_OPERATOR}. {PCH_OWNERSHIP_NOTE}{' '}
-        Mailing address: {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
+        {PCH_BRAND_NAME}. Sweepstakes administered by {PCH_OPERATOR}. {PCH_OWNERSHIP_NOTE} Mailing
+        address: {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
       </LegalSection>
     </LegalLayout>
   );

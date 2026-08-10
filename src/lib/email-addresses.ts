@@ -1,2 +1,2 @@
-/** Dave Sayer — operator inbox on Proton; applicant replies go here. */
-export const COORDINATOR_EMAIL = 'pchcoordinator@protonmail.com';
+/** Public operator inbox — Dave Sayer / PCH Digital support. */
+export const COORDINATOR_EMAIL = 'support@applypchdigital.com';

@@ -51,31 +51,41 @@ export const SUPER_PRIZE_LABEL = '$1,250,000 SuperPrize';
 /** Coordinator email contact window (hours) */
 export const APPLICATION_RESPONSE_HOURS = 24;
 
-const DEFAULT_APPLY_SMS_DIGITS = '19177430256';
-const DEFAULT_APPLY_SMS_DISPLAY = '+1 (917) 743-0256';
-
-/** Read env; treat blank strings as unset (empty Vercel vars break sms: links). */
-function readPublicEnv(...keys: string[]): string | undefined {
-  for (const key of keys) {
-    const value = process.env[key]?.trim();
-    if (value) return value;
-  }
-  return undefined;
+/** Badge / hero line — email follow-up */
+export function applicantResponseBadge(hours = APPLICATION_RESPONSE_HOURS): string {
+  return `Email from coordinator within ${hours} hours`;
 }
 
-/** Text/SMS apply — digits only for sms: links */
-export const APPLY_SMS_NUMBER_DIGITS = (() => {
-  const raw = readPublicEnv(
-    'NEXT_PUBLIC_APPLY_SMS_NUMBER',
-    'NEXT_PUBLIC_WHATSAPP_NUMBER' // legacy env name on Vercel
-  );
-  const digits = raw?.replace(/\D/g, '') ?? '';
-  return digits.length >= 10 ? digits : DEFAULT_APPLY_SMS_DIGITS;
-})();
+/** Standard sentence: who contacts them and when */
+export function applicantContactWithin(hours = APPLICATION_RESPONSE_HOURS): string {
+  return `Every applicant is contacted by email (${CONTACT_EMAIL}) within ${hours} hours.`;
+}
 
-/** Display format for the apply-by-text number */
-export const APPLY_SMS_NUMBER_DISPLAY =
-  readPublicEnv('NEXT_PUBLIC_APPLY_SMS_DISPLAY') ?? DEFAULT_APPLY_SMS_DISPLAY;
+export const APPLICANT_CONTACT_MONITOR =
+  'Check your email inbox and spam folder regularly. Reply on the email thread from Dave Sayer.';
+
+export const APPLICANT_CONTACT_CHANNEL_NOTE =
+  'Reply CONFIRM on email — your file continues on that email thread through final steps.';
+
+export const WINNER_NOTIFICATION =
+  'Selected winners receive prize details and next steps by email.';
+
+/** Name shown on apply success — matches who reaches out */
+export const APPLICANT_CASE_MANAGER_NAME = 'Dave Sayer';
+export const APPLICANT_CASE_MANAGER_TITLE = 'PCH Application Coordinator';
+
+export function applicantCaseManagerIntro(hours = APPLICATION_RESPONSE_HOURS): string {
+  return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal email from him at ${CONTACT_EMAIL} within ${hours} hours.`;
+}
+
+export const WINNERS_TAGLINE =
+  'Real winners with their PCH prize checks from around the world.';
+
+export const ELIGIBLE_REGIONS_SHORT =
+  'Open to applicants worldwide — USA, Canada, UK, Germany, Australia, and more.';
+
+/** Google Analytics 4 measurement ID (e.g. G-XXXXXXXXXX). Set in Vercel env. */
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';
 
 /** Combine country code + national number for API/email (avoids autofill putting "us" in one field). */
 export function formatApplicantPhone(countryCode: string, nationalNumber: string): string {
@@ -92,44 +102,3 @@ export function isValidApplicantPhone(phone: string): boolean {
   if (lettersOnly.length >= 2 && digits.length < 10) return false;
   return true;
 }
-
-/** Badge / hero line — email follow-up (text = optional reminder) */
-export function applicantResponseBadge(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Email from coordinator within ${hours} hours`;
-}
-
-/** Standard sentence: who contacts them and when */
-export function applicantContactWithin(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Every applicant is contacted by email (${CONTACT_EMAIL}) within ${hours} hours. We may also send a brief text reminder (${APPLY_SMS_NUMBER_DISPLAY}, text only — do not call) to check your inbox.`;
-}
-
-export const APPLICANT_CONTACT_MONITOR =
-  'Check your email inbox and spam folder regularly. Reply on the email thread from Dave Sayer.';
-
-export const APPLICANT_CONTACT_CHANNEL_NOTE =
-  'Reply CONFIRM on email — your file continues on that email thread through final steps. Text is used only for reminders until payment steps.';
-
-export const WINNER_NOTIFICATION =
-  'Selected winners receive prize details and next steps by email. Text may be used for payment and delivery updates after you agree to proceed.';
-
-/** Name shown on apply success — matches who reaches out in Email/Text 1 */
-export const APPLICANT_CASE_MANAGER_NAME = 'Dave Sayer';
-export const APPLICANT_CASE_MANAGER_TITLE = 'PCH Application Coordinator';
-
-export function applicantCaseManagerIntro(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `You have been assigned to ${APPLICANT_CASE_MANAGER_NAME}, ${APPLICANT_CASE_MANAGER_TITLE}. You should expect a personal email from him at ${CONTACT_EMAIL} within ${hours} hours.`;
-}
-
-/** Success page — optional text if email is slow */
-export function applicantFastTrackNote(hours = APPLICATION_RESPONSE_HOURS): string {
-  return `Due to high application volume, email may take up to ${hours} hours. Optional: text ${APPLY_SMS_NUMBER_DISPLAY} (text only) with your name so we can send a reminder to check your inbox.`;
-}
-
-export const WINNERS_TAGLINE =
-  'Real winners with their PCH prize checks from around the world.';
-
-export const ELIGIBLE_REGIONS_SHORT =
-  'Open to applicants worldwide — USA, Canada, UK, Germany, Australia, and more.';
-
-/** Google Analytics 4 measurement ID (e.g. G-XXXXXXXXXX). Set in Vercel env. */
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';

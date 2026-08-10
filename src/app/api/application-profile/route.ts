@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { absoluteSiteUrl, APPLY_SMS_NUMBER_DISPLAY } from '@/lib/site';
+import { absoluteSiteUrl } from '@/lib/site';
 import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
 import {
   createMailTransporter,
@@ -230,7 +230,7 @@ export async function POST(request: NextRequest) {
         <p>We have received your complete application and verification profile for reference <strong>${escapeHtml(parsed.appRef)}</strong>, including your identity document.</p>
         <p>Your submission is being processed for <strong>final review</strong> in the current Publishers Clearing House prize drawing.</p>
         <p>Dave Sayer, your PCH Application Coordinator, will contact you on your official email thread with the next update.</p>
-        <p>Publishers Clearing House<br>${escapeHtml(COORDINATOR_EMAIL)}<br>${escapeHtml(APPLY_SMS_NUMBER_DISPLAY)} (text only)</p>
+        <p>Publishers Clearing House<br>${escapeHtml(COORDINATOR_EMAIL)}</p>
       `,
       text: `We have received your application profile for ${parsed.appRef}. It is being processed for final review. Dave Sayer will contact you with the next update.`,
     });
