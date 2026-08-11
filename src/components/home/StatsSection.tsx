@@ -72,10 +72,10 @@ export function StatsSection() {
           <Stat value={15} suffix="M+" label="Winners since 1953" delay={100} visible={visible} />
           <Stat value={70} suffix="+" label="Years of operation" delay={200} visible={visible} />
           <Stat
-            value={2}
+            value={11}
             suffix=""
             label="Eligible countries"
-            sublabel="United States · Canada"
+            sublabel="USA · Canada · UK · Germany · NL · AU · more"
             delay={300}
             visible={visible}
           />

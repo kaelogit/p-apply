@@ -12,7 +12,7 @@ import {
 export const metadata = createMetadata({
   title: 'Our Story',
   description:
-    'The PCH story — awarding life-changing prizes to winners in the United States and Canada since 1953.',
+    'The PCH story — awarding life-changing prizes to winners in the US, Canada, UK, Europe, and Australia since 1953.',
   path: '/story',
 });
 
