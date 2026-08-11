@@ -34,7 +34,8 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'Which countries can apply?',
-    answer: 'Applications are open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, France, Ireland, Belgium, Switzerland, and New Zealand, where permitted by law. See Official Rules for full eligibility.',
+    answer:
+      'Applications are open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, France, Ireland, Belgium, Switzerland, and New Zealand, where permitted by law. See Official Rules for full eligibility.',
   },
   {
     question: 'Can each family member apply separately?',
@@ -42,7 +43,8 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'How are winners selected?',
-    answer: 'Winners are selected in random drawings conducted under independent supervision, in accordance with the Official Rules.',
+    answer:
+      'Winners are selected in random drawings conducted under independent supervision, in accordance with the Official Rules.',
   },
   {
     question: 'What happens after I submit my application?',
@@ -53,3 +55,19 @@ export const faqItems: FaqItem[] = [
     answer: `Email us at ${CONTACT_EMAIL}. All official application follow-up is handled by email.`,
   },
 ];
+
+/** Google FAQ rich-result schema (FAQPage). */
+export function buildFaqPageJsonLd(items: FaqItem[] = faqItems) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
