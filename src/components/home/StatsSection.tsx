@@ -69,13 +69,13 @@ export function StatsSection() {
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           <Stat value={500} suffix="M+" prefix="$" label="Prizes awarded" delay={0} visible={visible} />
-          <Stat value={15} suffix="M+" label="Winners worldwide" delay={100} visible={visible} />
+          <Stat value={15} suffix="M+" label="Winners since 1953" delay={100} visible={visible} />
           <Stat value={70} suffix="+" label="Years of operation" delay={200} visible={visible} />
           <Stat
-            value={6}
-            suffix="+"
-            label="Countries served"
-            sublabel="USA · Canada · UK · Germany · Australia · more"
+            value={2}
+            suffix=""
+            label="Eligible countries"
+            sublabel="United States · Canada"
             delay={300}
             visible={visible}
           />

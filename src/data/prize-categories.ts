@@ -53,7 +53,7 @@ export const PRIZE_GROUPS: PrizeGroup[] = [
     amountRange: `Up to ${MAX_LUMP_SUM_PRIZE}`,
     shortDescription: `Flagship lump-sum prizes — from ${SUPER_PRIZE_AMOUNT} SuperPrizes up to ${MAX_LUMP_SUM_PRIZE} Mega Prize.`,
     longDescription:
-      `Our largest drawings award life-changing lump-sum cash prizes. Real winners receive varied amounts — $1,000,000, ${SUPER_PRIZE_AMOUNT}, ${MAX_LUMP_SUM_PRIZE} Mega Prize, and more — selected at random. Every applicant is contacted by email and text within 24 hours.`,
+      `Our largest drawings award life-changing lump-sum cash prizes. Real winners receive varied amounts — $1,000,000, ${SUPER_PRIZE_AMOUNT}, ${MAX_LUMP_SUM_PRIZE} Mega Prize, and more — selected at random. Every applicant is contacted by email within 24 hours.`,
     icon: Trophy,
     impactFilter: 'SuperPrize',
   },
@@ -103,7 +103,7 @@ export const PRIZE_GROUPS: PrizeGroup[] = [
     amountRange: 'Up to $50,000',
     shortDescription: 'Luxury vehicle or cash option.',
     longDescription:
-      'Drive away in a luxury vehicle or choose the cash option. Awarded in random drawings to applicants worldwide.',
+      'Drive away in a luxury vehicle or choose the cash option. Awarded in random drawings to eligible applicants.',
     icon: Car,
     impactFilter: 'Vehicle Prize',
   },
@@ -180,6 +180,6 @@ export function tiersForGroup(groupId: PrizeGroupId): PrizeTier[] {
 export const ELIGIBLE_REGIONS = {
   title: 'Who can apply',
   description:
-    'Applications are open to legal residents of the United States, Canada, United Kingdom, Germany, Australia, New Zealand, and other eligible countries where permitted by law.',
-  regions: ['USA', 'Canada', 'United Kingdom', 'Germany', 'Australia', 'New Zealand', 'France', 'Netherlands', 'Ireland'],
+    'Applications are open to legal residents of the United States and Canada (excluding Quebec), age 18 or older, where permitted by law.',
+  regions: ['United States', 'Canada (excluding Quebec)'],
 };

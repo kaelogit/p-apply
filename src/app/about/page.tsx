@@ -47,7 +47,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed mb-4">
             PCH Digital continues the Publishers Clearing House prize tradition — awarding prizes
-            to applicants worldwide since 1953.
+            to eligible applicants in the United States and Canada since 1953.
           </p>
           <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
             {PCH_OWNERSHIP_NOTE}
@@ -79,7 +79,7 @@ export default function AboutPage() {
           <ul className="space-y-2 text-sm text-[var(--pch-text-muted)]">
             {[
               ELIGIBLE_REGIONS_SHORT,
-              'Every applicant contacted by email and text within 24 hours',
+              'Every applicant contacted by email within 24 hours',
               'Winners selected through random drawings',
               'One application per person',
             ].map((item) => (

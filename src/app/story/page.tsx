@@ -12,7 +12,7 @@ import {
 export const metadata = createMetadata({
   title: 'Our Story',
   description:
-    'The PCH story — awarding life-changing prizes to winners worldwide since 1953.',
+    'The PCH story — awarding life-changing prizes to winners in the United States and Canada since 1953.',
   path: '/story',
 });
 
@@ -86,8 +86,8 @@ export default function StoryPage() {
               },
               {
                 icon: Globe,
-                title: 'Global reach',
-                desc: 'Open to applicants across the USA, Canada, UK, Germany, Australia, and eligible regions worldwide.',
+                title: 'Eligible regions',
+                desc: 'Open to legal residents of the United States and Canada (excluding Quebec).',
               },
               {
                 icon: Shield,
@@ -113,8 +113,8 @@ export default function StoryPage() {
             Ready to apply?
           </h2>
           <p className="text-[var(--pch-text-muted)] mb-8 leading-relaxed">
-            Your application takes minutes. It is secure and open to eligible
-            applicants worldwide.
+            Your application takes minutes. It is secure and open to eligible residents of the
+            United States and Canada.
           </p>
           <Link href="/apply" className="btn-primary px-8 py-3.5 text-base inline-flex">
             Submit your application

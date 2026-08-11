@@ -51,7 +51,7 @@ export default function SecurityPage() {
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed">
             PCH Digital is committed to protecting every applicant with the highest
-            standards of security and transparency — in the USA and worldwide.
+            standards of security and transparency across the United States and Canada.
           </p>
         </div>
       </section>

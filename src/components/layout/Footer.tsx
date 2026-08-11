@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <PchLogo className="mb-4" />
             <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
-              Apply for your chance to win life-changing prizes. Real winners worldwide since 1953.
+              Apply for your chance to win life-changing prizes. Real winners since 1953.
             </p>
           </div>
 

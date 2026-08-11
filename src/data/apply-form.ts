@@ -49,29 +49,6 @@ export const COUNTRY_OPTIONS = [
   { group: 'North America', values: [
     { value: 'USA', label: 'United States' },
     { value: 'Canada', label: 'Canada' },
-    { value: 'Mexico', label: 'Mexico' },
-  ]},
-  { group: 'Europe', values: [
-    { value: 'UK', label: 'United Kingdom' },
-    { value: 'Germany', label: 'Germany' },
-    { value: 'France', label: 'France' },
-    { value: 'Netherlands', label: 'Netherlands' },
-    { value: 'Spain', label: 'Spain' },
-    { value: 'Italy', label: 'Italy' },
-    { value: 'Sweden', label: 'Sweden' },
-    { value: 'Switzerland', label: 'Switzerland' },
-    { value: 'Ireland', label: 'Ireland' },
-    { value: 'Belgium', label: 'Belgium' },
-    { value: 'Austria', label: 'Austria' },
-    { value: 'Norway', label: 'Norway' },
-    { value: 'Denmark', label: 'Denmark' },
-  ]},
-  { group: 'Oceania', values: [
-    { value: 'Australia', label: 'Australia' },
-    { value: 'New Zealand', label: 'New Zealand' },
-  ]},
-  { group: 'Other', values: [
-    { value: 'Other', label: 'Not Listed — Type in Region field' },
   ]},
 ] as const;
 
@@ -157,7 +134,7 @@ export const APPLY_FAQS = [
     q: 'Is PCH still operating after the bankruptcy?',
     a: 'Yes. PCH Digital continues the Publishers Clearing House prize tradition under new ownership. New prize drawings and applications are active. Current applications are for new promotions under our Official Rules.',
   },
-  { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the USA, Canada, UK, Germany, Australia, and other eligible regions. See Official Rules for details.' },
+  { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the United States and Canada (excluding Quebec). See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },
   {
     q: 'How will I hear back after applying?',
