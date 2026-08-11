@@ -47,7 +47,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed mb-4">
             PCH Digital continues the Publishers Clearing House prize tradition — awarding prizes
-            to eligible applicants in the United States and Canada since 1953.
+            to eligible applicants in the United States, Canada, and other selected countries.
           </p>
           <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
             {PCH_OWNERSHIP_NOTE}

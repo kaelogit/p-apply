@@ -488,7 +488,7 @@ export default function ApplyPage() {
                     <Checkbox
                       checked={form.ageConfirm}
                       onChange={(v) => update('ageConfirm', v)}
-                      label="I confirm I am 18 or older and a legal resident of the United States or Canada (excluding Quebec)."
+                      label="I confirm I am 18 or older and a legal resident of an eligible country (USA, Canada, UK, Germany, Netherlands, Australia, or as listed in Official Rules)."
                     />
                     <Checkbox
                       checked={form.rulesConfirm}

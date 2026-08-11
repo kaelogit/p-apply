@@ -87,7 +87,7 @@ export default function StoryPage() {
               {
                 icon: Globe,
                 title: 'Eligible regions',
-                desc: 'Open to legal residents of the United States and Canada (excluding Quebec).',
+                desc: 'Open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, and other selected countries.',
               },
               {
                 icon: Shield,
@@ -113,8 +113,8 @@ export default function StoryPage() {
             Ready to apply?
           </h2>
           <p className="text-[var(--pch-text-muted)] mb-8 leading-relaxed">
-            Your application takes minutes. It is secure and open to eligible residents of the
-            United States and Canada.
+            Your application takes minutes. It is secure and open to eligible residents of selected
+            countries listed in our Official Rules.
           </p>
           <Link href="/apply" className="btn-primary px-8 py-3.5 text-base inline-flex">
             Submit your application

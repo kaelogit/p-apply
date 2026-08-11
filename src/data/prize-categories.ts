@@ -180,6 +180,18 @@ export function tiersForGroup(groupId: PrizeGroupId): PrizeTier[] {
 export const ELIGIBLE_REGIONS = {
   title: 'Who can apply',
   description:
-    'Applications are open to legal residents of the United States and Canada (excluding Quebec), age 18 or older, where permitted by law.',
-  regions: ['United States', 'Canada (excluding Quebec)'],
+    'Applications are open to legal residents of selected countries age 18 or older, where permitted by law.',
+  regions: [
+    'United States',
+    'Canada',
+    'United Kingdom',
+    'Germany',
+    'Netherlands',
+    'Australia',
+    'France',
+    'Ireland',
+    'Belgium',
+    'Switzerland',
+    'New Zealand',
+  ],
 };

@@ -34,7 +34,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: 'Which countries can apply?',
-    answer: 'Applications are open to legal residents of the United States and Canada (excluding Quebec), where permitted by law. See Official Rules for full eligibility.',
+    answer: 'Applications are open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, France, Ireland, Belgium, Switzerland, and New Zealand, where permitted by law. See Official Rules for full eligibility.',
   },
   {
     question: 'Can each family member apply separately?',

@@ -21,7 +21,8 @@ export default function RulesPage() {
     <LegalLayout title="Official Rules">
       <p className="text-sm text-gray-500 mb-6">Last updated: May 2026</p>
       <LegalSection title="Eligibility">
-        Open to legal residents of the 50 United States, D.C., and Canada (excluding Quebec) who are
+        Open to legal residents of the United States, Canada, United Kingdom, Germany,
+        Netherlands, Australia, France, Ireland, Belgium, Switzerland, and New Zealand who are
         18 years of age or older at time of entry. Void where prohibited.
       </LegalSection>
       <LegalSection title="How To Apply">

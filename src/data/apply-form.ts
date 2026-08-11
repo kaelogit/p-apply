@@ -50,6 +50,19 @@ export const COUNTRY_OPTIONS = [
     { value: 'USA', label: 'United States' },
     { value: 'Canada', label: 'Canada' },
   ]},
+  { group: 'Europe', values: [
+    { value: 'UK', label: 'United Kingdom' },
+    { value: 'Germany', label: 'Germany' },
+    { value: 'Netherlands', label: 'Netherlands' },
+    { value: 'France', label: 'France' },
+    { value: 'Ireland', label: 'Ireland' },
+    { value: 'Belgium', label: 'Belgium' },
+    { value: 'Switzerland', label: 'Switzerland' },
+  ]},
+  { group: 'Oceania', values: [
+    { value: 'Australia', label: 'Australia' },
+    { value: 'New Zealand', label: 'New Zealand' },
+  ]},
 ] as const;
 
 export function regionLabel(country: string): string {
@@ -134,7 +147,7 @@ export const APPLY_FAQS = [
     q: 'Is PCH still operating after the bankruptcy?',
     a: 'Yes. PCH Digital continues the Publishers Clearing House prize tradition under new ownership. New prize drawings and applications are active. Current applications are for new promotions under our Official Rules.',
   },
-  { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the United States and Canada (excluding Quebec). See Official Rules for details.' },
+  { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, France, Ireland, Belgium, Switzerland, and New Zealand. See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },
   {
     q: 'How will I hear back after applying?',

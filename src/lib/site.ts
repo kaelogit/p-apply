@@ -87,7 +87,7 @@ export const WINNERS_TAGLINE =
   'Real winners with their PCH prize checks from around the world.';
 
 export const ELIGIBLE_REGIONS_SHORT =
-  'Open to legal residents of the United States and Canada (excluding Quebec).';
+  'Open to legal residents of the United States, Canada, United Kingdom, Germany, Netherlands, Australia, and other selected countries.';
 
 /** Google Analytics 4 measurement ID (e.g. G-XXXXXXXXXX). Set in Vercel env. */
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? '';
