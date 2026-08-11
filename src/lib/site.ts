@@ -1,10 +1,22 @@
 const DEFAULT_SITE_URL = 'https://applypchdigital.com';
 
+/**
+ * Public site origin for sitemap, canonicals, and OG URLs.
+ * Always prefer the custom domain — never fall back to *.vercel.app, or Google
+ * Search Console rejects the sitemap ("URL not allowed") for applypchdigital.com.
+ */
 function normalizeSiteUrl(raw: string | undefined): string {
   const value = raw?.trim();
-  if (value) return value.replace(/\/$/, '');
-  const vercelHost = process.env.VERCEL_URL?.trim();
-  if (vercelHost) return `https://${vercelHost.replace(/\/$/, '')}`;
+  if (value) {
+    try {
+      const host = new URL(value.replace(/\/$/, '')).hostname.toLowerCase();
+      // Ignore accidental vercel.app overrides in production env
+      if (host.endsWith('.vercel.app')) return DEFAULT_SITE_URL;
+      return value.replace(/\/$/, '');
+    } catch {
+      return DEFAULT_SITE_URL;
+    }
+  }
   return DEFAULT_SITE_URL;
 }
 
