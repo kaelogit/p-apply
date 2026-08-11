@@ -6,6 +6,7 @@ import {
   WINNER_NOTIFICATION,
   CONTACT_EMAIL,
   SITE_DOMAIN,
+  APPLICANT_CASE_MANAGER_NAME,
 } from '@/lib/site';
 
 export interface FaqItem {
@@ -53,6 +54,18 @@ export const faqItems: FaqItem[] = [
   {
     question: 'How do I contact PCH after applying?',
     answer: `Email us at ${CONTACT_EMAIL}. All official application follow-up is handled by email.`,
+  },
+  {
+    question: 'Someone contacted me about a PCH prize — is it real?',
+    answer: `If you are unsure, verify before you act. Official ${SITE_DOMAIN} contact and support is ${CONTACT_EMAIL}. Visit ${SITE_DOMAIN}/verify and email support with what you were told. We will confirm whether it matches an official file. Do not trust lookalike websites or emails that are not from @${SITE_DOMAIN}.`,
+  },
+  {
+    question: 'How do I verify official PCH Digital email or calls?',
+    answer: `Legitimate messages use the ${SITE_DOMAIN} website and email addresses ending in @${SITE_DOMAIN} (including ${CONTACT_EMAIL}). Your application coordinator may be ${APPLICANT_CASE_MANAGER_NAME}. If anything feels wrong, email ${CONTACT_EMAIL} from the Verify page before taking further steps. We will never ask for your passwords.`,
+  },
+  {
+    question: 'What should I do if I think a message is a scam or impersonation?',
+    answer: `Do not send passwords or personal login details. Forward or describe the contact to ${CONTACT_EMAIL} and use ${SITE_DOMAIN}/verify. Our support team will tell you if the outreach is official. When people are unsure, contacting support is the correct next step.`,
   },
 ];
 

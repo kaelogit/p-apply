@@ -29,6 +29,7 @@ export function Footer() {
                 { href: '/winners', label: 'Winner Photos' },
                 { href: '/apply', label: 'Apply' },
                 { href: '/faq', label: 'FAQ' },
+                { href: '/verify', label: 'Verify Contact' },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -64,6 +65,7 @@ export function Footer() {
             </h4>
             <nav className="flex flex-col gap-2.5">
               {[
+                { href: '/verify', label: 'Verify Official Contact' },
                 { href: '/security', label: 'Security' },
                 { href: '/rules', label: 'Official Rules' },
                 { href: '/privacy', label: 'Privacy Policy' },

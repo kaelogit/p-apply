@@ -1,20 +1,27 @@
-import { Lock, ShieldCheck, Mail, UserX } from 'lucide-react';
+import Link from 'next/link';
+import { Lock, ShieldCheck, Mail, UserX, AlertTriangle, ArrowRight } from 'lucide-react';
 import {
   CONTACT_EMAIL,
   APPLICATION_RESPONSE_HOURS,
   applicantContactWithin,
   WINNER_NOTIFICATION,
+  SITE_DOMAIN,
+  PCH_BRAND_NAME,
 } from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
   title: 'Security & Trust',
-  description:
-    'How PCH protects your application, your privacy, and your personal information.',
+  description: `How ${PCH_BRAND_NAME} protects applicants. Official contact is ${CONTACT_EMAIL} on ${SITE_DOMAIN}. Verify prize messages before you act — never share passwords.`,
   path: '/security',
 });
 
 const blocks = [
+  {
+    icon: AlertTriangle,
+    title: 'Unsure if a contact is real?',
+    desc: `If someone called, emailed, or messaged you about a PCH prize and you are not sure it is official, stop and verify first. Email ${CONTACT_EMAIL} or use our Verify page. We will confirm whether the outreach matches an official file.`,
+  },
   {
     icon: Lock,
     title: 'Private applications',
@@ -22,8 +29,8 @@ const blocks = [
   },
   {
     icon: ShieldCheck,
-    title: 'Secure verification',
-    desc: 'When winners are verified, we use professional-grade security practices. We will never ask for your passwords through email.',
+    title: 'Official channels only',
+    desc: `Use ${SITE_DOMAIN} and email addresses ending in @${SITE_DOMAIN} (including ${CONTACT_EMAIL}). We will never ask for your email or banking passwords. Lookalike domains and free inboxes pretending to be us are not official.`,
   },
   {
     icon: Mail,
@@ -47,11 +54,11 @@ export default function SecurityPage() {
           </div>
           <p className="section-label mb-3">Security</p>
           <h1 className="text-3xl md:text-4xl font-semibold text-[var(--pch-text)] mb-4">
-            Your privacy is our priority.
+            Trust, privacy, and how to verify us.
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed">
-            PCH Digital is committed to protecting every applicant with the highest
-            standards of security and transparency for applicants in every eligible country.
+            {PCH_BRAND_NAME} protects every applicant — and helps people confirm whether a prize
+            message is really from us before they act.
           </p>
         </div>
       </section>
@@ -70,21 +77,23 @@ export default function SecurityPage() {
             </div>
           ))}
 
-          <div className="card p-8 text-center mt-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)] mb-3">
-              Questions about your data?
+          <div className="card p-8 text-center mt-8 space-y-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--pch-text-muted)]">
+              Verify contact or ask about your data
             </p>
-            <p className="text-sm text-[var(--pch-text-muted)] mb-4 leading-relaxed">
-              Contact our team directly with any privacy or security questions.
-            </p>
-            <div className="space-y-2 text-sm">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="block text-[var(--pch-orange)] font-semibold hover:underline"
-              >
-                {CONTACT_EMAIL}
-              </a>
-            </div>
+            <a
+              href={`mailto:${CONTACT_EMAIL}?subject=Please%20verify%20this%20contact`}
+              className="block text-[var(--pch-orange)] font-semibold hover:underline"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            <Link
+              href="/verify"
+              className="btn-primary inline-flex px-6 py-3 text-sm"
+            >
+              Go to Verify page
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

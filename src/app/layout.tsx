@@ -5,12 +5,44 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Analytics } from '@/components/analytics/Analytics';
 import { createMetadata } from '@/lib/metadata';
+import {
+  CONTACT_EMAIL,
+  PCH_ADDRESS_LINE1,
+  PCH_BRAND_NAME,
+  SITE_URL,
+} from '@/lib/site';
 
 export const metadata = createMetadata({ path: '/' });
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: PCH_BRAND_NAME,
+  url: SITE_URL,
+  email: CONTACT_EMAIL,
+  logo: `${SITE_URL}/apple-touch-icon.png`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: PCH_ADDRESS_LINE1,
+    addressLocality: 'Port Washington',
+    addressRegion: 'NY',
+    postalCode: '11050',
+    addressCountry: 'US',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: CONTACT_EMAIL,
+      url: `${SITE_URL}/verify`,
+      availableLanguage: ['English'],
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -21,6 +53,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />

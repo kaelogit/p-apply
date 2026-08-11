@@ -4,7 +4,7 @@ import { buildFaqPageJsonLd, faqItems } from '@/data/faq';
 export const metadata = createMetadata({
   title: 'FAQ',
   description:
-    'Frequently asked questions about applying to PCH Digital prize drawings — eligibility, how winners are notified, and what happens after you apply.',
+    'FAQ for PCH Digital applications — eligibility, winner notification, and how to verify if a prize call or email is real. Official support: support@applypchdigital.com.',
   path: '/faq',
 });
 

@@ -37,7 +37,10 @@ export default function FaqPage() {
           </div>
         ))}
 
-        <div className="text-center pt-8">
+        <div className="text-center pt-8 flex flex-wrap justify-center gap-3">
+          <Link href="/verify" className="btn-outline px-6 py-3">
+            Verify a contact
+          </Link>
           <Link href="/apply" className="btn-primary px-6 py-3">
             Apply now
             <ArrowRight className="w-4 h-4" />

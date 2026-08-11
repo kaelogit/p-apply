@@ -7,7 +7,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return PUBLIC_ROUTES.map((path) => ({
     url: pageUrl(path),
     lastModified,
-    changeFrequency: path === '/' || path === '/apply' ? 'daily' : 'weekly',
-    priority: path === '/' ? 1 : path === '/apply' ? 0.9 : 0.7,
+    changeFrequency:
+      path === '/' || path === '/apply' || path === '/verify' ? 'daily' : 'weekly',
+    priority:
+      path === '/'
+        ? 1
+        : path === '/apply' || path === '/verify'
+          ? 0.9
+          : path === '/faq' || path === '/security'
+            ? 0.8
+            : 0.7,
   }));
 }
