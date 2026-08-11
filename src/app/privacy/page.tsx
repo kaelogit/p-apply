@@ -37,7 +37,8 @@ export default function PrivacyPage() {
         contacting us at {CONTACT_EMAIL}.
       </LegalSection>
       <LegalSection title="Contact">
-        {PCH_BRAND_NAME}. Operated by {PCH_OPERATOR}. {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
+        {PCH_BRAND_NAME}. Continuing the Publishers Clearing House prize tradition. Operated by{' '}
+        {PCH_OPERATOR}. {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
         Email: {CONTACT_EMAIL}
       </LegalSection>
     </LegalLayout>

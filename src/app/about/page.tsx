@@ -5,7 +5,7 @@ import { ELIGIBLE_REGIONS_SHORT, PCH_OWNERSHIP_NOTE } from '@/lib/site';
 
 export const metadata = createMetadata({
   title: 'About',
-  description: 'About Publishers Clearing House — apply to win since 1953.',
+  description: 'About PCH Digital — continuing the Publishers Clearing House prize tradition since 1953.',
   path: '/about',
 });
 
@@ -26,7 +26,7 @@ const sections = [
     href: '/impact',
     icon: Heart,
     title: 'Impact Stories',
-    desc: 'How real winners applied, heard back by email and text within 24 hours, and changed their lives.',
+    desc: 'How real winners applied, heard back by email within 24 hours, and changed their lives.',
   },
   {
     href: '/security',
@@ -43,11 +43,11 @@ export default function AboutPage() {
         <div className="container-page max-w-3xl">
           <p className="section-label mb-2">About</p>
           <h1 className="text-3xl md:text-4xl font-semibold text-[var(--pch-text)] mb-4">
-            Publishers Clearing House
+            PCH Digital
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed mb-4">
-            Since 1953, PCH has awarded hundreds of millions of dollars in prizes to
-            applicants worldwide.
+            PCH Digital continues the Publishers Clearing House prize tradition — awarding prizes
+            to applicants worldwide since 1953.
           </p>
           <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed">
             {PCH_OWNERSHIP_NOTE}

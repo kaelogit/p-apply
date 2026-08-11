@@ -27,9 +27,9 @@ export default function StoryPage() {
             <span className="text-[var(--pch-orange)]">Since 1953.</span>
           </h1>
           <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed max-w-2xl mx-auto mb-4">
-            Publishers Clearing House was built on a simple belief: ordinary people deserve
-            extraordinary chances. For over seven decades, people have applied,
-            won, and had their lives changed by the famous Prize Patrol.
+            PCH Digital continues a simple belief from Publishers Clearing House: ordinary people
+            deserve extraordinary chances. For over seven decades, people have applied, won, and
+            had their lives changed by the famous Prize Patrol.
           </p>
           <p className="text-sm text-[var(--pch-text-muted)] leading-relaxed max-w-2xl mx-auto">
             {PCH_OWNERSHIP_NOTE}

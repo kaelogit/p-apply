@@ -155,7 +155,7 @@ export const GUIDED_QUESTIONS = [
 export const APPLY_FAQS = [
   {
     q: 'Is PCH still operating after the bankruptcy?',
-    a: 'Yes. PCH continues under new ownership through PCH Digital. New prize drawings and applications are active. Current applications are for new promotions under our Official Rules.',
+    a: 'Yes. PCH Digital continues the Publishers Clearing House prize tradition under new ownership. New prize drawings and applications are active. Current applications are for new promotions under our Official Rules.',
   },
   { q: 'Which countries can apply?', a: 'Applications are open to legal residents of the USA, Canada, UK, Germany, Australia, and other eligible regions. See Official Rules for details.' },
   { q: 'Can I apply for someone else?', a: 'No. Each eligible person must submit their own application with their own information.' },

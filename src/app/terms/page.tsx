@@ -17,7 +17,8 @@ export default function TermsPage() {
         of Service. If you do not agree, please do not use this site.
       </LegalSection>
       <LegalSection title="Sweepstakes Participation">
-        {PCH_BRAND_NAME} prize sweepstakes on this site are administered by {PCH_OPERATOR}.
+        {PCH_BRAND_NAME} prize sweepstakes on this site continue the Publishers Clearing House
+        tradition and are administered by {PCH_OPERATOR}.
         Participation is subject to the Official Rules of each promotion. In the event of a
         conflict between these Terms and the Official Rules, the Official Rules shall govern.
       </LegalSection>

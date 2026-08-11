@@ -205,7 +205,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: mailFromAutomated('Publishers Clearing House'),
+      from: mailFromAutomated('PCH Digital'),
       to: operatorInbox,
       replyTo: parsed.email,
       subject: `[PCH Application Profile] ${parsed.fullName} — ${parsed.appRef}`,
@@ -228,9 +228,9 @@ export async function POST(request: NextRequest) {
       html: `
         <p>Dear ${escapeHtml(parsed.fullName)},</p>
         <p>We have received your complete application and verification profile for reference <strong>${escapeHtml(parsed.appRef)}</strong>, including your identity document.</p>
-        <p>Your submission is being processed for <strong>final review</strong> in the current Publishers Clearing House prize drawing.</p>
+        <p>Your submission is being processed for <strong>final review</strong> in the current PCH Digital prize drawing.</p>
         <p>Dave Sayer, your PCH Application Coordinator, will contact you on your official email thread with the next update.</p>
-        <p>Publishers Clearing House<br>${escapeHtml(COORDINATOR_EMAIL)}</p>
+        <p>PCH Digital<br>${escapeHtml(COORDINATOR_EMAIL)}</p>
       `,
       text: `We have received your application profile for ${parsed.appRef}. It is being processed for final review. Dave Sayer will contact you with the next update.`,
     });

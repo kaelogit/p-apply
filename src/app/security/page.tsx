@@ -50,7 +50,7 @@ export default function SecurityPage() {
             Your privacy is our priority.
           </h1>
           <p className="text-[var(--pch-text-muted)] leading-relaxed">
-            Publishers Clearing House is committed to protecting every applicant with the highest
+            PCH Digital is committed to protecting every applicant with the highest
             standards of security and transparency — in the USA and worldwide.
           </p>
         </div>

@@ -10,13 +10,14 @@ export function HeroSection() {
       <div className="container-page">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <p className="section-label mb-4">Prize Drawings Open</p>
+            <p className="section-label mb-4">PCH Digital · Prize Drawings Open</p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-[var(--pch-text)] leading-[1.1] mb-6">
               Apply for your chance to{' '}
               <span className="text-[var(--pch-orange)]">win.</span>
             </h1>
             <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed mb-8 max-w-lg">
-              Submit your application for PCH prize drawings. {ELIGIBLE_REGIONS_SHORT}
+              Submit your application through PCH Digital — continuing the Publishers Clearing House
+              prize tradition. {ELIGIBLE_REGIONS_SHORT}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">

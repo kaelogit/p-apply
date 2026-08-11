@@ -83,7 +83,8 @@ export function Footer() {
 
         <div className="pt-8 border-t border-[var(--pch-border)]">
           <p className="text-sm text-[var(--pch-text-muted)]">
-            © {year} {PCH_BRAND_NAME}. Operated by {PCH_OPERATOR}.
+            © {year} {PCH_BRAND_NAME}. Continuing the Publishers Clearing House prize tradition.
+            Operated by {PCH_OPERATOR}.
           </p>
         </div>
       </div>

@@ -43,8 +43,9 @@ export default function RulesPage() {
         return an Affidavit of Eligibility and Release of Liability.
       </LegalSection>
       <LegalSection title="Sponsor">
-        {PCH_BRAND_NAME}. Sweepstakes administered by {PCH_OPERATOR}. {PCH_OWNERSHIP_NOTE} Mailing
-        address: {PCH_ADDRESS_LINE1}, {PCH_ADDRESS_LINE2}.
+        {PCH_BRAND_NAME}. Sweepstakes administered by {PCH_OPERATOR}. Continuing the Publishers
+        Clearing House prize tradition. {PCH_OWNERSHIP_NOTE} Mailing address: {PCH_ADDRESS_LINE1},{' '}
+        {PCH_ADDRESS_LINE2}.
       </LegalSection>
     </LegalLayout>
   );

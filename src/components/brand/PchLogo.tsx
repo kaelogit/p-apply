@@ -19,13 +19,13 @@ export function PchLogo({ className }: PchLogoProps) {
     <Link href="/" className={cn('flex items-center gap-2.5 group', className)}>
       {logoFailed ? (
         <div className="w-9 h-9 rounded-lg bg-[var(--pch-orange)] flex items-center justify-center shrink-0 border border-[var(--pch-border)]">
-          <span className="text-white text-xs font-bold tracking-tight">PCH</span>
+          <span className="text-white text-[10px] font-bold tracking-tight">PCH</span>
         </div>
       ) : (
         <div className="h-9 shrink-0 rounded-lg border border-[var(--pch-border)] overflow-hidden bg-white p-0.5">
           <Image
             src={LOGO_SRC}
-            alt="PCH"
+            alt="PCH Digital"
             width={36}
             height={36}
             className="h-full w-auto object-contain rounded-md"
@@ -36,7 +36,10 @@ export function PchLogo({ className }: PchLogoProps) {
       )}
       <div className="leading-tight">
         <span className="block text-sm font-semibold text-[var(--pch-text)] tracking-tight">
-          Publisher&apos;s Clearing House
+          PCH Digital
+        </span>
+        <span className="block text-[10px] font-medium text-[var(--pch-text-muted)] tracking-wide">
+          Publishers Clearing House
         </span>
       </div>
     </Link>

@@ -31,14 +31,19 @@ export function absoluteSiteUrl(path = ''): string {
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
-export const PCH_BRAND_NAME = 'Publishers Clearing House';
+/** Primary public brand — what visitors should feel first. */
+export const PCH_BRAND_NAME = 'PCH Digital';
+
+/** Heritage / prize brand still used in winner stories and history. */
+export const PCH_HERITAGE_NAME = 'Publishers Clearing House';
+
 export const PCH_OPERATOR = 'PCH Digital (ARB Interactive Group)';
 export const PCH_ADDRESS_LINE1 = '382 Channel Drive';
 export const PCH_ADDRESS_LINE2 = 'Port Washington, NY 11050';
 
-/** Short note on current PCH operations after restructuring — use on About, FAQ, legal pages. */
+/** Short note on current operations — PCH Digital first. */
 export const PCH_OWNERSHIP_NOTE =
-  'Publishers Clearing House continues under new ownership through PCH Digital. Current sweepstakes, prize awards, and Prize Patrol presentations for new winners are ongoing.';
+  'PCH Digital continues the Publishers Clearing House prize tradition under new ownership. Current sweepstakes, prize awards, and Prize Patrol presentations for new winners are ongoing.';
 
 /** Highest lump-sum prize on the site */
 export const MAX_LUMP_SUM_PRIZE = '$2,500,000';

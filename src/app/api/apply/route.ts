@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: mailFromAutomated('Publishers Clearing House'),
+      from: mailFromAutomated('PCH Digital'),
       to: operatorInbox,
       replyTo: parsed.email,
       subject: `[PCH Application] ${parsed.name} — Ref ${appRef} — ${parsed.city}, ${parsed.country}`,

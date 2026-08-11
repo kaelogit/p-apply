@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
-import { absoluteSiteUrl, MAX_LUMP_SUM_PRIZE, SITE_URL } from '@/lib/site';
+import { absoluteSiteUrl, MAX_LUMP_SUM_PRIZE, PCH_BRAND_NAME, SITE_URL } from '@/lib/site';
 
-export const SITE_NAME = "Publisher's Clearing House";
+export const SITE_NAME = 'PCH Digital';
 export const DEFAULT_TITLE = 'Apply to Win PCH Prizes';
-export const DEFAULT_DESCRIPTION = `Apply for your chance to win PCH prizes — Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrizes, Weekly For Life, and more. Real winners since 1953.`;
+export const DEFAULT_DESCRIPTION = `Apply for your chance to win PCH Digital prizes — Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrizes, Weekly For Life, and more. Continuing the Publishers Clearing House prize tradition.`;
 
 /** Hero image used for link previews (WhatsApp, Instagram, Facebook, iMessage, etc.) */
 export const OG_IMAGE_PATH = '/hero-image.jpg';
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 900;
-export const OG_IMAGE_ALT = 'PCH winner with Prize Patrol and prize check';
+export const OG_IMAGE_ALT = 'PCH Digital winner with Prize Patrol and prize check';
 
 export function pageUrl(path = '/'): string {
   return absoluteSiteUrl(path || '/');
@@ -20,7 +20,7 @@ export function ogImageUrl(imagePath = OG_IMAGE_PATH): string {
 }
 
 function fullTitle(title?: string): string {
-  return title ? `${title} | PCH` : `${SITE_NAME} — ${DEFAULT_TITLE}`;
+  return title ? `${title} | ${PCH_BRAND_NAME}` : `${SITE_NAME} — ${DEFAULT_TITLE}`;
 }
 
 export function createMetadata(options: {
@@ -40,7 +40,9 @@ export function createMetadata(options: {
   const title = fullTitle(options.title);
 
   return {
-    ...(options.title ? { title: options.title } : { title: { default: title, template: '%s | PCH' } }),
+    ...(options.title
+      ? { title: options.title }
+      : { title: { default: title, template: `%s | ${PCH_BRAND_NAME}` } }),
     description,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: url },
