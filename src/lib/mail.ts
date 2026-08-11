@@ -1,7 +1,7 @@
 import 'server-only';
 import nodemailer from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { COORDINATOR_EMAIL } from '@/lib/email-addresses';
+import { APPLY_FROM_EMAIL, COORDINATOR_EMAIL } from '@/lib/email-addresses';
 
 function readEnv(...keys: string[]): string | undefined {
   for (const key of keys) {
@@ -19,8 +19,14 @@ export function getSmtpCredentials(): { user: string; pass: string } | null {
   return { user, pass };
 }
 
+/** Operator inbox — new applications land here. */
 export function getOperatorInbox(): string {
   return readEnv('TO_EMAIL') ?? COORDINATOR_EMAIL;
+}
+
+/** From address for automated application mail (defaults to apply@). */
+export function getApplyFromAddress(): string {
+  return readEnv('MAIL_FROM', 'APPLY_FROM_EMAIL') ?? APPLY_FROM_EMAIL;
 }
 
 function resolveSmtpHost(): string {
@@ -50,9 +56,8 @@ export function createMailTransporter(): nodemailer.Transporter<SMTPTransport.Se
 }
 
 export function mailFromAutomated(displayName: string): string {
-  const creds = getSmtpCredentials();
-  if (!creds) return `"${displayName}" <noreply@example.com>`;
-  return `"${displayName}" <${creds.user}>`;
+  const from = getApplyFromAddress();
+  return `"${displayName}" <${from}>`;
 }
 
 export function mailUnavailableMessage(): string {

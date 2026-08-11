@@ -91,6 +91,7 @@ export async function POST(request: NextRequest) {
       text: buildOperatorApplicationText(parsed, appRef),
       html: buildOperatorApplicationHtml(parsed, appRef),
     });
+    // from: apply@applypchdigital.com → to: support@applypchdigital.com (via MAIL_FROM / TO_EMAIL)
 
     return NextResponse.json({ ok: true, ref: appRef });
   } catch (err) {

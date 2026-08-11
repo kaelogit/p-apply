@@ -23,6 +23,7 @@ const user = process.env.ZOHO_USER || process.env.SMTP_USER;
 const passRaw = process.env.ZOHO_PASS || process.env.SMTP_PASS;
 const pass = passRaw?.replace(/\s/g, '');
 const to = process.env.TO_EMAIL || 'support@applypchdigital.com';
+const from = process.env.MAIL_FROM || process.env.ZOHO_USER || 'apply@applypchdigital.com';
 const host = process.env.SMTP_HOST || 'smtp.zoho.com';
 const port = Number(process.env.SMTP_PORT || 587);
 
@@ -39,17 +40,17 @@ const transporter = nodemailer.createTransport({
   ...(port === 465 ? {} : { requireTLS: true }),
 });
 
-console.log(`Testing Zoho SMTP as ${user} via ${host}:${port} → ${to} ...`);
+console.log(`Testing Zoho SMTP as ${user} via ${host}:${port} → ${to} (from ${from}) ...`);
 
 try {
   await transporter.verify();
   console.log('✓ SMTP connection verified');
 
   const info = await transporter.sendMail({
-    from: `"PCH Test" <${user}>`,
+    from: `"PCH Test" <${from}>`,
     to,
     subject: '[PCH SMTP Test] Connection OK',
-    text: 'If you received this, Zoho SMTP is configured correctly.',
+    text: 'If you received this, Zoho SMTP is configured correctly (apply@ → support@).',
   });
 
   console.log('✓ Test email sent:', info.messageId);
