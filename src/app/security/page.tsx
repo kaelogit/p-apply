@@ -11,9 +11,10 @@ import {
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Security & Trust',
-  description: `How ${PCH_BRAND_NAME} protects applicants. Official contact is ${CONTACT_EMAIL} on ${SITE_DOMAIN}. Verify prize messages before you act — never share passwords.`,
-  path: '/security',
+  title: 'Did PCH Say You Won? Check If It’s Real',
+  description: `Official PCH Digital contact is ${CONTACT_EMAIL} on ${SITE_DOMAIN}. We never ask for fees or passwords. Check a prize message before you act.`,
+  path: '/verify',
+  noIndex: true,
 });
 
 const blocks = [

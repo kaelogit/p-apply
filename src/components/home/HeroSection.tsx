@@ -12,8 +12,8 @@ export function HeroSection() {
           <div>
             <p className="section-label mb-4">PCH Digital · Prize Drawings Open</p>
             <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-[var(--pch-text)] leading-[1.1] mb-6">
-              Apply for your chance to{' '}
-              <span className="text-[var(--pch-orange)]">win.</span>
+              Apply here. You could win{' '}
+              <span className="text-[var(--pch-orange)]">up to $2.5 million.</span>
             </h1>
             <p className="text-lg text-[var(--pch-text-muted)] leading-relaxed mb-8 max-w-lg">
               Submit your application through PCH Digital — continuing the Publishers Clearing House

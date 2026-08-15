@@ -9,8 +9,9 @@ import {
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Privacy Policy',
-  description: 'PCH privacy policy — how we collect, use, and protect your application information.',
+  title: 'PCH Privacy Policy — How We Handle Your Application',
+  description:
+    'How PCH Digital uses the information you share on applypchdigital.com. Official follow-up is by email. We never ask for passwords.',
   path: '/privacy',
 });
 

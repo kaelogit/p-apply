@@ -1,9 +1,9 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Apply to Win',
+  title: 'Apply for PCH Here — Official Form. Free Entry',
   description:
-    'Submit your PCH prize application online. Enter for Mega Prize, SuperPrize, Weekly For Life, Dream Home, daily cash drawings, and more.',
+    'One application on applypchdigital.com. Dave Sayer emails you within 24 hours. No fee. No password. This is the official PCH Digital apply page.',
   path: '/apply',
 });
 

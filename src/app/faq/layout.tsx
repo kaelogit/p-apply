@@ -2,9 +2,9 @@ import { createMetadata } from '@/lib/metadata';
 import { buildFaqPageJsonLd, faqItems } from '@/data/faq';
 
 export const metadata = createMetadata({
-  title: 'FAQ',
+  title: 'Is PCH Digital Real? How to Apply and Win',
   description:
-    'FAQ for PCH Digital applications — eligibility, winner notification, and how to verify if a prize call or email is real. Official support: support@applypchdigital.com.',
+    'Yes — prizes are being awarded. How to apply, when Dave Sayer emails you, who can enter, and how to check a prize message before you reply.',
   path: '/faq',
 });
 

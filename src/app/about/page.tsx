@@ -4,8 +4,9 @@ import { createMetadata } from '@/lib/metadata';
 import { ELIGIBLE_REGIONS_SHORT, PCH_OWNERSHIP_NOTE } from '@/lib/site';
 
 export const metadata = createMetadata({
-  title: 'About',
-  description: 'About PCH Digital — continuing the Publishers Clearing House prize tradition since 1953.',
+  title: 'This Is PCH Digital — The Official Prize Site',
+  description:
+    'PCH Digital continues the Publishers Clearing House prize tradition. Official apply site: applypchdigital.com. Support: support@applypchdigital.com.',
   path: '/about',
 });
 
@@ -29,10 +30,10 @@ const sections = [
     desc: 'How real winners applied, heard back by email within 24 hours, and changed their lives.',
   },
   {
-    href: '/security',
+    href: '/verify',
     icon: Shield,
-    title: 'Security & Trust',
-    desc: 'How we protect your application and keep your personal information secure.',
+    title: 'Is this message real?',
+    desc: 'Check a prize email, call, or text before you reply. Official contact is on this site.',
   },
 ];
 

@@ -4,7 +4,8 @@ import { Viewport } from 'next';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Analytics } from '@/components/analytics/Analytics';
-import { createMetadata } from '@/lib/metadata';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { createMetadata, pageUrl } from '@/lib/metadata';
 import {
   CONTACT_EMAIL,
   PCH_ADDRESS_LINE1,
@@ -22,6 +23,7 @@ export const viewport: Viewport = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
   name: PCH_BRAND_NAME,
   url: SITE_URL,
   email: CONTACT_EMAIL,
@@ -39,10 +41,20 @@ const organizationJsonLd = {
       '@type': 'ContactPoint',
       contactType: 'customer support',
       email: CONTACT_EMAIL,
-      url: `${SITE_URL}/verify`,
+      url: pageUrl('/verify'),
       availableLanguage: ['English'],
     },
   ],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: PCH_BRAND_NAME,
+  url: SITE_URL,
+  publisher: { '@id': `${SITE_URL}/#organization` },
+  inLanguage: 'en-US',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -53,10 +65,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
       </head>
       <body className="min-h-screen flex flex-col">
         <Navbar />

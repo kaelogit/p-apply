@@ -5,8 +5,8 @@ import { MAX_LUMP_SUM_PRIZE, SUPER_PRIZE_AMOUNT } from '@/lib/site';
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Prize Categories',
-  description: `Explore PCH prize categories — Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrize ${SUPER_PRIZE_AMOUNT}, Weekly For Life, Dream Home, and more.`,
+  title: `What You Can Win — PCH Prizes Up to ${MAX_LUMP_SUM_PRIZE}`,
+  description: `Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrize ${SUPER_PRIZE_AMOUNT}, Weekly For Life, Dream Home, and more. Apply free on the official site.`,
   path: '/areas',
 });
 

@@ -1,9 +1,9 @@
 import { createMetadata } from '@/lib/metadata';
 
 export const metadata = createMetadata({
-  title: 'Impact Stories',
+  title: 'They Applied. Then They Won. PCH Winner Stories',
   description:
-    'Real PCH winner stories — applicants who heard back by email and text within 24 hours and went on to win life-changing prizes.',
+    'Read how applicants heard from Dave Sayer within 24 hours and went on to win. Official follow-up is email only at support@applypchdigital.com.',
   path: '/impact',
 });
 

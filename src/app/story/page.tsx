@@ -10,9 +10,9 @@ import {
 } from '@/lib/site';
 
 export const metadata = createMetadata({
-  title: 'Our Story',
+  title: 'PCH Still Awards Real Prizes — The Story Since 1953',
   description:
-    'The PCH story — awarding life-changing prizes to winners in the US, Canada, UK, Europe, and Australia since 1953.',
+    'Prize Patrol, real checks, and the Publishers Clearing House tradition — now continued by PCH Digital. Apply on the official site: applypchdigital.com.',
   path: '/story',
 });
 

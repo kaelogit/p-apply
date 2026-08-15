@@ -10,9 +10,9 @@ import {
 } from '@/lib/site';
 
 export const metadata = createMetadata({
-  title: 'Official Rules',
+  title: 'PCH Official Rules — Who Can Enter and How Winners Are Chosen',
   description:
-    'Official rules for PCH prize drawings — eligibility, winner selection, and prize awards.',
+    'Eligibility, drawings, and prize awards for PCH Digital sweepstakes. Apply free on applypchdigital.com. Official email is support@applypchdigital.com.',
   path: '/rules',
 });
 

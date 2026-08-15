@@ -13,7 +13,7 @@ const navLinks = [
   { href: '/impact', label: 'Impact' },
   { href: '/winners', label: 'Winners' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/verify', label: 'Verify' },
+  { href: '/verify', label: 'Is this real?' },
 ];
 
 export function Navbar() {

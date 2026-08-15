@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { absoluteSiteUrl, MAX_LUMP_SUM_PRIZE, PCH_BRAND_NAME, SITE_URL } from '@/lib/site';
+import { absoluteSiteUrl, MAX_LUMP_SUM_PRIZE, SITE_URL } from '@/lib/site';
 
 export const SITE_NAME = 'PCH Digital';
-export const DEFAULT_TITLE = 'Apply to Win PCH Prizes';
-export const DEFAULT_DESCRIPTION = `Apply for your chance to win PCH Digital prizes — Mega Prize up to ${MAX_LUMP_SUM_PRIZE}, SuperPrizes, Weekly For Life, and more. Continuing the Publishers Clearing House prize tradition.`;
+export const DEFAULT_TITLE = 'Official PCH Site — Apply Free. You Could Win $2.5M';
+export const DEFAULT_DESCRIPTION = `This is applypchdigital.com — the official PCH Digital site. Apply free for prizes up to ${MAX_LUMP_SUM_PRIZE}. Dave Sayer emails you within 24 hours. We never ask for a fee or password.`;
 
 /** Hero image used for link previews (WhatsApp, Instagram, Facebook, iMessage, etc.) */
 export const OG_IMAGE_PATH = '/hero-image.jpg';
@@ -17,10 +17,6 @@ export function pageUrl(path = '/'): string {
 
 export function ogImageUrl(imagePath = OG_IMAGE_PATH): string {
   return absoluteSiteUrl(imagePath);
-}
-
-function fullTitle(title?: string): string {
-  return title ? `${title} | ${PCH_BRAND_NAME}` : `${SITE_NAME} — ${DEFAULT_TITLE}`;
 }
 
 export function createMetadata(options: {
@@ -37,17 +33,24 @@ export function createMetadata(options: {
   const imagePath = options.image ?? OG_IMAGE_PATH;
   const imageUrl = ogImageUrl(imagePath);
   const imageAlt = options.imageAlt ?? OG_IMAGE_ALT;
-  const title = fullTitle(options.title);
+  const documentTitle = options.title ?? DEFAULT_TITLE;
 
   return {
-    ...(options.title
-      ? { title: options.title }
-      : { title: { default: title, template: `%s | ${PCH_BRAND_NAME}` } }),
+    title: options.title ?? { default: DEFAULT_TITLE, template: '%s' },
     description,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: url },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+        { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      ],
+      shortcut: '/favicon.ico',
+      apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    },
     openGraph: {
-      title,
+      title: documentTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -66,7 +69,7 @@ export function createMetadata(options: {
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: documentTitle,
       description,
       images: {
         url: imageUrl,
@@ -74,8 +77,11 @@ export function createMetadata(options: {
       },
     },
     robots: options.noIndex
-      ? { index: false, follow: true }
-      : { index: true, follow: true },
+      ? { index: false, follow: true, googleBot: { index: false, follow: true } }
+      : { index: true, follow: true, googleBot: { index: true, follow: true } },
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+      : {}),
   };
 }
 
@@ -90,7 +96,6 @@ export const PUBLIC_ROUTES = [
   '/winners',
   '/faq',
   '/verify',
-  '/security',
   '/rules',
   '/privacy',
   '/terms',

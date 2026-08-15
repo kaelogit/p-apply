@@ -3,8 +3,8 @@ import { createMetadata } from '@/lib/metadata';
 import { PCH_BRAND_NAME, PCH_OPERATOR, SITE_DOMAIN } from '@/lib/site';
 
 export const metadata = createMetadata({
-  title: 'Terms of Service',
-  description: `Terms of service for ${SITE_DOMAIN} and PCH prize applications.`,
+  title: 'PCH Terms — Free to Apply, Official Site Only',
+  description: `Terms for applypchdigital.com. Applying is free. Official contact is support@applypchdigital.com. Use the Verify page if a message feels off.`,
   path: '/terms',
 });
 

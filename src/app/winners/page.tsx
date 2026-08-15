@@ -5,8 +5,8 @@ import { createMetadata } from '@/lib/metadata';
 import { WINNERS_TAGLINE } from '@/lib/site';
 
 export const metadata = createMetadata({
-  title: 'Winners',
-  description: `${WINNERS_TAGLINE} See real people who applied and won.`,
+  title: 'Real PCH Winners — People Holding Their Checks',
+  description: `${WINNERS_TAGLINE} They applied on this official site.`,
   path: '/winners',
 });
 

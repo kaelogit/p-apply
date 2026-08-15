@@ -7,6 +7,7 @@ import { WinnersSection } from '@/components/home/WinnersSection';
 import { StatsSection } from '@/components/home/StatsSection';
 import { VideoSection } from '@/components/home/VideoSection';
 import { FaqSection } from '@/components/home/FaqSection';
+import { VerifySection } from '@/components/home/VerifySection';
 import { ApplyCtaSection } from '@/components/home/ApplyCtaSection';
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
       <RealStoriesSection />
       <StatsSection />
       <VideoSection />
+      <VerifySection />
       <FaqSection />
       <ApplyCtaSection />
     </div>

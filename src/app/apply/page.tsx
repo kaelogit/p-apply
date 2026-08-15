@@ -560,6 +560,16 @@ export default function ApplyPage() {
               </div>
             </div>
 
+            <div className="card p-5">
+              <p className="text-sm font-medium text-[var(--pch-text)] mb-1">Unsure about a message?</p>
+              <p className="text-xs text-[var(--pch-text-muted)] leading-relaxed mb-3">
+                Official follow-up is {CONTACT_EMAIL} only. Check it here before you reply.
+              </p>
+              <Link href="/verify" className="text-sm font-semibold text-[var(--pch-orange)] hover:underline">
+                Verify official contact
+              </Link>
+            </div>
+
             <div className="hidden lg:block space-y-2">
               {APPLY_FAQS.map((f, i) => (
                 <FaqItem key={i} item={f} open={openFaq === i} onToggle={() => setOpenFaq(openFaq === i ? null : i)} />
